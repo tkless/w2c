@@ -19,7 +19,7 @@
       t.content.querySelector('p').innerHTML = data.abstract;
 
       var clone = document.importNode(t.content, true);
-      document.body.appendChild(clone);
+      document.querySelector('.preview').appendChild(clone);
     }
     else {
       console.log('template not supported');
