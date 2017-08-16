@@ -10,9 +10,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "title": "Fill-in-the-Blank Text",
     "abstract": "For rendering a fill-in-the-blank text.",
     "screenshots": [
-      "https://akless.github.io/ccm-components/cloze/resources/preview_1.png",
-      "https://akless.github.io/ccm-components/cloze/resources/preview_2.png",
-      "https://akless.github.io/ccm-components/cloze/resources/preview_3.png"
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_1.jpg",
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_2.jpg",
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_3.jpg"
     ],
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
     "name": "cloze",
