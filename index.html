@@ -8,86 +8,32 @@
 <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css" media="screen">
 <link rel="stylesheet" href="css/style.css">
 
-  <template>
-    <div class="col-sm-6 col-lg-4">
-      <div class="thumbnail">
-        <img class="img-responsive">
-        <div class="caption">
-          <h3>Comp-Titel</h3>
-          <p>Hier kurze beschreibung der Komponente</p>
-          <p class="button">
-            <a href="#" class="detail btn btn-primary" role="button" onclick="renderComponentDetail()">Details</a>
-            <a href="#" class="create btn btn-default" role="button" onclick="createApp()">Create App</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <!-- Navbar
-  ================================================== -->
-
-  <nav class="navbar navbar-default">
-    <div class="container">
-
-      <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Navigation ein-/ausblenden</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">W2C</a>
-      </div>
-
-      <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#">Link <span class="sr-only">(aktuell)</span></a></li>
-          <li><a href="#">Contact</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Components <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Aktion</a></li>
-              <li><a href="#">Andere Aktion</a></li>
-              <li><a href="#">Irgendwas anderes</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Abgetrennter Link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Noch ein abgetrennter Link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-
-    </div><!-- /.container -->
-  </nav>
-
-<!-- Overwiev all comonents
- ================================================== -->
-  <div class="container">
-    <div class="row">
-      <div class="preview">
-
-
-
+<template id="all-components">
+  <div class="col-sm-6 col-lg-4">
+    <div class="thumbnail">
+      <img class="img-responsive">
+      <div class="caption">
+        <h3>Comp-Titel</h3>
+        <p class="abstract">Hier kurze beschreibung der Komponente</p>
+        <p class="button">
+          <a href="#" class="detail btn btn-primary" role="button" onclick="renderComponentDetail()">Details</a>
+          <a href="#" class="create btn btn-default" role="button" onclick="createApp()">Create App</a>
+        </p>
       </div>
     </div>
   </div>
+</template>
 
-<!-- One component view
-================================================== -->
-<div id="component">
-  <div class="container">
-
+<template id="component-detail">
+  <div>
     <header class="media">
       <section class="media-left" id="logo">
         <a><img src="https://akless.github.io/ccm-components/component.png"></a>
       </section>
       <section class="media-body" id="trailer">
         <h4 id="title" class="media-heading">Fill-in-the-Blank Text</h4>
-        <a href="https://github.com/akless" id="developer">André Kless<span class="glyphicon glyphicon-chevron-right"></span>
+        <a href="https://github.com/akless" id="developer">André Kless
+          <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </section>
     </header>
@@ -96,9 +42,9 @@
 
     <div class="navigation text-center">
       <div class="btn-group">
-        <button typ="button" class="btn btn-primary">Information</button>
-        <button typ="button" class="btn btn-primary">Preview</button>
-        <button typ="button" class="btn btn-primary">Demo</button>
+        <a typ="button" class="btn btn-primary" href="#info">Information</a>
+        <a typ="button" class="btn btn-primary" href="#prev">Preview</a>
+        <a typ="button" class="btn btn-primary" href="#demo">Demo</a>
       </div>
     </div>
 
@@ -107,32 +53,32 @@
       <hr>
       <p class="lead"><i>ccm</i> component for rendering a fill-in-the-blank text.</p>
       <h4>Description</h4>
-      <p>The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.</p>
+      <p id="description">The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.</p>
       <h4>Details</h4>
 
       <table class="table table-striped">
         <tbody class="col-md-12">
-          <tr>
-            <th>Component name</th>
-            <td>cloze</td>
-          </tr>
-          <tr>
-            <th>Version</th>
-            <td>1.0.0</td>
-          </tr>
-          <tr>
-            <th>URL</th>
-            <td><a href="https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js">https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js</a>
-            </td>
-          </tr>
-          <tr>
-            <th>Developer</th>
-            <td>André Kless</td>
-          </tr>
-          <tr>
-            <th>LICENSE</th>
-            <td>The MIT License (MIT)</td>
-          </tr>
+        <tr>
+          <th>Component name</th>
+          <td>cloze</td>
+        </tr>
+        <tr>
+          <th>Version</th>
+          <td>1.0.0</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a href="https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js">https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js</a>
+          </td>
+        </tr>
+        <tr>
+          <th>Developer</th>
+          <td>André Kless</td>
+        </tr>
+        <tr>
+          <th>LICENSE</th>
+          <td>The MIT License (MIT)</td>
+        </tr>
         </tbody>
       </table>
 
@@ -186,7 +132,55 @@
       </div>
     </div>
   </div>
+</template>
+
+<!-- Navbar
+================================================== -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+
+    <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Navigation ein-/ausblenden</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">W2C</a>
+    </div>
+
+    <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Link <span class="sr-only">(aktuell)</span></a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Components <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Aktion</a></li>
+            <li><a href="#">Andere Aktion</a></li>
+            <li><a href="#">Irgendwas anderes</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Abgetrennter Link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Noch ein abgetrennter Link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container -->
+</nav>
+
+<!-- Overwiev all comonents
+ ================================================== -->
+<div class="container">
+  <section>
+
+  </section>
 </div>
+
 
 
 

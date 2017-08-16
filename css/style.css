@@ -1,9 +1,16 @@
+body { padding-top: 80px; }
+
 .thumbnail {
     background-color: #eaf1f1;
 }
 
 .caption {
     text-align: center;
+    height: 174px !important;
+}
+.abstract {
+    height: 20px !important;
+    overflow: hidden;
 }
 
 img {
