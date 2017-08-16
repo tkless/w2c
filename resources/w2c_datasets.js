@@ -55,7 +55,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "title": "Quill Texteditor",
     "abstract": "For rendering a quill text editor.",
     "screenshots": [
-      "https://akless.github.io/ccm-components/libs/screenshots/editor_preview_1.png"
+      "https://akless.github.io/ccm-components/libs/screenshots/editor_preview_1.jpg"
     ],
     "name": "editor",
     "versions": {
