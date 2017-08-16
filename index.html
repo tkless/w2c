@@ -8,7 +8,21 @@
 <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css" media="screen">
 <link rel="stylesheet" href="css/style.css">
 
-
+  <template>
+    <div class="col-sm-6 col-lg-4">
+      <div class="thumbnail">
+        <img class="img-responsive">
+        <div class="caption">
+          <h3>Comp-Titel</h3>
+          <p>Hier kurze beschreibung der Komponente</p>
+          <p class="button">
+            <a href="#" class="detail btn btn-primary" role="button" onclick="renderComponentDetail()">Details</a>
+            <a href="#" class="create btn btn-default" role="button" onclick="createApp()">Create App</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </template>
 
   <!-- Navbar
   ================================================== -->
@@ -56,24 +70,125 @@
     <div class="row">
       <div class="preview">
 
-      <template id="all-components">
-        <div class="col-sm-6 col-lg-4">
-          <div class="thumbnail">
-            <img class="img-responsive">
-            <div class="caption">
-              <h3>Comp-Titel</h3>
-              <p>Hier kurze beschreibung der Komponente</p>
-              <p class="button"><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Create App</a></p>
-            </div>
-          </div>
-        </div>
-      </template>
+
+
       </div>
     </div>
   </div>
 
-<!-- W2C Content
+<!-- One component view
 ================================================== -->
+<div id="component">
+  <div class="container">
+
+    <header class="media">
+      <section class="media-left" id="logo">
+        <a><img src="https://akless.github.io/ccm-components/component.png"></a>
+      </section>
+      <section class="media-body" id="trailer">
+        <h4 id="title" class="media-heading">Fill-in-the-Blank Text</h4>
+        <a href="https://github.com/akless" id="developer">André Kless<span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </section>
+    </header>
+
+    <hr>
+
+    <div class="navigation text-center">
+      <div class="btn-group">
+        <button typ="button" class="btn btn-primary">Information</button>
+        <button typ="button" class="btn btn-primary">Preview</button>
+        <button typ="button" class="btn btn-primary">Demo</button>
+      </div>
+    </div>
+
+    <div id="info">
+      <h2>Information</h2>
+      <hr>
+      <p class="lead"><i>ccm</i> component for rendering a fill-in-the-blank text.</p>
+      <h4>Description</h4>
+      <p>The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.</p>
+      <h4>Details</h4>
+
+      <table class="table table-striped">
+        <tbody class="col-md-12">
+          <tr>
+            <th>Component name</th>
+            <td>cloze</td>
+          </tr>
+          <tr>
+            <th>Version</th>
+            <td>1.0.0</td>
+          </tr>
+          <tr>
+            <th>URL</th>
+            <td><a href="https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js">https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Developer</th>
+            <td>André Kless</td>
+          </tr>
+          <tr>
+            <th>LICENSE</th>
+            <td>The MIT License (MIT)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="text-right">
+        <a href="#main">
+          <span class="label label-default">back to top</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="prev">
+      <h3>Preview</h3>
+      <hr>
+      <div class="row">
+        <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="https://akless.github.io/ccm-components/cloze/resources/preview_1.png">
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="https://akless.github.io/ccm-components/cloze/resources/preview_2.png">
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="https://akless.github.io/ccm-components/cloze/resources/preview_3.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <a href="#main">
+          <span class="label label-default">back to top</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="demo">
+      <h3>Live demo with demo data</h3>
+      <hr>
+      <div id="demo_section">
+        <div>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <a href="#main"><span class="label label-default">back to top</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <script src="https://akless.github.io/ccm/version/ccm-9.0.0.js"></script>
 <script src="js/w2c.js"></script>

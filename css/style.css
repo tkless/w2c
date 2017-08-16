@@ -1,0 +1,16 @@
+.thumbnail {
+    background-color: #eaf1f1;
+}
+
+.caption {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 216px !important;
+}
+
+.button {
+    margin-top: 30px;
+}
