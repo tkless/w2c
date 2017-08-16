@@ -69,7 +69,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "title": "Eval",
     "abstract": "For interpreting a given JavaScript expression.",
     "screenshots": [
-      "https://akless.github.io/ccm-components/cloze/resources/screenshot_1.jpg"
+      "https://akless.github.io/ccm-components/eval/resources/screenshot_1.jpg"
     ],
     "name": "eval",
     "versions": {
