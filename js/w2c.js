@@ -8,15 +8,41 @@
 ( function () {
 
   var ccm = window.ccm[ '9.0.0' ];
-  ccm.load( 'resources/w2c_datasets.js', renderAllComponents );
+  var datasets;
+  ccm.load( 'resources/w2c_datasets.js', function ( result )
+  {
+    datasets = result;
+    renderAllComponents();
+    fillDropdownMenue();
+  } );
 
-  function renderAllComponents( datasets ) {
+
+  function fillDropdownMenue() {
+    for ( var data in datasets )
+      setDropdownMenueItems( datasets[ data ] );
+  }
+
+  function renderAllComponents() {
     var row_div = document.createElement('div');
     row_div.className = 'row';
     row_div.id = 'view-all';
     document.querySelector( 'section' ).appendChild( row_div );
     for ( var data in datasets )
       setPreviewsContent( datasets[ data ] );
+  }
+
+  function setDropdownMenueItems( data ) {
+    var clone = document.importNode( document.querySelector( '#dropdown-items' ).content, true );
+
+    var inner = clone.querySelector('li');
+
+    clone.querySelector( 'a' ).innerHTML = data.title;
+    inner.querySelector( 'a' ).onclick = function ( event ) {
+      if ( event ) event.preventDefault();
+      renderComponentDetail( data );
+    };
+
+    document.querySelector( '.dropdown-menu' ).appendChild( clone );
   }
 
   function setPreviewsContent( data ) {
@@ -27,27 +53,27 @@
     if ( data.screenshots ) inner.querySelector( 'img' ).src = data.screenshots[ 0 ];
     inner.querySelector( 'h3' ).innerHTML = data.title;
     inner.querySelector( 'p' ).innerHTML = data.abstract;
-    inner.querySelector( '.detail' ).onclick = renderComponentDetail;
+    inner.querySelector( '.detail' ).onclick = function ( event ) {
+      if ( event ) event.preventDefault();
+      renderComponentDetail( data );
+    };
 
     document.querySelector( '#view-all' ).appendChild( clone );
 
-    function renderComponentDetail() {
-      var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
-      var inner = clone.querySelector('div');
-
-      inner.querySelector('#title').innerHTML = data.title;
-      inner.querySelector('#developer').innerHTML = data.developer;
-      inner.querySelector('.lead').innerHTML = data.abstract;
-      inner.querySelector('#description').innerHTML = data.description;
-
-      document.querySelector( 'section' ).innerHTML = '';
-      document.querySelector( 'section' ).appendChild( clone );
-    }
-
   }
 
-  function createApp() {
+  function renderComponentDetail( data ) {
+    console.log(data);
+    var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
+    var inner = clone.querySelector('div');
 
+    inner.querySelector('#title').innerHTML = data.title;
+    inner.querySelector('#developer').innerHTML = data.developer;
+    inner.querySelector('.lead').innerHTML = data.abstract;
+    inner.querySelector('#description').innerHTML = data.description;
+
+    document.querySelector( 'section' ).innerHTML = '';
+    document.querySelector( 'section' ).appendChild( clone );
   }
 
 } )();
