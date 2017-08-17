@@ -1,5 +1,9 @@
 body { padding-top: 90px; }
 
+.navbar-brand {
+    cursor: pointer;
+}
+
 .thumbnail {
     background-color: #eaf1f1;
 }

@@ -19,6 +19,14 @@
       document.querySelector( 'section' ).innerHTML = '';
       renderAllComponents();
     };
+
+    //set click event of Home
+    document.querySelector('#home').onclick = function ( event ) {
+      if ( event ) event.preventDefault();
+      document.querySelector( 'section' ).innerHTML = '';
+      renderAllComponents();
+    };
+
     renderAllComponents();
     fillDropdownMenue();
   } );
@@ -91,17 +99,21 @@
     inner.querySelector('#website a').innerHTML = data.website;
     inner.querySelector('#license').innerHTML = data.license;
 
-    data.screenshots.map( function ( entry ) {
-      var screenshots_elem = document.importNode( document.querySelector( '#prev-img' ).content, true );
-      var inner_1 = screenshots_elem.querySelector('div');
-      inner_1.querySelector( 'img' ).src = entry;
-      inner.querySelector( '#prev-thumbnail' ).appendChild( inner_1 );
-    });
+    if ( data.screenshots ) {
+      data.screenshots.map(function (entry) {
+        var screenshots_elem = document.importNode(document.querySelector('#prev-img').content, true);
+        var inner_1 = screenshots_elem.querySelector('div');
+        inner_1.querySelector('img').src = entry;
+        inner.querySelector('#prev-thumbnail').appendChild(inner_1);
+      });
+    } else inner.removeChild( inner.querySelector( '#prev' ) );
 
     if ( data.demos )
       ccm.start( data.versions[0].source, data.demos[0], function (instance) {
         inner.querySelector( '#demo-section' ).appendChild( instance.root );
       } );
+    else inner.removeChild( inner.querySelector( '#demo' ) );
+
 
 
     document.querySelector( 'section' ).innerHTML = '';
