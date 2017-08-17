@@ -58,7 +58,7 @@
     var clone = document.importNode( document.querySelector( '#all-components' ).content, true );
     var inner = clone.querySelector('div');
 
-    if ( data.screenshots ) inner.querySelector( 'img' ).src = data.screenshots[ 0 ];
+    inner.querySelector( 'img' ).src = data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg';
     inner.querySelector( 'h3' ).innerHTML = data.title;
     inner.querySelector( 'p' ).innerHTML = data.abstract;
     inner.querySelector( '.detail' ).onclick = function ( event ) {
@@ -76,7 +76,7 @@
 
     inner.querySelector('img').src = "resources/component.png";
     inner.querySelector('#title').innerHTML = data.title;
-    inner.querySelector('.developer').innerHTML = data.developer;
+    inner.querySelector('.developer').innerHTML = data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>';
     inner.querySelector('.lead').innerHTML = data.abstract;
     inner.querySelector('#description').innerHTML = data.description;
     inner.querySelector('#comp-name').innerHTML = data.name;
