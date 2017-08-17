@@ -168,7 +168,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "title": "Kanban Card",
     "abstract": "For rendering a kanban card.",
     "screenshots": [
-      "https://akless.github.io/ccm-components/kanban_card/resources/preview_1.png",
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_1.jpg",
       "https://akless.github.io/ccm-components/kanban_card/resources/preview_2.png",
       "https://akless.github.io/ccm-components/kanban_card/resources/preview_3.png"
     ],
