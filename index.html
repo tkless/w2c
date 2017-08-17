@@ -20,8 +20,8 @@
         <h3>Comp-Titel</h3>
         <p class="abstract">Hier kurze beschreibung der Komponente</p>
         <p class="button">
-          <a href="#" class="detail btn btn-primary" role="button" onclick="renderComponentDetail()">Details</a>
-          <a href="#" class="create btn btn-default" role="button" onclick="createApp()">Create App</a>
+          <a href="#" class="detail btn btn-primary" role="button">Details</a>
+          <a href="#" class="create btn btn-default" role="button">Create App</a>
         </p>
       </div>
     </div>
@@ -29,14 +29,14 @@
 </template>
 
 <template id="component-detail">
-  <div>
+  <div id="main">
     <header class="media">
       <section class="media-left" id="logo">
-        <a><img src="https://akless.github.io/ccm-components/component.png"></a>
+        <a><img src=""></a>
       </section>
       <section class="media-body" id="trailer">
-        <h4 id="title" class="media-heading">Fill-in-the-Blank Text</h4>
-        <a href="https://github.com/akless" id="developer">André Kless
+        <h4 id="title" class="media-heading"></h4>
+        <a href="" class="developer" target="_blank">
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </section>
@@ -55,33 +55,34 @@
     <div id="info">
       <h2>Information</h2>
       <hr>
-      <p class="lead"><i>ccm</i> component for rendering a fill-in-the-blank text.</p>
+      <p class="lead"></p>
       <h4>Description</h4>
-      <p id="description">The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.</p>
+      <p id="description"></p>
       <h4>Details</h4>
+
 
       <table class="table table-striped">
         <tbody class="col-md-12">
         <tr>
           <th>Component name</th>
-          <td>cloze</td>
+          <td id="comp-name"></td>
         </tr>
         <tr>
-          <th>Version</th>
-          <td>1.0.0</td>
-        </tr>
-        <tr>
-          <th>URL</th>
-          <td><a href="https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js">https://akless.github.io/ccm-components/cloze/ccm.cloze.min.js</a>
-          </td>
+          <th>Versions</th>
+          <td id="versions"></td>
         </tr>
         <tr>
           <th>Developer</th>
-          <td>André Kless</td>
+          <td class="developer"></td>
+        </tr>
+        <tr>
+          <th>website</th>
+          <td id="website"><a href=""></a>
+          </td>
         </tr>
         <tr>
           <th>LICENSE</th>
-          <td>The MIT License (MIT)</td>
+          <td id="license"></td>
         </tr>
         </tbody>
       </table>
@@ -143,7 +144,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a href="../" class="navbar-brand">W2C</a>
+      <a class="navbar-brand">W2C</a>
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -166,12 +167,10 @@
   </div>
 </div>
 
-<!-- Overwiev all comonents
+<!-- content area
  ================================================== -->
 <div class="container">
-  <section>
-
-  </section>
+  <section><!-- template place--></section>
 </div>
 
 

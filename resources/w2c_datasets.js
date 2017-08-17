@@ -16,10 +16,18 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
     "name": "cloze",
-    "versions": {
-      "1.0.0": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-1.0.0.js",
-      "2.0.0": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.js"
-    },
+    "versions": [
+      {
+        version: '1.0.0',
+        source: 'https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-1.0.0.js',
+        minified: 'https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-1.0.0.min.js'
+      },
+      {
+        version: '2.0.0',
+        source: 'https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.js',
+        minified: 'https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.min.js'
+      }
+    ],
     "developer": "André Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
