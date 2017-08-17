@@ -79,19 +79,30 @@
     inner.querySelector('.developer').innerHTML = data.developer;
     inner.querySelector('.lead').innerHTML = data.abstract;
     inner.querySelector('#description').innerHTML = data.description;
-    inner.querySelector('#comp-name').innerHTML = data.title;
+    inner.querySelector('#comp-name').innerHTML = data.name;
 
     var versions_elem = inner.querySelector('#versions');
     data.versions.map( function ( entry ) {
-      versions_elem.innerHTML += entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="\' + entry.minified + \'">minified</a>' : '' ) + '<br>';
+      versions_elem.innerHTML += entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="' + entry.minified + '">minified</a>' : '' ) + '<br>';
     } );
 
-
+    inner.querySelector('#developer').innerHTML = data.developer;
     inner.querySelector('#website a').href = data.website;
     inner.querySelector('#website a').innerHTML = data.website;
     inner.querySelector('#license').innerHTML = data.license;
 
-    var screenshots_elem = inner.querySelector('#versions');
+    data.screenshots.map( function ( entry ) {
+      var screenshots_elem = document.importNode( document.querySelector( '#prev-img' ).content, true );
+      var inner_1 = screenshots_elem.querySelector('div');
+      inner_1.querySelector( 'img' ).src = entry;
+      inner.querySelector( '#prev-thumbnail' ).appendChild( inner_1 );
+    });
+
+    if ( data.demos )
+      ccm.start( data.versions[0].source, data.demos[0], function (instance) {
+        inner.querySelector( '#demo-section' ).appendChild( instance.root );
+      } );
+
 
     document.querySelector( 'section' ).innerHTML = '';
     document.querySelector( 'section' ).appendChild( clone );
