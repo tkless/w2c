@@ -9,6 +9,7 @@
 
   var ccm = window.ccm[ '9.2.0' ];
   var datasets;
+
   ccm.load( 'resources/w2c_datasets.js', function ( result )
   {
     datasets = result;
@@ -20,22 +21,8 @@
       renderAllComponents();
     };
 
-    //set click event of Home
-    document.querySelector('#home').onclick = function ( event ) {
-      if ( event ) event.preventDefault();
-      document.querySelector( 'section' ).innerHTML = '';
-      renderAllComponents();
-    };
-
     renderAllComponents();
-    fillDropdownMenue();
   } );
-
-
-  function fillDropdownMenue() {
-    for ( var data in datasets )
-      setDropdownMenueItems( datasets[ data ] );
-  }
 
   function renderAllComponents() {
     var row_div = document.createElement('div');
@@ -45,20 +32,6 @@
 
     for ( var data in datasets )
       setPreviewsContent( datasets[ data ] );
-  }
-
-  function setDropdownMenueItems( data ) {
-    var clone = document.importNode( document.querySelector( '#dropdown-items' ).content, true );
-
-    var inner = clone.querySelector('li');
-
-    clone.querySelector( 'a' ).innerHTML = data.title;
-    inner.querySelector( 'a' ).onclick = function ( event ) {
-      if ( event ) event.preventDefault();
-      renderComponentDetail( data );
-    };
-
-    document.querySelector( '.dropdown-menu' ).appendChild( clone );
   }
 
   function setPreviewsContent( data ) {
@@ -112,11 +85,11 @@
     }
 
     if ( data.demos )
-      ccm.start( data.versions[0].source, data.demos[0], function (instance) {
+      ccm.start( data.versions[0].minified ? data.versions[0].minified : data.versions[0].source, data.demos[0], function (instance) {
         inner.querySelector( '#demo-section' ).appendChild( instance.root );
       } );
     else {
-      inner.removeChild( inner.querySelector( '#demo' ) );
+      ccm.helper.removeElement( inner.querySelector( '#demo' ) );
       ccm.helper.removeElement( inner.querySelector( '.demo' ) );
     }
 

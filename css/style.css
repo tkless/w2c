@@ -1,7 +1,101 @@
-body { padding-top: 90px; }
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #1995dc;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #1995dc !important;
+    background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.logo-small {
+    color: #1995dc;
+    font-size: 50px;
+}
+.logo {
+    color: #1995dc;
+    font-size: 200px;
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
 
 .navbar-brand {
     cursor: pointer;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.jumbotron {
+    background-color: #1995dc;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
 }
 
 .thumbnail {
