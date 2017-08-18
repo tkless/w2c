@@ -79,6 +79,9 @@ ccm.files[ "w2c_datasets.js" ] = {
   "fill_in_the_blank_text_builder": {
     "title": "Fill-in-the-Blank Text Builder",
     "abstract": "For creating a fill-in-the-blank text.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/libs/screenshots/fill_in_the_blank_text_builder_preview_1.png"
+    ],
     "description": "Renders any given HTML text as a fill-in-the-blank text. The text can be entered via a visual editor. Mark gap words with doubled square brackets. For example: \"Hello, [[World]]!\". Use round brackets to mark given letters. If you have \"Hello, [[(W)o(rl)d]]!\", than the first, third and fourth letter are visible as a solution hint. The search words can be specified as a further solution. An individual list of solution words can also be specified. Any form of solutions can be turned on and off. You can choose between different layouts and authentication procedures. Points can be awarded for each correct gap. For time-dependent fill-in-the-blank texts, the available time can be specified in seconds. In addition to a visual feedback, the available buttons can also be set. Try it out on the demo.",
     "name": "fill_in_the_blank_text_builder",
     "versions": [
