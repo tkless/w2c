@@ -19,6 +19,13 @@ h4 {
     margin-bottom: 30px;
 }
 
+#prev h2,
+#info h2,
+#demo h2,
+#create-app h2 {
+    margin-bottom: 3px;
+}
+
 .navbar {
     margin-bottom: 0;
     background-color: #1995dc;

@@ -4,7 +4,7 @@
 <title>W2C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -57,7 +57,6 @@
 
     <div id="info">
       <div class="page-header"><h2>Information</h2></div>
-
       <p class="lead"></p>
       <h4>Description</h4>
       <p id="description"></p>
@@ -98,7 +97,7 @@
     </div>
 
     <div id="prev">
-      <div class="page-header"><h3>Preview</h3></div>
+      <div class="page-header"><h2>Preview</h2></div>
 
       <div id="prev-thumbnail" class="row">
         <!-- template prev-img-->
@@ -113,7 +112,7 @@
 
     <div id="demo">
       <div class="page-header">
-        <h3>Live demo with demo data&nbsp; <span class="label label-default">Create similar App</span></h3>
+        <h2>Live demo with demo data&nbsp; <span class="label label-default">Create similar App</span></h2>
       </div>
 
       <div id="demo-section">
@@ -124,8 +123,8 @@
       </div>
     </div>
 
-    <div id="Create App">
-      <div class="page-header"><h3>Create App</h3></div>
+    <div id="create-app">
+      <div class="page-header"><h2>Create App</h2></div>
 
       <div id="create-section">
       </div>
@@ -190,9 +189,14 @@
   <!-- content area
    ================================================== -->
   <div id="main" class="container">
-    <section><!-- template place--></section>
+    <section>
+    </section>
   </div>
 
+  <div id="portfolio" class="container-fluid text-center">
+    <h2>Component Portfolio</h2><br>
+    <h4>What we have already created</h4>
+  </div>
 
   <!-- Container (About Section) -->
   <div id="about" class="container-fluid">
@@ -243,7 +247,7 @@
   <script>
     $(document).ready(function(){
       // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      $(".navbar a, footer a[href='#myPage'] .btn-lg").on('click', function(event) {
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
           // Prevent default anchor click behavior

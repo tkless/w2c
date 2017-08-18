@@ -28,7 +28,7 @@
     var row_div = document.createElement('div');
     row_div.className = 'row';
     row_div.id = 'view-all';
-    document.querySelector( 'section' ).appendChild( row_div );
+    document.querySelector( '#portfolio' ).appendChild( row_div );
 
     for ( var data in datasets )
       setPreviewsContent( datasets[ data ] );
