@@ -135,6 +135,11 @@ ccm.files[ "w2c_datasets.js" ] = {
   "game_chooser": {
     "title": "Game Chooser",
     "abstract": "Little Game for choosing one of two answers as fast as possible",
+    "screenshots": [
+      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_1.jpg",
+      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_2.jpg",
+      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_3.jpg"
+    ],
     "description": "Game Chooser is a little game implemented in ccm. Game Rules: A number is given and the user has to decide, whether the sum of digits is even or odd as fast as possible. There are two buttons, which the user can press accordingly. The time for choosing is recorded. The range of the numbers can be adjusted via a slider.",
     "name": "game_chooser",
     "versions": [
@@ -145,7 +150,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos": [ {} ]
   },
   "geogebra": {
     "title": "GeoGebra Connector",
