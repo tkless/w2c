@@ -6,6 +6,47 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "content": {
+    "title": "Content",
+    "abstract": "For rendering a predefined content.",
+    "name": "content",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "source": "https://akless.github.io/ccm-components/content/versions/ccm.content-2.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/content/versions/ccm.content-2.0.0.min.js"
+      },
+      {
+        "version": "1.0.0",
+        "source": "https://akless.github.io/ccm-components/content/versions/ccm.content-1.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/content/versions/ccm.content-1.0.0.min.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/akless/ccm-components/"
+  },
+  "eval": {
+    "title": "Eval",
+    "abstract": "For interpreting a given JavaScript expression.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/eval/resources/screenshot_1.jpg"
+    ],
+    "name": "eval",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://akless.github.io/ccm-components/eval/versions/ccm.eval-1.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/eval/versions/ccm.eval-1.0.0.min.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/akless/ccm-components/",
+    "demos": [
+      [ "ccm.get", "https://akless.github.io/ccm-components/eval/resources/eval_configs.min.js", "demo" ]
+    ]
+  },
   "cloze": {
     "title": "Fill-in-the-Blank Text",
     "abstract": "For rendering a fill-in-the-blank text.",
@@ -49,64 +90,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/"
-  },
-  "content": {
-    "title": "Content",
-    "abstract": "For rendering a predefined content.",
-    "name": "content",
-    "versions": [
-      {
-        "version": "2.0.0",
-        "source": "https://akless.github.io/ccm-components/content/versions/ccm.content-2.0.0.js",
-        "minified": "https://akless.github.io/ccm-components/content/versions/ccm.content-2.0.0.min.js"
-      },
-      {
-        "version": "1.0.0",
-        "source": "https://akless.github.io/ccm-components/content/versions/ccm.content-1.0.0.js",
-        "minified": "https://akless.github.io/ccm-components/content/versions/ccm.content-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/"
-  },
-  "editor": {
-    "title": "Quill Texteditor",
-    "abstract": "For rendering a quill text editor.",
-    "screenshots": [
-      "https://akless.github.io/ccm-components/libs/screenshots/editor_preview_1.jpg"
-    ],
-    "name": "editor",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/editor/ccm.editor.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
-  },
-  "eval": {
-    "title": "Eval",
-    "abstract": "For interpreting a given JavaScript expression.",
-    "screenshots": [
-      "https://akless.github.io/ccm-components/eval/resources/screenshot_1.jpg"
-    ],
-    "name": "eval",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://akless.github.io/ccm-components/eval/versions/ccm.eval-1.0.0.js",
-        "minified": "https://akless.github.io/ccm-components/eval/versions/ccm.eval-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
-    "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/eval/resources/eval_configs.min.js", "demo" ]
-    ]
   },
   "fine_upload": {
     "title": "Fine Uploader Connector",
@@ -315,6 +298,23 @@ ccm.files[ "w2c_datasets.js" ] = {
       {
         "version": "latest",
         "source": "https://tkless.github.io/ccm-components/question/ccm.question.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/tkless/ccm-components/"
+  },
+  "editor": {
+    "title": "Quill Texteditor",
+    "abstract": "For rendering a quill text editor.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/libs/screenshots/editor_preview_1.jpg"
+    ],
+    "name": "editor",
+    "versions": [
+      {
+        "version": "latest",
+        "source": "https://tkless.github.io/ccm-components/editor/ccm.editor.js"
       }
     ],
     "developer": "Tea Kless",
