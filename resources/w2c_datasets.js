@@ -18,9 +18,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "cloze",
     "versions": [
       {
-        "version": '2.0.0',
-        "source": 'https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.js',
-        "minified": 'https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.min.js'
+        "version": "2.0.0",
+        "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.0.0.min.js"
       },
       {
         "version": "1.0.0",
@@ -240,9 +240,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "le",
     "versions": [
       {
-        "version": '2.0.0',
-        "source": 'https://akless.github.io/ccm-components/le/versions/ccm.le-2.0.0.js',
-        "minified": 'https://akless.github.io/ccm-components/le/versions/ccm.le-2.0.0.min.js'
+        "version": "2.0.0",
+        "source": "https://akless.github.io/ccm-components/le/versions/ccm.le-2.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/le/versions/ccm.le-2.0.0.min.js"
       },
       {
         "version": "1.0.0",
@@ -331,9 +331,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "quiz",
     "versions": [
       {
-        "version": '2.0.0',
-        "source": 'https://akless.github.io/ccm-components/quiz/versions/ccm.quiz-2.0.0.js',
-        "minified": 'https://akless.github.io/ccm-components/quiz/versions/ccm.quiz-2.0.0.min.js'
+        "version": "2.0.0",
+        "source": "https://akless.github.io/ccm-components/quiz/versions/ccm.quiz-2.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/quiz/versions/ccm.quiz-2.0.0.min.js"
       },
       {
         "version": "1.0.0",
