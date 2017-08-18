@@ -98,11 +98,15 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "fine_upload": {
     "title": "Fine Uploader Connector",
     "abstract": "Upload a file to a server via Fine Uploader",
+    "screenshots": [
+      "https://mkaul.github.io/ccm-components/fine_upload/resources/screenshot_1.jpg"
+    ],
     "description": "In order to embed the famous Fine Uploader software anywhere, use this connector. see <a href='https://fineuploader.com/' target='_blank'>https://fineuploader.com/</a>: 'Fine Uploader aims to make file-uploading on the web possible in every browser and mobile device. It is cross-browser, dependency-free, and 100% JavaScript. The product is highly customizable, and allows integrators to fine-tune every aspect of their users’ upload experience. Implementation requires only a single CSS file, a JavaScript file, and a server to upload to. Fine Uploader users enjoy widespread browser support and a suite of features, resulting in a smooth experience when uploading files to a website.'",
     "name": "fine_upload",
     "versions": [
@@ -113,7 +117,10 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos": [
+      {}
+    ]
   },
   "forum": {
     "title": "Forum",
@@ -130,7 +137,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "game_chooser": {
     "title": "Game Chooser",
@@ -156,6 +164,9 @@ ccm.files[ "w2c_datasets.js" ] = {
   "geogebra": {
     "title": "GeoGebra Connector",
     "abstract": "<i>ccm</i> connector for GeoGebra",
+    "screenshots": [
+      "https://mkaul.github.io/ccm-components/geogebra/resources/screenshot_1.jpg"
+    ],
     "description": "In order to embed the famous GeoGebra software anywhere, use this connector. For GeoGebra see https://www.geogebra.org: 'GeoGebra is dynamic mathematics software for all levels of education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus in one easy-to-use package. GeoGebra is a rapidly expanding community of millions of users located in just about every country. GeoGebra has become the leading provider of dynamic mathematics software, supporting science, technology, engineering and mathematics (STEM) education and innovations in teaching and learning worldwide.'",
     "name": "geogebra",
     "versions": [
@@ -166,7 +177,10 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos": [
+      {}
+    ]
   },
   "input": {
     "title": "Input",
@@ -258,6 +272,9 @@ ccm.files[ "w2c_datasets.js" ] = {
   "learning_app": {
     "title": "LearningApp Connector",
     "abstract": "<i>ccm</i> connector for learning apps",
+    "screenshots": [
+      "https://mkaul.github.io/ccm-components/learning_app/resources/screenshot_1.jpg"
+    ],
     "description": "In order to embed the famous LearningApps software anywhere, use this connector. 'LearningApps.org is a Web 2.0 application, to support learning and teaching processes with small interactive modules. Those modules can be used directly in learning materials, but also for self studying. The aim is to collect reusable building blocks and make them available to everyone. Blocks (called Apps) include no specific framework or a specific learning scenario. The blocks are therefore not suitable as complete lessons or tasks, instead they must be embedded in an appropriate teaching scenario', see <a href='http://learningapps.org' target='_blank'>http://learningapps.org</a>.",
     "name": "learning_app",
     "versions": [
@@ -268,7 +285,10 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos": [
+      {}
+    ]
   },
   "log": {
     "title": "Logger",
@@ -300,7 +320,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "question": {
     "title": "Question",
@@ -317,7 +338,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "editor": {
     "title": "Quill Texteditor",
@@ -334,7 +356,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "quiz": {
     "title": "Quiz",
@@ -378,7 +401,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "star_rating_result": {
     "title": "Star Rating Result",
@@ -395,7 +419,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "slidecast": {
     "title": "Slidecast",
@@ -413,7 +438,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "testsuite": {
     "title": "Test Suite",
@@ -445,7 +471,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   },
   "user": {
     "title": "User",
@@ -468,6 +495,9 @@ ccm.files[ "w2c_datasets.js" ] = {
   "uml": {
     "title": "UML Connector",
     "abstract": "<i>ccm</i> connector for PlantUML",
+    "screenshots": [
+      "https://mkaul.github.io/ccm-components/uml/resources/screenshot_1.jpg"
+    ],
     "description": "In order to embed the famous PlantUML software anywhere, use this connector. PlantUML.com is a web server that generates diagrams in the cloud. There are also various extensions or add-ons that incorporate PlantUML, see <a href='http://plantuml.com/' target='_blank'>http://plantuml.com/</a>",
     "name": "uml",
     "versions": [
@@ -478,11 +508,17 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos": [
+      {}
+    ]
   },
   "upload": {
     "title": "Upload",
     "abstract": "Upload a file to a server",
+    "screenshots": [
+      "https://mkaul.github.io/ccm-components/upload/resources/screenshot_1.jpg"
+    ],
     "description": "With a file chooser you can choose any file from your computer. Upload lets you upload the file to a server.",
     "name": "upload",
     "versions": [
@@ -493,7 +529,10 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos": [
+      {}
+    ]
   },
   "voting": {
     "title": "Voting",
@@ -510,6 +549,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/"
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
   }
 };
