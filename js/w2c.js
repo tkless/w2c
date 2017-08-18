@@ -7,7 +7,7 @@
 
 ( function () {
 
-  var ccm = window.ccm[ '9.0.0' ];
+  var ccm = window.ccm[ '9.2.0' ];
   var datasets;
   ccm.load( 'resources/w2c_datasets.js', function ( result )
   {
@@ -106,13 +106,22 @@
         inner_1.querySelector('img').src = entry;
         inner.querySelector('#prev-thumbnail').appendChild(inner_1);
       });
-    } else inner.removeChild( inner.querySelector( '#prev' ) );
+    } else {
+      ccm.helper.removeElement( inner.querySelector( '#prev' ) );
+      ccm.helper.removeElement( inner.querySelector( '.prev' ) );
+    }
 
     if ( data.demos )
       ccm.start( data.versions[0].source, data.demos[0], function (instance) {
         inner.querySelector( '#demo-section' ).appendChild( instance.root );
       } );
-    else inner.removeChild( inner.querySelector( '#demo' ) );
+    else {
+      inner.removeChild( inner.querySelector( '#demo' ) );
+      ccm.helper.removeElement( inner.querySelector( '.demo' ) );
+    }
+
+    if ( inner.querySelector( '.navigation .btn-group' ).childElementCount < 2 )
+      ccm.helper.removeElement( inner.querySelector( '.info' ) );
 
 
 
