@@ -8,6 +8,10 @@ body {
     margin-top: 30px;
 }
 
+.modal-footer {
+    margin-top: 40px;
+}
+
 h2 {
     font-size: 24px;
     text-transform: uppercase;
@@ -21,6 +25,10 @@ h4 {
     color: #303030;
     font-weight: 400;
     margin-bottom: 30px;
+}
+
+.container-fluid {
+    padding: 60px 50px;
 }
 
 #prev h2,
@@ -64,6 +72,8 @@ h4 {
     font-size: 200px;
 }
 
+.slideanim {visibility:hidden;}
+
 .slide {
     animation-name: slide;
     -webkit-animation-name: slide;
@@ -71,6 +81,7 @@ h4 {
     -webkit-animation-duration: 1s;
     visibility: visible;
 }
+
 @keyframes slide {
     0% {
         opacity: 0;
@@ -89,6 +100,22 @@ h4 {
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
     }
 }
 
