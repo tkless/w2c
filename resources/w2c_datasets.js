@@ -315,7 +315,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/posts/ccm.posts.js"
+        "source": "https://tkless.github.io/ccm-components/news/ccm.posts.js"
       }
     ],
     "developer": "Tea Kless",

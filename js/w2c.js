@@ -28,7 +28,7 @@
     var row_div = document.createElement('div');
     row_div.className = 'row';
     row_div.id = 'view-all';
-    document.querySelector( '#portfolio' ).appendChild( row_div );
+    document.querySelector( '.all' ).appendChild( row_div );
 
     for ( var data in datasets )
       setPreviewsContent( datasets[ data ] );
@@ -59,7 +59,12 @@
     inner.querySelector('#title').innerHTML = data.title;
     inner.querySelector('.developer').innerHTML = data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>';
     inner.querySelector('.lead').innerHTML = data.abstract;
-    inner.querySelector('#description').innerHTML = data.description;
+
+    if (  data.description )
+      inner.querySelector('#description').innerHTML = data.description;
+    else {
+      ccm.helper.removeElement( inner.querySelector( '.descr' ) );
+    }
     inner.querySelector('#comp-name').innerHTML = data.name;
 
     var versions_elem = inner.querySelector('#versions');

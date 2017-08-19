@@ -21,7 +21,7 @@
         <h3>Comp-Titel</h3>
         <p class="abstract">Hier kurze beschreibung der Komponente</p>
         <p class="button">
-          <a href="#" class="detail btn btn-primary" role="button">Details</a>
+          <a href="#" class="detail btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Details</a>
           <a href="#" class="create btn btn-default" role="button">Create App</a>
         </p>
       </div>
@@ -56,10 +56,13 @@
     </div>
 
     <div id="info">
-      <div class="page-header"><h2>Information</h2></div>
+      <div class="page-header"><h3>Information</h3></div>
       <p class="lead"></p>
-      <h4>Description</h4>
-      <p id="description"></p>
+
+      <div class="descr">
+        <h4>Description</h4>
+        <p id="description"></p>
+      </div>
       <h4>Details</h4>
 
 
@@ -90,21 +93,21 @@
       </table>
 
       <div class="text-right">
-        <a href="#main">
+        <a href="#myModal">
           <span class="label label-default">back to top</span>
         </a>
       </div>
     </div>
 
     <div id="prev">
-      <div class="page-header"><h2>Preview</h2></div>
+      <div class="page-header"><h3>Preview</h3></div>
 
       <div id="prev-thumbnail" class="row">
         <!-- template prev-img-->
       </div>
 
       <div class="text-right">
-        <a href="#main">
+        <a href="#myModal">
           <span class="label label-default">back to top</span>
         </a>
       </div>
@@ -112,25 +115,14 @@
 
     <div id="demo">
       <div class="page-header">
-        <h2>Live demo with demo data&nbsp; <span class="label label-default">Create similar App</span></h2>
+        <h3>Live demo with demo data&nbsp; <span class="label label-default">Create similar App</span></h3>
       </div>
 
       <div id="demo-section">
       </div>
 
       <div class="text-right">
-        <a href="#main"><span class="label label-default">back to top</span></a>
-      </div>
-    </div>
-
-    <div id="create-app">
-      <div class="page-header"><h2>Create App</h2></div>
-
-      <div id="create-section">
-      </div>
-
-      <div class="text-right">
-        <a href="#main"><span class="label label-default">back to top</span></a>
+        <a href="#myModal"><span class="label label-default">back to top</span></a>
       </div>
     </div>
 
@@ -162,7 +154,7 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="#main">All COMPONENTS</a></li>
+          <li><a href="#portfolio">All COMPONENTS</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#about">ABOUT</a></li>
@@ -183,36 +175,60 @@
         </div>
       </div>
     </form>
+    <br>
+    <br>
+    <p class="warning">!!! This site is still under construction. !!!
+    <br>Feel free to explore what is already working.
+    </p>
   </div>
 
 
-  <!-- content area
-   ================================================== -->
-  <div id="main" class="container">
-    <section>
-    </section>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Component Overview</h4>
+        </div>
+        <div class="modal-body">
+          <section></section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
   </div>
 
+  <!-- Container (All Components Section) -->
   <div id="portfolio" class="container-fluid text-center">
     <h2>Component Portfolio</h2><br>
     <h4>What we have already created</h4>
+    <div class="container">
+      <div class="row all">
+
+      </div>
+    </div>
   </div>
 
   <!-- Container (About Section) -->
   <div id="about" class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
-        <h2>About Web Components</h2><br>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <br><button class="btn btn-default btn-lg">Get in Touch</button>
+        <h2>We can shape the world in a new way!!!</h2><br>
+        <h4>Why can we shape the world in a new way?</h4><br>
+        <p>Any web component that has been released under a free software license in Web Component Cloud extends the functionality of the web as a whole.</p>
+          <br><button class="btn btn-default btn-lg">Join In</button>
       </div>
       <div class="col-sm-4">
         <span class="glyphicon glyphicon-globe logo slideanim slide"></span>
       </div>
     </div>
   </div>
-
 
   <!-- Container (Contact Section) -->
   <div id="contact" class="container-fluid bg-grey">
@@ -221,8 +237,8 @@
       <div class="col-sm-5">
         <p>Contact us and we'll get back to you within 24 hours.</p>
         <p><span class="glyphicon glyphicon-map-marker"></span> Germnany, GER</p>
-        <p><span class="glyphicon glyphicon-envelope"></span> andre.kless@h-brs.de</p>
-        <p><span class="glyphicon glyphicon-envelope"></span> tea.kless@h-brs.de</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> andre.kless@web.de</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> tea.kless@web.de</p>
       </div>
       <div class="col-sm-7 slideanim">
         <div class="row">
