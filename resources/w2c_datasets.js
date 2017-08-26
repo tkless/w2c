@@ -24,7 +24,10 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "André Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/"
+    "website": "https://github.com/akless/ccm-components/",
+    "demos": [
+      [ "ccm.get", "https://akless.github.io/ccm-components/content/resources/configs.min.js", "demo" ]
+    ]
   },
   "eval": {
     "title": "Eval",
@@ -44,7 +47,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/eval/resources/eval_configs.min.js", "demo" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/eval/resources/configs.min.js", "demo" ]
     ]
   },
   "cloze": {
@@ -73,7 +76,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/cloze/resources/cloze_configs.min.js", "demo" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/cloze/resources/configs.min.js", "demo" ]
     ],
     "factories": [
       {
@@ -118,9 +121,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [
-      {}
-    ]
+    "demos": [ {} ]
   },
   "forum": {
     "title": "Forum",
@@ -178,9 +179,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [
-      {}
-    ]
+    "demos": [ {} ]
   },
   "input": {
     "title": "Input",
@@ -197,7 +196,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/input/resources/input_configs.min.js", "demo" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/input/resources/configs.min.js", "demo" ]
     ]
   },
   "kanban_board": {
@@ -218,7 +217,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_board/resources/kanban_board_configs.min.js", "demo" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_board/resources/configs.min.js", "demo" ]
     ]
   },
   "kanban_card": {
@@ -241,9 +240,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/kanban_card_configs.min.js", "homework" ],
-      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/kanban_card_configs.min.js", "presentation" ],
-      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/kanban_card_configs.min.js", "realtime" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js", "homework" ],
+      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js", "presentation" ],
+      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js", "realtime" ]
     ]
   },
   "le": {
@@ -286,9 +285,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [
-      {}
-    ]
+    "demos": [ {} ]
   },
   "log": {
     "title": "Logger",
@@ -383,7 +380,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/quiz/resources/quiz_configs.min.js", "demo" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/quiz/resources/configs.min.js", "demo" ]
     ]
   },
   "star_rating": {
@@ -489,7 +486,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/user/resources/user_configs.min.js", "demo" ]
+      [ "ccm.get", "https://akless.github.io/ccm-components/user/resources/configs.min.js", "demo" ]
     ]
   },
   "uml": {
@@ -509,9 +506,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [
-      {}
-    ]
+    "demos": [ {} ]
   },
   "upload": {
     "title": "Upload",
@@ -530,9 +525,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [
-      {}
-    ]
+    "demos": [ {} ]
   },
   "voting": {
     "title": "Voting",
