@@ -7,7 +7,7 @@
 
 ( function () {
 
-  var ccm = window.ccm[ '9.2.0' ];
+  var ccm = window.ccm[ '10.0.0' ];
   var datasets;
 
   ccm.load( 'resources/w2c_datasets.js', function ( result )
