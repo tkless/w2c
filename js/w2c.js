@@ -59,23 +59,22 @@
     inner.querySelector('#title').innerHTML = data.title;
     inner.querySelector('.developer').innerHTML = data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>';
     inner.querySelector('.lead').innerHTML = data.abstract;
+    inner.querySelector('#comp-name').innerHTML = data.name;
+    inner.querySelector('#developer').innerHTML = data.developer;
+    inner.querySelector('#website a').href = data.website;
+    inner.querySelector('#website a').innerHTML = data.website;
+    inner.querySelector('#license').innerHTML = data.license;
 
     if (  data.description )
       inner.querySelector('#description').innerHTML = data.description;
     else {
       ccm.helper.removeElement( inner.querySelector( '.descr' ) );
     }
-    inner.querySelector('#comp-name').innerHTML = data.name;
 
     var versions_elem = inner.querySelector('#versions');
     data.versions.map( function ( entry ) {
       versions_elem.innerHTML += entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="' + entry.minified + '">minified</a>' : '' ) + '<br>';
     } );
-
-    inner.querySelector('#developer').innerHTML = data.developer;
-    inner.querySelector('#website a').href = data.website;
-    inner.querySelector('#website a').innerHTML = data.website;
-    inner.querySelector('#license').innerHTML = data.license;
 
     if ( data.screenshots ) {
       data.screenshots.map(function (entry) {
@@ -100,8 +99,6 @@
 
     if ( inner.querySelector( '.navigation .btn-group' ).childElementCount < 2 )
       ccm.helper.removeElement( inner.querySelector( '.info' ) );
-
-
 
     document.querySelector( 'section' ).innerHTML = '';
     document.querySelector( 'section' ).appendChild( clone );

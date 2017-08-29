@@ -95,8 +95,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "fill_in_the_blank_text_builder",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/fill_in_the_blank_text_builder/ccm.fill_in_the_blank_text_builder.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/fill_in_the_blank_text_builder/versions/ccm.fill_in_the_blank_text_builder-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -132,8 +132,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "forum",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/forum/ccm.forum.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/forum/versions/ccm.forum-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -311,8 +311,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "posts",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/news/ccm.posts.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -329,8 +329,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "question",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/question/ccm.question.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/question/versions/ccm.question-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -347,8 +347,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "editor",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/editor/ccm.editor.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -392,8 +392,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "star_rating",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/star_rating/ccm.star_rating.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/star_rating/versions/ccm.star_rating-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -410,8 +410,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "star_rating_result",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/star_rating_result/ccm.star_rating_result.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -429,8 +429,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "slidecast",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/slidecast/ccm.slidecast.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/slidecast/versions/ccm.slidecast-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -462,8 +462,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "thumb_rating",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/thumb_rating/ccm.thumb_rating.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -536,8 +536,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "voting",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://tkless.github.io/ccm-components/voting/ccm.voting.js"
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/voting/versions/ccm.voting-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
