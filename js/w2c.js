@@ -63,8 +63,12 @@ $( document ).ready( function() {
     inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
     inner.find( 'h3' ).html( data.title );
     inner.find( '.abstract' ).html( data.abstract );
-    inner.find( '.detail' ).click ( function ()  {
+    inner.find( '.detail' ).click ( function () {
       renderComponentDetail( data );
+    } );
+
+    inner.find( '.create' ).click ( function () {
+      renderCreateApp( data );
     } );
 
     $( '#all' ).append( clone );
@@ -119,6 +123,18 @@ $( document ).ready( function() {
 
     $( '#detail' ).html( '' );
     $( '#detail' ).append( clone );
+
+    inner.find( '.createFrom' ).click ( function () {
+      renderCreateApp( data );
+    } );
+  }
+
+  function renderCreateApp( data ) {
+    if ( data.factories )
+      ccm.start( data.factories[0].url, function (instance) {
+        $( '#create' ).html( '' );
+        $( '#create' ).append( instance.root );
+      } );
   }
 
   //sort components bei name
