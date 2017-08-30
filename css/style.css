@@ -1,10 +1,11 @@
 body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
-    color: #818181;
+    color: #818181 !important;
 }
 
-#myModal {
+#createApp,
+#componentDetail {
     margin-top: 30px;
 }
 
@@ -15,14 +16,14 @@ body {
 h2 {
     font-size: 24px;
     text-transform: uppercase;
-    color: #303030;
+    color: #303030 !important;
     font-weight: 600;
     margin-bottom: 30px;
 }
 h4 {
     font-size: 19px;
     line-height: 1.375em;
-    color: #303030;
+    color: #303030 !important;
     font-weight: 400;
     margin-bottom: 30px;
 }
@@ -58,17 +59,18 @@ h4 {
     background-color: #fff !important;
 }
 
-.navbar-default .navbar-toggle {
+.navbar-default,
+.navbar-toggle {
     border-color: transparent;
-    color: #fff !important;
+    color: #fff;
 }
 
 .logo-small {
-    color: #1995dc;
+    color: #1995dc !important;
     font-size: 50px;
 }
 .logo {
-    color: #1995dc;
+    color: #1995dc !important;
     font-size: 200px;
 }
 
@@ -124,18 +126,18 @@ h4 {
 }
 
 .bg-grey {
-    background-color: #f6f6f6;
+    background-color: #f6f6f6 !important;
 }
 
 .jumbotron {
-    background-color: #1995dc;
-    color: #fff;
+    background-color: #1995dc !important;
+    color: #fff !important;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
 }
 
 .thumbnail {
-    background-color: #eaf1f1;
+    background-color: #eaf1f1 !important;
 }
 
 .caption {

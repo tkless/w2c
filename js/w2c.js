@@ -4,31 +4,52 @@
  * @author André Kless <andre.kless@web.de> 2017
  * @license The MIT License (MIT)
  */
-
-( function () {
+$( document ).ready( function() {
 
   var ccm = window.ccm[ '10.0.0' ];
   var datasets;
 
-  ccm.load( 'resources/w2c_datasets.js', function ( result )
-  {
+// Add smooth scrolling to all links in navbar + footer link
+
+  // Add smooth scrolling to all links in navbar + footer link
+  $( ".navbar a, footer a[href='#w2c']" ).on( 'click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if ( this.hash !== "" ) {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $( 'html, body' ).animate( {
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $( window ).scroll( function() {
+    $( ".slideanim").each( function(){
+      var pos = $( this ).offset().top;
+
+      var winTop = $ (window ).scrollTop();
+      if ( pos < winTop + 600 ) {
+        $( this ).addClass( "slide" );
+      }
+    });
+  });
+
+  ccm.load( 'resources/w2c_datasets.js', function ( result ) {
     datasets = result;
-
-    //set click event of W2C Brand
-    document.querySelector('.navbar-header').onclick = function ( event ) {
-      if ( event ) event.preventDefault();
-      document.querySelector( 'section' ).innerHTML = '';
-      renderAllComponents();
-    };
-
     renderAllComponents();
   } );
 
   function renderAllComponents() {
-    var row_div = document.createElement('div');
-    row_div.className = 'row';
-    row_div.id = 'view-all';
-    document.querySelector( '.all' ).appendChild( row_div );
 
     for ( var data in datasets )
       setPreviewsContent( datasets[ data ] );
@@ -37,80 +58,76 @@
   function setPreviewsContent( data ) {
 
     var clone = document.importNode( document.querySelector( '#all-components' ).content, true );
-    var inner = clone.querySelector('div');
+    var inner = $( clone.querySelector('div') );
 
-    inner.querySelector( 'img' ).src = data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg';
-    inner.querySelector( 'h3' ).innerHTML = data.title;
-    inner.querySelector( 'p' ).innerHTML = data.abstract;
-    inner.querySelector( '.detail' ).onclick = function ( event ) {
-      if ( event ) event.preventDefault();
+    inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
+    inner.find( 'h3' ).html( data.title );
+    inner.find( '.abstract' ).html( data.abstract );
+    inner.find( '.detail' ).click ( function ()  {
       renderComponentDetail( data );
-    };
+    } );
 
-    document.querySelector( '#view-all' ).appendChild( clone );
+    $( '#all' ).append( clone );
 
   }
 
   function renderComponentDetail( data ) {
     var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
-    var inner = clone.querySelector('div');
+    var inner = $( clone.querySelector('div') );
 
-    inner.querySelector('img').src = "resources/component.png";
-    inner.querySelector('#title').innerHTML = data.title;
-    inner.querySelector('.developer').innerHTML = data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>';
-    inner.querySelector('.lead').innerHTML = data.abstract;
-    inner.querySelector('#comp-name').innerHTML = data.name;
-    inner.querySelector('#developer').innerHTML = data.developer;
-    inner.querySelector('#website a').href = data.website;
-    inner.querySelector('#website a').innerHTML = data.website;
-    inner.querySelector('#license').innerHTML = data.license;
+    inner.find( 'img' ).attr( 'src', 'resources/component.png' );
+    inner.find( '#title' ).html( data.title );
+    inner.find( '.developer' ).html( data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>' );
+    inner.find( '.lead' ).html = data.abstract;
+    inner.find( '#comp-name' ).html( data.name );
+    inner.find( '#developer' ).html( data.developer );
+    inner.find( '#website a' ).html( data.website );
+    inner.find( '#website a' ).html( data.website );
+    inner.find( '#license' ).html( data.license );
 
     if (  data.description )
-      inner.querySelector('#description').innerHTML = data.description;
+      inner.find( '#description' ).html( data.description );
     else {
-      ccm.helper.removeElement( inner.querySelector( '.descr' ) );
+      inner.find( '.descr' ).remove();
     }
 
-    var versions_elem = inner.querySelector('#versions');
+    var versions_elem = inner.find( '#versions' );
     data.versions.map( function ( entry ) {
       versions_elem.innerHTML += entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="' + entry.minified + '">minified</a>' : '' ) + '<br>';
     } );
 
     if ( data.screenshots ) {
-      data.screenshots.map(function (entry) {
-        var screenshots_elem = document.importNode(document.querySelector('#prev-img').content, true);
-        var inner_1 = screenshots_elem.querySelector('div');
-        inner_1.querySelector('img').src = entry;
-        inner.querySelector('#prev-thumbnail').appendChild(inner_1);
+      data.screenshots.map( function ( entry ) {
+        var screenshots_elem = document.importNode( document.querySelector( '#prev-img' ).content, true );
+        var inner_1 = $ ( screenshots_elem.querySelector( 'div' ) );
+        inner_1.find('img').attr( 'src', entry );
+        inner.find('#prev-thumbnail').append( inner_1 );
       });
     } else {
-      ccm.helper.removeElement( inner.querySelector( '#prev' ) );
-      ccm.helper.removeElement( inner.querySelector( '.prev' ) );
+      inner.find( '#prev' ).remove();
+      inner.find( '.prev' ).remove();
     }
 
     if ( data.demos )
       ccm.start( data.versions[0].minified ? data.versions[0].minified : data.versions[0].source, data.demos[0], function (instance) {
-        inner.querySelector( '#demo-section' ).appendChild( instance.root );
+        inner.find( '#demo-section' ).append( instance.root );
       } );
     else {
-      ccm.helper.removeElement( inner.querySelector( '#demo' ) );
-      ccm.helper.removeElement( inner.querySelector( '.demo' ) );
+      inner.find( '#demo' ).remove();
+      inner.find( '.demo' ).remove();
     }
 
-    if ( inner.querySelector( '.navigation .btn-group' ).childElementCount < 2 )
-      ccm.helper.removeElement( inner.querySelector( '.info' ) );
-
-    document.querySelector( 'section' ).innerHTML = '';
-    document.querySelector( 'section' ).appendChild( clone );
+    $( '#detail' ).html( '' );
+    $( '#detail' ).append( clone );
   }
 
   //sort components bei name
-  function sort() {
+  /**function sort() {
     var unsorted = 'update Link Add feature improve Report'.split(' ');
     unsorted.sort(function (a, b) {
       a.localeCompare(b); //  ["Add", "feature", "improve", "Link", "Report", "update"]
     } );
 
-  }
+  }**/
 
-} )();
+} );

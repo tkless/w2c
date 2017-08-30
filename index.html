@@ -12,6 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!--Templates -->
 <template id="all-components">
   <div class="col-sm-6 col-lg-4">
     <div class="thumbnail">
@@ -20,8 +21,8 @@
         <h3>Comp-Titel</h3>
         <p class="abstract">Hier kurze beschreibung der Komponente</p>
         <p class="button">
-          <a href="#" class="detail btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Details</a>
-          <a href="#" class="create btn btn-default" role="button">Create App</a>
+          <a href="#" class="detail btn btn-primary" role="button" data-toggle="modal" data-target="#componentDetail">Details</a>
+          <a href="#" class="create btn btn-default" role="button" data-toggle="modal" data-target="#createApp">Create App</a>
         </p>
       </div>
     </div>
@@ -122,9 +123,11 @@
   </div>
 </template>
 
+<!---------------------- End Templates -------------------->
 
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<body id="w2c" data-spy="scroll" data-target=".navbar" data-offset="60">
   <!-- Navbar
   ================================================== -->
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -135,7 +138,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#myPage">W2C</a>
+        <a class="navbar-brand" href="#w2c">W2C</a>
       </div>
       <div class="collapse navbar-collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-left">
@@ -149,6 +152,8 @@
     </div>
   </nav>
 
+  <!-- Jumbotron
+  ================================================== -->
   <div class="jumbotron text-center">
     <h1>Web Component Cloud</h1>
     <p>We specialize in building of modular Web</p>
@@ -167,8 +172,8 @@
     </p>
   </div>
 
-  <!-- Modal of Component Detail-->
-  <div id="myModal" class="modal fade" role="dialog">
+  <!-- Modal Container of Component Detail-->
+  <div id="componentDetail" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -178,7 +183,28 @@
           <h4 class="modal-title">Component Overview</h4>
         </div>
         <div class="modal-body">
-          <section></section>
+          <section id="detail"></section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Container of Create Component-->
+  <div id="createApp" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Component App</h4>
+        </div>
+        <div class="modal-body">
+          <section id="create"></section>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -193,7 +219,7 @@
     <h2>Component Portfolio</h2><br>
     <h4>What we have already created</h4>
     <div class="container">
-      <div class="row all">
+      <div id="all" class="row">
 
       </div>
     </div>
@@ -247,45 +273,14 @@
     </div>
   </div>
 
-  <script src="js/w2c.js"></script>
+  <!-- Container (Footer Section) -->
+  <footer class="container-fluid text-center">
+    <a href="#w2c" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+  </footer>
 
-  <script>
-    $(document).ready(function(){
-      // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage'] .btn-lg").on('click', function(event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function(){
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-
-      $(window).scroll(function() {
-        $(".slideanim").each(function(){
-          var pos = $(this).offset().top;
-
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
-        });
-      });
-    })
-  </script>
-
+  <script src="js/w2c.js"></script
 
 </body>
 
