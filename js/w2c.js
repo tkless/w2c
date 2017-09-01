@@ -97,7 +97,7 @@ $( document ).ready( function() {
 
     var versions_elem = inner.find( '#versions' );
     data.versions.map( function ( entry ) {
-      versions_elem.innerHTML += entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="' + entry.minified + '">minified</a>' : '' ) + '<br>';
+      versions_elem.append( entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="' + entry.minified + '">minified</a>' : '' ) + '<br>' );
     } );
 
     if ( data.screenshots ) {
