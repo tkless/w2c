@@ -8,7 +8,7 @@ $( document ).ready( function() {
 
   var ccm = window.ccm[ '10.0.0' ];
   var datasets;
-
+  var unsorted_array = [];
 // Add smooth scrolling to all links in navbar + footer link
 
   // Add smooth scrolling to all links in navbar + footer link
@@ -49,10 +49,25 @@ $( document ).ready( function() {
     renderAllComponents();
   } );
 
-  function renderAllComponents() {
+  function sortCompByName() {
+    for ( var data in datasets ) {
+      unsorted_array.push( { "name": datasets[ data ].title, "data": datasets[ data ] } );
+    }
 
-    for ( var data in datasets )
-      setPreviewsContent( datasets[ data ] );
+    unsorted_array.sort( compare );
+
+    //sort components bei name
+    function compare( a, b ) {
+      return a.name.localeCompare( b.name );
+    }
+  }
+
+  function renderAllComponents() {
+    sortCompByName();
+
+    for ( var i = 0; i < unsorted_array.length; i++ ) {
+      setPreviewsContent( unsorted_array[i].data );
+    }
   }
 
   function setPreviewsContent( data ) {
@@ -137,13 +152,6 @@ $( document ).ready( function() {
       } );
   }
 
-  //sort components bei name
-  /**function sort() {
-    var unsorted = 'update Link Add feature improve Report'.split(' ');
-    unsorted.sort(function (a, b) {
-      a.localeCompare(b); //  ["Add", "feature", "improve", "Link", "Report", "update"]
-    } );
 
-  }**/
 
 } );
