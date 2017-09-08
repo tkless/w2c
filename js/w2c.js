@@ -146,12 +146,10 @@ $( document ).ready( function() {
 
   function renderCreateApp( data ) {
     if ( data.factories )
-      ccm.start( data.factories[0].url, function (instance) {
+      ccm.start( data.factories[0].url, data.factories[0].config, function (instance) {
+        $( '#storage' ).attr( 'value','["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]' );
         $( '#create' ).html( '' );
         $( '#create' ).append( instance.root );
       } );
   }
-
-
-
 } );
