@@ -29,6 +29,21 @@ ccm.files[ "w2c_datasets.js" ] = {
       [ "ccm.get", "https://akless.github.io/ccm-components/content/resources/configs.min.js", "demo" ]
     ]
   },
+  "comment": {
+    "title": "Comment",
+    "abstract": "For rendering a comment to any component.",
+    "name": "comment",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/comment/versions/ccm.comment-1.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos":[ {} ]
+  },
   "eval": {
     "title": "Eval",
     "abstract": "For interpreting a given JavaScript expression.",

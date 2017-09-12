@@ -207,11 +207,32 @@
           <h4 class="modal-title">Create Component App</h4>
         </div>
         <div class="modal-body">
+
+          <section id="load-start-state">
+              <form>
+                <div class="form-group">
+                  <h3 class="text-primary"> Load existing App</h3>
+                  <label for="src">Where is your app?</label>
+                  <select class="form-control" id="src">
+                    <option>Web Component Cloud (W2C)</option>
+                    <option value="">Own Server/Database</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="conf">Give here your app identifier</label>
+                  <input id="key" type="text" class="form-control" placeholder="Id or Key ..." id="conf">
+                </div>
+                <button type="button" class="load-app btn btn-success">Load App</button>
+              </form>
+          </section>
+
           <section id="create"></section>
+
           <section>
             <div class="form-group">
-              <label for="sel1">Where to save the app?</label>
-              <select class="form-control" id="sel1">
+              <label for="dest">Where to save the app?</label>
+              <select class="form-control" id="dest">
                 <option id="storage">Web Component Cloud (W2C)</option>
                 <option value="">Own Server/Database</option>
               </select>
