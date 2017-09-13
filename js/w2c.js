@@ -82,9 +82,14 @@ $( document ).ready( function() {
       renderComponentDetail( data );
     } );
 
-    inner.find( '.create' ).click ( function () {
-      renderCreateApp( data );
-    } );
+
+    if ( data.factories ) {
+      inner.find( '.create' ).click ( function () {
+        $( '#createApp' ).modal( 'show' );
+        renderCreateApp( data );
+      } );
+    }
+    else inner.find( '.create' ).addClass( 'disabled' );
 
     $( '#all' ).append( clone );
 
@@ -139,45 +144,55 @@ $( document ).ready( function() {
     $( '#detail' ).html( '' );
     $( '#detail' ).append( clone );
 
-    inner.find( '.createFrom' ).click ( function () {
-      renderCreateApp( data );
-    } );
+
+    if ( data.factories ) {
+      inner.find( '.createFrom' ).click ( function () {
+        $( '#createApp' ).modal( 'show' );
+        renderCreateApp( data );
+      } );
+    }
+
   }
 
   function renderCreateApp( data ) {
+    //$('#createApp').modal('show');
 
-    var factory = data.factories[0];
-    //set click Event of load-app-button
-    $( '.load-app' ).on( 'click', function ( event ) {
+    if ( data.factories ){
 
-      event.preventDefault();
+      var factory = data.factories[0];
+      //set click Event of load-app button
+      $( '.load-app' ).on( 'click', function ( event ) {
 
-      if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
-        ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
-          ccm.helper.encodeDependencies( result );
-          factory.config.start_state = result;
-          ccm.start( factory.url, factory.config, callback );
-        });
+        event.preventDefault();
+
+        if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
+          ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
+            ccm.helper.encodeDependencies( result );
+            factory.config.start_state = result;
+            ccm.start( factory.url, factory.config, callback );
+          });
+        }
+      });
+
+      var config = data.factories[0].config;
+      config.onfinish = function ( instance, cloze_config ) {
+
+        var store = { value: $('#storage').attr('value') };
+
+        ccm.helper.decodeDependencies( store );
+
+        ccm.helper.solveDependency( store, 'value', function ( store ) {
+          store.set( cloze_config, function ( result ) { console.log( result.key, result ); } );
+        } );
+      };
+      ccm.start( factory.url, config, callback );
+
+      function callback( instance ) {
+        $('#storage').attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
+        $('#create').html('');
+        $('#create').append(instance.root);
       }
-    });
-
-    var config = data.factories[0].config;
-    config.onfinish = function ( instance, cloze_config ) {
-
-      var store = { value: $('#storage').attr('value') };
-
-      ccm.helper.decodeDependencies( store );
-
-      ccm.helper.solveDependency( store, 'value', function ( store ) {
-        store.set( cloze_config, function ( result ) { console.log( result.key, result ); } );
-      } );
-    };
-    ccm.start( factory.url, config, callback );
-
-    function callback( instance ) {
-      $('#storage').attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
-      $('#create').html('');
-      $('#create').append(instance.root);
     }
+
   }
 } );
