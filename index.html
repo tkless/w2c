@@ -15,6 +15,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+
 <!--------------------- Templates ------------------------->
 <template id="all-components">
   <div class="col-sm-6 col-lg-4">
@@ -203,15 +205,16 @@
       <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">x</button>
           <h4 class="modal-title">Create Component App</h4>
         </div>
         <div class="modal-body">
 
+          <!----------- Load existing app ----------->
           <section id="load-start-state">
               <form>
                 <div class="form-group">
-                  <h3 class="text-primary"> Load existing App</h3>
+                  <legend class="text-primary">Load existing App</legend>
                   <label for="src">Where is your app?</label>
                   <select class="form-control" id="src">
                     <option>Web Component Cloud (W2C)</option>
@@ -221,16 +224,19 @@
 
                 <div class="form-group">
                   <label for="conf">Give here your app identifier</label>
-                  <input id="key" type="text" class="form-control" placeholder="Id or Key ..." id="conf">
+                  <input id="key" type="text" class="form-control" placeholder="Id..." id="conf">
                 </div>
-                <button type="button" class="load-app btn btn-success">Load App</button>
+                <button type="button" class="load-app btn btn-info">Load App</button>
               </form>
           </section>
 
+          <!-------------- create new app -------------->
           <section id="create"></section>
 
+          <!----------- Where to save the app ----------->
           <section>
             <div class="form-group">
+              <legend class="text-primary">Do you like it?</legend>
               <label for="dest">Where to save the app?</label>
               <select class="form-control" id="dest">
                 <option id="storage">Web Component Cloud (W2C)</option>
@@ -238,9 +244,34 @@
               </select>
             </div>
           </section>
+
+          <section>
+            <button id="save" type="button" class="btn btn-md btn-primary">Save App</button>
+          </section>
+
+          <section id="usage">
+            <legend class="text-primary">How can you use the app?</legend>
+            <ol>
+              <li>Add the following <code>script</code>-Tag to your page:</li>
+              <p id="script-tag"></p>
+              <li>Insert this <code>HTML</code>-Tag in your page:</li>
+              <p id="html-tag"></p>
+            </ol>
+
+            <legend class="text-primary">If you want to change created app...</legend>
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Atention:</span>
+              Note this Id: <span id="id"></span> and enter in section <span text-primary>"Load existing App"</span>
+            </div>
+          </section>
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Leave">
+            Leave
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
 

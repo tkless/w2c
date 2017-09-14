@@ -44,6 +44,15 @@ $( document ).ready( function() {
     });
   });
 
+  // Reset modal data
+  $('#createApp').on('hidden.bs.modal', function () {
+    $( '#usage' ).css( 'display', 'none' );
+    $( '#save' ).removeClass( 'btn-success' );
+    $( '#save' ).addClass( 'btn-primary' );
+    $( '#save' ).html( 'Save App' );
+    $( 'form' ).trigger( 'reset' );
+  });
+
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
     datasets = result;
     renderAllComponents();
@@ -155,43 +164,58 @@ $( document ).ready( function() {
   }
 
   function renderCreateApp( data ) {
-    //$('#createApp').modal('show');
 
-    if ( data.factories ){
+    var factory = data.factories[0];
 
-      var factory = data.factories[0];
-      //set click Event of load-app button
-      $( '.load-app' ).on( 'click', function ( event ) {
+    //set click Event of load-app button
+    $( '.load-app' ).on( 'click', function ( event ) {
+      event.preventDefault();
 
-        event.preventDefault();
-
-        if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
-          ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
-            ccm.helper.encodeDependencies( result );
-            factory.config.start_state = result;
-            ccm.start( factory.url, factory.config, callback );
-          });
-        }
-      });
-
-      var config = data.factories[0].config;
-      config.onfinish = function ( instance, cloze_config ) {
-
-        var store = { value: $('#storage').attr('value') };
-
-        ccm.helper.decodeDependencies( store );
-
-        ccm.helper.solveDependency( store, 'value', function ( store ) {
-          store.set( cloze_config, function ( result ) { console.log( result.key, result ); } );
-        } );
-      };
-      ccm.start( factory.url, config, callback );
-
-      function callback( instance ) {
-        $('#storage').attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
-        $('#create').html('');
-        $('#create').append(instance.root);
+      if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
+        ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
+          ccm.helper.encodeDependencies( result );
+          factory.config.start_state = result;
+          ccm.start( factory.url, factory.config, callback );
+        });
       }
+    });
+
+    var config = data.factories[0].config;
+
+    config.onfinish = function ( instance, cloze_config ) {
+      var store = { value: $('#storage').attr('value') };
+      ccm.helper.decodeDependencies( store );
+
+      ccm.helper.solveDependency( store, 'value', function ( store ) {
+        store.set( cloze_config, function ( result ) {
+          var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
+
+          $( '#save' ).attr('onclick','').unbind('click');
+          $( '#save' ).removeClass( 'btn-primary' );
+          $( '#save' ).addClass( 'btn-success' );
+          $( '#save' ).html( 'Saved' )
+          $( '#usage' ).fadeIn( 2000 );
+          $( '#script-tag' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt;</code>' );
+          $( '#html-tag' ).html('<code>'+ embed_code +'</code>');
+          $( '#id' ).html('<i>'+result.key+'</i>');
+        } );
+      } );
+    };
+    ccm.start( factory.url, config, callback );
+
+
+
+
+    function getEmbedCode( url, name, version, store_settings, key ) {
+      var index = name + ( version ? '-' + version.replace( '.', '-' ) : '' );
+      return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+','+key+'\'>&lt;/ccm-'+index+'&gt;';
+    }
+
+    function callback( instance ) {
+      $('#storage').attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
+      $('#create').html('');
+      $('#save').on('click', function () { instance.submit(); });
+      $('#create').append(instance.root);
     }
 
   }
