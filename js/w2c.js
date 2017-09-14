@@ -188,6 +188,9 @@ $( document ).ready( function() {
 
       ccm.helper.solveDependency( store, 'value', function ( store ) {
         store.set( cloze_config, function ( result ) {
+
+          console.log(result);
+
           var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
 
           $( '#save' ).attr('onclick','').unbind('click');
@@ -207,7 +210,7 @@ $( document ).ready( function() {
 
 
     function getEmbedCode( url, name, version, store_settings, key ) {
-      var index = name + ( version ? '-' + version.replace( '.', '-' ) : '' );
+      var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
       return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+','+key+'\'>&lt;/ccm-'+index+'&gt;';
     }
 
