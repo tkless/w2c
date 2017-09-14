@@ -200,14 +200,11 @@ $( document ).ready( function() {
           $( '#usage' ).fadeIn( 2000 );
           $( '#script-tag' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt;</code>' );
           $( '#html-tag' ).html('<code>'+ embed_code +'</code>');
-          $( '#id' ).html('<i>'+result.key+'</i>');
+          $( '#id' ).html('<pre>'+result.key+'</pre>');
         } );
       } );
     };
     ccm.start( factory.url, config, callback );
-
-
-
 
     function getEmbedCode( url, name, version, store_settings, key ) {
       var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
