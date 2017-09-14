@@ -211,7 +211,7 @@ $( document ).ready( function() {
 
     function getEmbedCode( url, name, version, store_settings, key ) {
       var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
-      return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+','+key+'\'>&lt;/ccm-'+index+'&gt;';
+      return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
     }
 
     function callback( instance ) {
