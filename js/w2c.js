@@ -186,10 +186,11 @@ $( document ).ready( function() {
       var store = { value: $('#storage').attr('value') };
       ccm.helper.decodeDependencies( store );
 
+      if ( $( '#key' ).val() )
+        cloze_config.key = $( '#key' ).val();
+
       ccm.helper.solveDependency( store, 'value', function ( store ) {
         store.set( cloze_config, function ( result ) {
-
-          console.log(result);
 
           var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
 
