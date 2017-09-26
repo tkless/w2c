@@ -138,6 +138,7 @@ h4 {
 
 .thumbnail {
     background-color: #eaf1f1 !important;
+    width: 360px !important;
 }
 
 .caption {
