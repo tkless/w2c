@@ -106,6 +106,24 @@ ccm.files[ "w2c_datasets.js" ] = {
       }
     ]
   },
+  "editor": {
+    "title": "Quill Texteditor",
+    "abstract": "For rendering a quill text editor.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/libs/screenshots/editor_preview_1.jpg"
+    ],
+    "name": "editor",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [ {} ]
+  },
   "fine_upload": {
     "title": "Fine Uploader Connector",
     "abstract": "Upload a file to a server via Fine Uploader",
@@ -340,24 +358,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]
   },
-  "editor": {
-    "title": "Quill Texteditor",
-    "abstract": "For rendering a quill text editor.",
-    "screenshots": [
-      "https://akless.github.io/ccm-components/libs/screenshots/editor_preview_1.jpg"
-    ],
-    "name": "editor",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]
-  },
   "quiz": {
     "title": "Quiz",
     "abstract": "For rendering a quiz.",
@@ -439,6 +439,24 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]
+  },
+  "teambuild": {
+    "title": "Team Building",
+    "abstract": "For realtime team building.",
+    "name": "teambuild",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.0.min.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/akless/ccm-components/",
+    "demos": [
+      [ "ccm.get", "https://akless.github.io/ccm-components/teambuild/resources/configs.min.js", "demo" ]
+    ]
   },
   "testsuite": {
     "title": "Test Suite",
