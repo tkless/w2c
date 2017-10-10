@@ -201,6 +201,20 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]
   },
+  "highlight": {
+    "title": "Code Highlighting",
+    "abstract": "For Code Highlighting",
+    "name": "highlight",
+    "versions": [
+      {
+        "version": "latest",
+        "source": "https://mkaul.github.io/ccm-components/highlight/ccm.highlight.js"
+      }
+    ],
+    "developer": "Manfred Kaul",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/mkaul/ccm-components/"
+  },
   "input": {
     "title": "Input",
     "abstract": "For user inputs.",
