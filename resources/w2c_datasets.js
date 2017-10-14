@@ -161,6 +161,21 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]
   },
+  "feedback": {
+    "title": "Feedback",
+    "abstract": "For rendering a feedback.",
+    "name": "feedback",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [  [ "ccm.get", "https://tkless.github.io/ccm-components/feedback/resources/configs.min.js", "demo" ] ]
+  },
   "game_chooser": {
     "title": "Game Chooser",
     "abstract": "Little Game for choosing one of two answers as fast as possible",
