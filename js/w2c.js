@@ -115,7 +115,7 @@ $( document ).ready( function() {
     inner.find( '#comp-name' ).html( data.name );
     inner.find( '#developer' ).html( data.developer );
     inner.find( '#website a' ).html( data.website );
-    inner.find( '#website a' ).attr( 'href', data.website );
+    inner.find( '#website a' ).attr( 'href', data.website ).attr( 'target', '_blank' );
     inner.find( '#license' ).html( data.license );
 
     if (  data.description )
