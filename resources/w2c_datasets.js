@@ -168,7 +168,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
@@ -180,16 +180,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "title": "Game Chooser",
     "abstract": "Little Game for choosing one of two answers as fast as possible",
     "screenshots": [
-      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_1.jpg",
-      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_2.jpg",
-      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_3.jpg"
+      "https://mkaul.github.io/ccm-components/game_chooser/resources/screenshot_1.jpg"
     ],
     "description": "Game Chooser is a little game implemented in ccm. Game Rules: A number is given and the user has to decide, whether the sum of digits is even or odd as fast as possible. There are two buttons, which the user can press accordingly. The time for choosing is recorded. The range of the numbers can be adjusted via a slider.",
     "name": "game_chooser",
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/game_chooser/ccm.game_chooser.js"
+        "source": "https://mkaul.github.io/ccm-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js"
       }
     ],
     "developer": "Manfred Kaul",

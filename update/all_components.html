@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title>W2C</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Web Component Cloud">
+<meta name="keywords" content="w2c,ccm,web,component,app,cloud,kless,andre,tea">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+
+
+<!--------------------- Templates ------------------------->
+<template id="all-components">
+  <div class="col-sm-6 col-lg-4">
+    <div class="thumbnail">
+      <img class="img-responsive" src="">
+      <div class="caption">
+        <h3>Comp-Titel</h3>
+        <p class="abstract">Hier kurze beschreibung der Komponente</p>
+        <p class="button">
+          <a href="#" class="detail btn btn-primary" role="button" data-toggle="modal" data-target="#componentDetail">Details</a>
+          <a href="#" class="create btn btn-default" role="button" data-toggle="modal">Create App</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="component-detail">
+  <div>
+    <header class="media">
+      <section class="media-left" id="logo">
+        <a><img src=""></a>
+      </section>
+      <section class="media-body" id="trailer">
+        <h4 id="title" class="media-heading"></h4>
+        <a href="" class="developer" target="_blank"></a>
+        <br><br>
+        <a typ="button" class="createFrom btn btn-success btn-sm" data-toggle="modal">Create App</a>
+      </section>
+    </header>
+
+    <hr>
+
+    <div class="navigation text-center">
+      <div class="btn-group">
+        <a typ="button" class="btn btn-primary info" href="#info">Information</a>
+        <a typ="button" class="btn btn-primary prev" href="#prev">Preview</a>
+        <a typ="button" class="btn btn-primary demo" href="#demo">Demo</a>
+      </div>
+    </div>
+
+    <div id="info">
+      <div class="page-header">
+        <h2>Information</h2>
+      </div>
+      <p class="lead"></p>
+
+      <div class="descr">
+        <h4>Description</h4>
+        <p id="description"></p>
+      </div>
+      <h4>Details</h4>
+
+
+      <table class="table table-striped">
+        <tbody class="col-md-12">
+        <tr>
+          <th>Component name</th>
+          <td id="comp-name"></td>
+        </tr>
+        <tr>
+          <th>Versions</th>
+          <td id="versions"></td>
+        </tr>
+        <tr>
+          <th>Developer</th>
+          <td id="developer"></td>
+        </tr>
+        <tr>
+          <th>Website</th>
+          <td id="website"><a href=""></a>
+          </td>
+        </tr>
+        <tr>
+          <th>LICENSE</th>
+          <td id="license"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="prev">
+      <div class="page-header">
+        <h2>Preview</h2>
+      </div>
+
+      <div id="prev-thumbnail" class="row">
+        <!-- template prev-img-->
+      </div>
+    </div>
+
+    <div id="demo">
+      <div class="page-header">
+        <h2>Live demo with demo data&nbsp; <span class="label label-warning">Create similar App</span></h2>
+      </div>
+
+      <div id="demo-section">
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<template id="prev-img">
+  <div class="col-xs-6 col-md-5">
+    <div class="thumbnail">
+      <img src="">
+    </div>
+  </div>
+</template>
+
+<!---------------------- End Templates -------------------->
+
+
+
+<body id="w2c" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- Navbar
+================================================== -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html">W2C</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="all_components.html">All COMPONENTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#sign-in">SIGN UP</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Jumbotron
+ ================================================== -->
+<div class="jumbotron text-center">
+  <h1>Web Components</h1>
+  <h2>We have already crated</h2>
+  <br>
+  <br>
+  <p class="warning">!!! This site is still under construction. !!!
+    <br>Feel free to explore what is already working.
+  </p>
+</div>
+
+
+<!-- Modal Container of Component Detail-->
+<div id="componentDetail" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Component Overview</h4>
+      </div>
+      <div class="modal-body">
+        <section id="detail"></section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Container of Create Component-->
+<div id="createApp" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h4 class="modal-title">Create Component App</h4>
+      </div>
+      <div class="modal-body">
+
+        <!----------- Load existing app ----------->
+        <section id="load-start-state">
+          <form>
+            <div class="form-group">
+              <legend class="text-primary">Load existing App</legend>
+              <label for="src">Where is your app?</label>
+              <select class="form-control" id="src">
+                <option>Web Component Cloud (W2C)</option>
+                <option value="">Own Server/Database</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="conf">Give here your app identifier</label>
+              <input id="key" type="text" class="form-control" placeholder="Id..." id="conf">
+            </div>
+            <button type="button" class="load-app btn btn-info">Load App</button>
+          </form>
+        </section>
+
+        <!-------------- create new app -------------->
+        <section id="create"></section>
+
+        <!----------- Where to save the app ----------->
+        <section>
+          <div class="form-group">
+            <legend class="text-primary">Do you like it?</legend>
+            <label for="dest">Where to save the app?</label>
+            <select class="form-control" id="dest">
+              <option id="storage">Web Component Cloud (W2C)</option>
+              <option value="">Own Server/Database</option>
+            </select>
+          </div>
+        </section>
+
+        <section>
+          <button id="save" type="button" class="btn btn-md btn-primary">Save App</button>
+        </section>
+
+        <!----------- How to use the app ----------->
+        <section id="usage">
+          <legend class="text-primary">How can you use the app?</legend>
+          <ol>
+            <li>Add the following <code>script</code>-Tag to your page:</li>
+            <p id="script-tag"></p>
+            <li>Insert this <code>HTML</code>-Tag in your page:</li>
+            <p id="html-tag"></p>
+          </ol>
+
+          <legend class="text-primary">If you want to change created app...</legend>
+          <div class="alert alert-info" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Atention:</span>
+            Note this Id: <span id="id"></span>
+          </div>
+        </section>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Leave">
+          Leave
+          <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Container (All Components Section) -->
+<div id="portfolio" class="container-fluid text-center">
+  <div class="container">
+    <div id="all" class="row">
+
+    </div>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Germany, GER</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;
+        <a href="mailto:andre.kless@web.de?subject=W2C&amp;bcc=tea.kless@web.de">andre.kless@web.de</a>
+      </p>
+      <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;
+        <a href="mailto:tea.kless@web.de?subject=W2C&amp;bcc=andre.kless@web.de">tea.kless@web.de</a>
+      </p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit" disabled="disabled">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Footer Section) -->
+<footer class="container-fluid text-center">
+  <a href="#w2c" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script src="https://akless.github.io/ccm/version/ccm-10.0.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/w2c.js"></script>
+
+</body>
