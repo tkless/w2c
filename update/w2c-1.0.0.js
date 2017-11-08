@@ -6,7 +6,7 @@
  */
 $( document ).ready( function() {
 
-  var ccm = window.ccm[ '10.0.0' ];
+  var ccm = window.ccm[ '11.5.0' ];
   var datasets;
   var unsorted_array = [];
 
@@ -68,7 +68,7 @@ $( document ).ready( function() {
         if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
           ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
             ccm.helper.encodeDependencies( result );
-            factory.config.start_state = result;
+            factory.config.start_values = result;
             ccm.start( factory.url, factory.config, callback );
           });
         }
@@ -76,15 +76,17 @@ $( document ).ready( function() {
 
       var config = data.factories[0].config;
 
-      config.onfinish = function ( instance, cloze_config ) {
+      config.onfinish = function ( instance, comp_config ) {
         var store = { value: inner.find( '#storage' ).attr( 'value' ) };
         ccm.helper.decodeDependencies( store );
 
         if ( inner.find( '#key' ).value )
-          cloze_config.key = inner.find( '#key' ).value;
+          comp_config.key = inner.find( '#key' ).value;
+
+
 
         ccm.helper.solveDependency( store, 'value', function ( store ) {
-          store.set( cloze_config, function ( result ) {
+          store.set( comp_config, function ( result ) {
 
             var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
 
@@ -101,18 +103,26 @@ $( document ).ready( function() {
       };
 
       // render component preview bei changing component factory settings
-      config.onchange = function ( instance, cloze_config ) {
+      config.onchange = function ( instance, comp_config ) {
 
-        $(window).resize( function () {
-          var max_height =  $( '.gallery-expander-contents' ).outerHeight();
-          var height =  $( '.gallery-contents' ).outerHeight() + max_height;
+        console.log( comp_config );
+        ccm.start( data.versions[0].source, comp_config, function ( inst ) {
+          ccm.helper.setContent( inner.find( '.preview' )[0], inst.root );
 
-          $('.gallery-item active').css( 'height', height);
-          $('.gallery-item active > .gallery-expander').css( 'max-height', max_height );
-        });
 
-        $(window).trigger('resize');
+          $(window).resize( function () {
+            var max_height =  $( '.gallery-expander-contents' ).outerHeight();
+            var height =  $( '.gallery-contents' ).outerHeight() + max_height;
+
+            $('.gallery-item active').css( 'height', height);
+            $('.gallery-item active > .gallery-expander').css( 'max-height', max_height );
+          });
+
+          $(window).trigger('resize');
+
+        } );
       };
+      config.submit_button = false;
 
       ccm.start( factory.url, config, callback );
 
