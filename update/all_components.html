@@ -7,8 +7,8 @@
 <meta name="description" content="Web Component Cloud">
 <meta name="keywords" content="w2c,ccm,web,component,app,cloud,kless,andre,tea">
 
-<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 
@@ -42,23 +42,9 @@
             </section>
             <!----------- Load existing app ----------->
             <section>
-              <form>
-                <div class="form-group">
-                  <legend class="text-primary">Load existing App</legend>
-                  <label for="src">Where is your app?</label>
-                  <select class="form-control" id="src">
-                    <option>Web Component Cloud (W2C)</option>
-                    <option value="">Own Server/Database</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="conf">Give here your app identifier</label>
-                  <input id="key" type="text" class="form-control" placeholder="Id..." id="conf">
-                </div>
-                <button type="button" class="load-app btn btn-info">Load App</button>
-              </form>
+              <button type="button" class="load-app btn btn-info" data-toggle="modal" data-target="#loadApp">Load App</button>
             </section>
+
 
             <!-------------- create new app -------------->
             <section id="render-factory"></section>
@@ -219,7 +205,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="all_components.html">All COMPONENTS</a></li>
+        <li><a href="#all">All COMPONENTS</a></li>
         <li><a href="#contact">CONTACT</a></li>
         <li><a href="#sign-in">SIGN UP</a></li>
       </ul>
@@ -240,7 +226,7 @@
 </div>
 
 
-<!-- Modal Container of Component Detail
+<!-- Container of Component Detail
 ================================================== -->
 <div id="componentDetail" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -256,6 +242,52 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Modal Container (Load existing app)
+================================================== -->
+<div id="loadApp" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h4 class="modal-title">Load Existing App</h4>
+      </div>
+      <div class="modal-body">
+
+        <!----------- Load existing app ----------->
+        <section id="load-start-state">
+          <form>
+            <div class="form-group">
+              <legend class="text-primary">Load existing App</legend>
+              <label for="src">Where is your app?</label>
+              <select class="form-control" id="src">
+                <option>Web Component Cloud (W2C)</option>
+                <option value="">Own Server/Database</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="conf">Give here your app identifier</label>
+              <input id="key" type="text" class="form-control" placeholder="Id..." id="conf">
+            </div>
+            <button type="button" class="load-app btn btn-info">Load App</button>
+          </form>
+        </section>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Leave">
+          Leave
+          <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
 
@@ -316,5 +348,39 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="w2c-1.0.0.js"></script>
 <script src="../js/jquery.imagelistexpander.js"></script>
+<script>
+  // Add smooth scrolling to all links in navbar + footer link
+  $( ".navbar a, footer a[href='#w2c']" ).on( 'click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if ( this.hash !== "" ) {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $( 'html, body' ).animate( {
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $( window ).scroll( function() {
+    $( ".slideanim").each( function(){
+      var pos = $( this ).offset().top;
+
+      var winTop = $ (window ).scrollTop();
+      if ( pos < winTop + 600 ) {
+        $( this ).addClass( "slide" );
+      }
+    });
+  });
+</script>
 
 </body>

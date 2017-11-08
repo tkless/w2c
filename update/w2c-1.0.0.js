@@ -10,40 +10,7 @@ $( document ).ready( function() {
   var datasets;
   var unsorted_array = [];
 
-  // Add smooth scrolling to all links in navbar + footer link
-  $( ".navbar a, footer a[href='#w2c']" ).on( 'click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if ( this.hash !== "" ) {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $( 'html, body' ).animate( {
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-
-  $( window ).scroll( function() {
-    $( ".slideanim").each( function(){
-      var pos = $( this ).offset().top;
-
-      var winTop = $ (window ).scrollTop();
-      if ( pos < winTop + 600 ) {
-        $( this ).addClass( "slide" );
-      }
-    });
-  });
-
-  ccm.load( 'resources/w2c_datasets.js', function ( result ) {
+  ccm.load( '../resources/w2c_datasets.js', function ( result ) {
     datasets = result;
     renderAllComponents();
   } );
@@ -55,7 +22,7 @@ $( document ).ready( function() {
       setPreviewsContent( unsorted_array[i].data );
     }
 
-    // expand thumbnail bei for crate component view
+    // expand thumbnail for crate component view
     $('.gallery-items').imagelistexpander({ prefix: "gallery-" });
 
     function sortCompByName() {
@@ -77,7 +44,7 @@ $( document ).ready( function() {
     var clone = document.importNode( document.querySelector( '#all-components' ).content, true );
     var inner = $( clone.querySelector('li') );
 
-    inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
+    inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : '../resources/preview.jpg' ) );
     inner.find( 'h3' ).html( data.title );
     inner.find( '.abstract' ).html( data.abstract );
     inner.find( '.detail' ).click ( function () {
@@ -86,7 +53,6 @@ $( document ).ready( function() {
 
     if ( data.factories ) {
       renderCreateComponent( data );
-
     }
     else inner.find( '.create' ).addClass( 'disabled' );
 
@@ -134,6 +100,20 @@ $( document ).ready( function() {
         } );
       };
 
+      // render component preview bei changing component factory settings
+      config.onchange = function ( instance, cloze_config ) {
+
+        $(window).resize( function () {
+          var max_height =  $( '.gallery-expander-contents' ).outerHeight();
+          var height =  $( '.gallery-contents' ).outerHeight() + max_height;
+
+          $('.gallery-item active').css( 'height', height);
+          $('.gallery-item active > .gallery-expander').css( 'max-height', max_height );
+        });
+
+        $(window).trigger('resize');
+      };
+
       ccm.start( factory.url, config, callback );
 
       function getEmbedCode( url, name, version, store_settings, key ) {
@@ -155,7 +135,7 @@ $( document ).ready( function() {
     var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
     var inner = $( clone.querySelector('div') );
 
-    inner.find( 'img' ).attr( 'src', 'resources/component.png' );
+    inner.find( 'img' ).attr( 'src', '../resources/component.png' );
     inner.find( '#title' ).html( data.title );
     inner.find( '.developer' ).html( data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>' );
     inner.find( '.lead' ).html = data.abstract;

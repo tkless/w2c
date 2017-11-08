@@ -4,8 +4,7 @@ body {
     color: #818181 !important;
 }
 
-#createApp,
-#componentDetail {
+#loadApp {
     margin-top: 30px;
 }
 
@@ -42,7 +41,7 @@ h4 {
 
 .navbar {
     margin-bottom: 0;
-    background-color: #1995dc !important;
+    background-color: #1995dc;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -61,16 +60,16 @@ h4 {
 
 .navbar-default,
 .navbar-toggle {
-    border-color: transparent !important;
+    border-color: transparent;
     color: #fff !important;
 }
 
 .logo-small {
-    color: #1995dc !important;
+    color: #1995dc;
     font-size: 50px;
 }
 .logo {
-    color: #1995dc !important;
+    color: #1995dc;
     font-size: 200px;
 }
 
@@ -126,12 +125,12 @@ h4 {
 }
 
 .bg-grey {
-    background-color: #f6f6f6 !important;
+    background-color: #f6f6f6;
 }
 
 .jumbotron {
-    background-color: #1995dc !important;
-    color: #fff !important;
+    background-color: #1995dc;
+    color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
 }
@@ -140,25 +139,25 @@ h4 {
 }
 
 .thumbnail {
-    background-color: #f6f6f6 !important;
+    background-color: #f6f6f6;
 }
 
 #all-components.thumbnail {
-    width: 360px !important;
+    width: 360px;
 }
 
 .caption {
     text-align: center;
-    height: 174px !important;
+    height: 174px;
 }
 .abstract {
-    height: 20px !important;
+    height: 20px;
     overflow: hidden;
 }
 
 .thumbnail img {
     width: 360px;
-    height: 216px !important;
+    height: 216px;
 }
 
 #logo img {

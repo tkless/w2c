@@ -485,6 +485,11 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "teambuild",
     "versions": [
       {
+        "version": "1.0.1",
+        "source": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.1.js",
+        "minified": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.1.min.js"
+      },
+      {
         "version": "1.0.0",
         "source": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.0.js",
         "minified": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.0.min.js"
@@ -495,6 +500,12 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/teambuild/resources/configs.min.js", "demo" ]
+    ],
+    "factories": [
+      {
+        "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-1.0.0.min.js",
+        "config": {}
+      }
     ]
   },
   "testsuite": {
