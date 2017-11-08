@@ -500,12 +500,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/teambuild/resources/configs.min.js", "demo" ]
-    ],
-    "factories": [
-      {
-        "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.0.0.min.js",
-        "config": {}
-      }
     ]
   },
   "testsuite": {

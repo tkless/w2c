@@ -58,10 +58,16 @@ h4 {
     background-color: #fff !important;
 }
 
-.navbar-default,
-.navbar-toggle {
-    border-color: transparent;
+.navbar-default, .navbar-toggle {
+    border-color: transparent !important;
     color: #fff !important;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar:hover{
+    color: #fff;
 }
 
 .logo-small {
@@ -215,6 +221,7 @@ section {
 #all {
   position: relative;
   text-align: center;
+  padding-left: 0px;
 }
 
 .gallery-item {
