@@ -61,7 +61,7 @@ $( document ).ready( function() {
     function renderCreateComponent( data ) {
 
       //set click Event of load-app button
-      inner.find( '.load-app' ).on( 'click', function ( event ) {
+      $( '.load-app' ).on( 'click', function ( event ) {
         event.preventDefault();
 
         if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
