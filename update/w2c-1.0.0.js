@@ -59,7 +59,6 @@ $( document ).ready( function() {
     $( '#all' ).append( clone );
 
     function renderCreateComponent( data ) {
-      var factory = data.factories[0];
 
       //set click Event of load-app button
       $( '.load-app' ).on( 'click', function ( event ) {
@@ -76,14 +75,13 @@ $( document ).ready( function() {
 
       var config = data.factories[0].config;
 
-      config.onfinish = function ( instance, comp_config ) {
+      config.onfinish = function ( instance ) {
+        var comp_config = instance.getValue();
         var store = { value: inner.find( '#storage' ).attr( 'value' ) };
         ccm.helper.decodeDependencies( store );
 
         if ( inner.find( '#key' ).value )
           comp_config.key = inner.find( '#key' ).value;
-
-
 
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
@@ -108,6 +106,7 @@ $( document ).ready( function() {
       config.onchange = function ( instance ) { renderPreview( instance, data ); };
       config.submit_button = false;
 
+      var factory = data.factories[0];
       ccm.start( factory.url, config, callback );
 
       function getEmbedCode( name, version, store_settings, key ) {
