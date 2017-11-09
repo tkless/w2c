@@ -110,8 +110,10 @@ $( document ).ready( function() {
       var factory = data.factories[0];
       ccm.start( factory.url, config, callback );
 
-      function getEmbedCode( name, version, store_settings, key ) {
+      function getEmbedCode( url, name, version, store_settings, key ) {
         var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
+        console.log('!');
+        debugger;
         return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
       }
 
