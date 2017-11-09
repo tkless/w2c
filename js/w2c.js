@@ -86,7 +86,7 @@ $( document ).ready( function() {
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
 
-            var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
+            var embed_code = getEmbedCode( data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
 
             inner.find( '#save' ).attr('onclick','').unbind('click');
             inner.find( '#save' ).removeClass( 'btn-primary' );
@@ -110,7 +110,7 @@ $( document ).ready( function() {
       var factory = data.factories[0];
       ccm.start( factory.url, config, callback );
 
-      function getEmbedCode( url, name, version, store_settings, key ) {
+      function getEmbedCode( name, version, store_settings, key ) {
         var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
         return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
       }
