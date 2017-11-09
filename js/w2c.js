@@ -25,6 +25,19 @@ $( document ).ready( function() {
     // expand thumbnail for create-component view
     $('.gallery-items').imagelistexpander({ prefix: "gallery-" });
 
+    //set click Event of load-app button
+    $( '.load-app' ).on( 'click', function ( event ) {
+      event.preventDefault();
+
+      if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
+        ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
+          ccm.helper.encodeDependencies( result );
+          factory.config.start_values = result;
+          ccm.start( factory.url, factory.config, callback );
+        });
+      }
+    });
+
     function sortCompByName() {
       for ( var data in datasets ) {
         unsorted_array.push( { "name": datasets[ data ].title, "data": datasets[ data ] } );
@@ -59,19 +72,6 @@ $( document ).ready( function() {
     $( '#all' ).append( clone );
 
     function renderCreateComponent( data ) {
-
-      //set click Event of load-app button
-      $( '.load-app' ).on( 'click', function ( event ) {
-        event.preventDefault();
-
-        if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
-          ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
-            ccm.helper.encodeDependencies( result );
-            factory.config.start_values = result;
-            ccm.start( factory.url, factory.config, callback );
-          });
-        }
-      });
 
       var config = data.factories[0].config;
 
