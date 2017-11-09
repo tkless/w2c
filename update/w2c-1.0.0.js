@@ -62,7 +62,7 @@ $( document ).ready( function() {
       var factory = data.factories[0];
 
       //set click Event of load-app button
-      inner.find( '.load-app' ).on( 'click', function ( event ) {
+      $( '.load-app' ).on( 'click', function ( event ) {
         event.preventDefault();
 
         if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
@@ -99,26 +99,18 @@ $( document ).ready( function() {
             inner.find( '#html-tag' ).html('<code>'+ embed_code +'</code>');
             inner.find( '#id' ).html('<pre>'+result.key+'</pre>');
 
-            resizeHight();
+            resizeHeight();
           } );
         } );
       };
 
       // render component preview bei changing component factory settings
-      config.onchange = function ( instance, comp_config ) {
-
-        console.log( comp_config );
-        ccm.start( data.versions[0].source, comp_config, function ( inst ) {
-          ccm.helper.setContent( inner.find( '.preview' )[0], inst.root );
-
-          resizeHight();
-        } );
-      };
+      config.onchange = function ( instance ) { renderPreview( instance, data ); };
       config.submit_button = false;
 
       ccm.start( factory.url, config, callback );
 
-      function getEmbedCode( url, name, version, store_settings, key ) {
+      function getEmbedCode( name, version, store_settings, key ) {
         var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
         return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
       }
@@ -128,6 +120,17 @@ $( document ).ready( function() {
         inner.find( '#render-factory' ).html('');
         inner.find('#save').on('click', function () { instance.submit(); });
         inner.find( '#render-factory' ).append(instance.root);
+        renderPreview( instance, data );
+      }
+
+      function renderPreview( instance,  data ) {
+        if(!instance.getValue) return;
+
+        ccm.start( data.versions[0].source, instance.getValue(), function ( inst ) {
+          ccm.helper.setContent( inner.find( '.preview' )[0], inst.root );
+
+          resizeHeight();
+        } );
       }
 
     }
@@ -184,7 +187,7 @@ $( document ).ready( function() {
 
   }
 
-  function resizeHight() {
+  function resizeHeight() {
     $(window).resize( function () {
       var max_height =  $( '.gallery-expander-contents' ).outerHeight();
       var height =  $( '.gallery-contents' ).outerHeight() + max_height;
