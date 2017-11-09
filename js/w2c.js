@@ -6,7 +6,7 @@
  */
 $( document ).ready( function() {
 
-  var ccm = window.ccm[ '11.5.0' ];
+  var ccm = window.ccm[ '12.3.1' ];
   var datasets;
   var unsorted_array = [];
 
@@ -22,7 +22,7 @@ $( document ).ready( function() {
       setPreviewsContent( unsorted_array[i].data );
     }
 
-    // expand thumbnail for crate component view
+    // expand thumbnail for create-component view
     $('.gallery-items').imagelistexpander({ prefix: "gallery-" });
 
     function sortCompByName() {
@@ -61,7 +61,7 @@ $( document ).ready( function() {
     function renderCreateComponent( data ) {
 
       //set click Event of load-app button
-      $( '.load-app' ).on( 'click', function ( event ) {
+      inner.find( '.load-app' ).on( 'click', function ( event ) {
         event.preventDefault();
 
         if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
@@ -85,7 +85,6 @@ $( document ).ready( function() {
 
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
-
             var embed_code = getEmbedCode( data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
 
             inner.find( '#save' ).attr('onclick','').unbind('click');
@@ -93,11 +92,11 @@ $( document ).ready( function() {
             inner.find( '#save' ).addClass( 'btn-success' );
             inner.find( '#save' ).html( 'Saved' );
             inner.find( '#usage' ).fadeIn( 2000 );
-            inner.find( '#script-tag' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt;</code>' );
-            inner.find( '#html-tag' ).html('<code>'+ embed_code +'</code>');
+            inner.find( '#embed-code' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
             inner.find( '#id' ).html('<pre>'+result.key+'</pre>');
 
             resizeHeight();
+            copyToClipboard();
           } );
         } );
       };
@@ -110,17 +109,17 @@ $( document ).ready( function() {
       var factory = data.factories[0];
       ccm.start( factory.url, config, callback );
 
-      function getEmbedCode( name, version, store_settings, key ) {
-        var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
-        return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
-      }
-
       function callback( instance ) {
         inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
         inner.find( '#render-factory' ).html('');
         inner.find('#save').on('click', function () { instance.submit(); });
         inner.find( '#render-factory' ).append(instance.root);
         renderPreview( instance, data );
+      }
+
+      function getEmbedCode( name, version, store_settings, key ) {
+        var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
+        return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
       }
 
       function renderPreview( instance,  data ) {
@@ -131,6 +130,25 @@ $( document ).ready( function() {
 
           resizeHeight();
         } );
+      }
+      
+      function copyToClipboard() {
+
+        inner.find( '.copy' ).click( function() {
+          var textarea = document.createElement('textarea');
+          textarea.id = 't';
+          textarea.style.height = 0;
+          document.body.appendChild(textarea);
+
+          textarea.value = document.querySelector( '#embed-code > code' ).innerText;
+
+          // Now copy inside the textarea to clipboard
+          var selector = document.querySelector('#t');
+          selector.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        });
+
       }
 
     }

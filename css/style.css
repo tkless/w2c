@@ -181,7 +181,9 @@ section {
 #usage {
     display: none;
 }
-
+#embed-code {
+    word-break: break-all;
+}
 /*--------- thumbnail-expander ----------*/
 .gallery-item {
     display: inline-block;
