@@ -42,13 +42,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos":[ {} ],
-    "factories": [
-      {
-        "url": "https://tkless.github.io/ccm-components/comment_builder/versions/ccm.comment_builder-1.0.0.js",
-        "config": {}
-      }
-    ]
+    "demos":[ {} ]
   },
   "eval": {
     "title": "Eval",
@@ -111,7 +105,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://tkless.github.io/ccm-components/fill_in_the_blank_text_builder/versions/ccm.fill_in_the_blank_text_builder-1.0.0.js",
+        "url": "https://tkless.github.io/ccm-components/fill_in_the_blank_text_builder/versions/ccm.fill_in_the_blank_text_builder-2.0.0.js",
         "config": {}
       }
     ]

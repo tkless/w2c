@@ -9,67 +9,11 @@ $( document ).ready( function() {
   var ccm = window.ccm[ '11.5.0' ];
   var datasets;
   var unsorted_array = [];
-// Add smooth scrolling to all links in navbar + footer link
-
-  // Add smooth scrolling to all links in navbar + footer link
-  $( ".navbar a, footer a[href='#w2c']" ).on( 'click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if ( this.hash !== "" ) {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $( 'html, body' ).animate( {
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-
-  $( window ).scroll( function() {
-    $( ".slideanim").each( function(){
-      var pos = $( this ).offset().top;
-
-      var winTop = $ (window ).scrollTop();
-      if ( pos < winTop + 600 ) {
-        $( this ).addClass( "slide" );
-      }
-    });
-  });
-
-  // Reset modal data
-  $('#createApp').on('hidden.bs.modal', function () {
-    $( '#usage' ).css( 'display', 'none' );
-    $( '#save' ).removeClass( 'btn-success' );
-    $( '#save' ).addClass( 'btn-primary' );
-    $( '#save' ).html( 'Save App' );
-    $( 'form' ).trigger( 'reset' );
-  });
 
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
     datasets = result;
     renderAllComponents();
   } );
-
-  function sortCompByName() {
-    for ( var data in datasets ) {
-      unsorted_array.push( { "name": datasets[ data ].title, "data": datasets[ data ] } );
-    }
-
-    unsorted_array.sort( compare );
-
-    //sort components bei name
-    function compare( a, b ) {
-      return a.name.localeCompare( b.name );
-    }
-  }
 
   function renderAllComponents() {
     sortCompByName();
@@ -77,12 +21,28 @@ $( document ).ready( function() {
     for ( var i = 0; i < unsorted_array.length; i++ ) {
       setPreviewsContent( unsorted_array[i].data );
     }
+
+    // expand thumbnail for crate component view
+    $('.gallery-items').imagelistexpander({ prefix: "gallery-" });
+
+    function sortCompByName() {
+      for ( var data in datasets ) {
+        unsorted_array.push( { "name": datasets[ data ].title, "data": datasets[ data ] } );
+      }
+
+      unsorted_array.sort( compare );
+
+      //sort components bei name
+      function compare( a, b ) {
+        return a.name.localeCompare( b.name );
+      }
+    }
   }
 
   function setPreviewsContent( data ) {
 
     var clone = document.importNode( document.querySelector( '#all-components' ).content, true );
-    var inner = $( clone.querySelector('div') );
+    var inner = $( clone.querySelector('li') );
 
     inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
     inner.find( 'h3' ).html( data.title );
@@ -91,17 +51,89 @@ $( document ).ready( function() {
       renderComponentDetail( data );
     } );
 
-
     if ( data.factories ) {
-      inner.find( '.create' ).click ( function () {
-        $( '#createApp' ).modal( 'show' );
-        renderCreateApp( data );
-      } );
+      renderCreateComponent( data );
     }
     else inner.find( '.create' ).addClass( 'disabled' );
 
     $( '#all' ).append( clone );
 
+    function renderCreateComponent( data ) {
+
+      //set click Event of load-app button
+      $( '.load-app' ).on( 'click', function ( event ) {
+        event.preventDefault();
+
+        if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
+          ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
+            ccm.helper.encodeDependencies( result );
+            factory.config.start_values = result;
+            ccm.start( factory.url, factory.config, callback );
+          });
+        }
+      });
+
+      var config = data.factories[0].config;
+
+      config.onfinish = function ( instance ) {
+        var comp_config = instance.getValue();
+        var store = { value: inner.find( '#storage' ).attr( 'value' ) };
+        ccm.helper.decodeDependencies( store );
+
+        if ( inner.find( '#key' ).value )
+          comp_config.key = inner.find( '#key' ).value;
+
+        ccm.helper.solveDependency( store, 'value', function ( store ) {
+          store.set( comp_config, function ( result ) {
+
+            var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
+
+            inner.find( '#save' ).attr('onclick','').unbind('click');
+            inner.find( '#save' ).removeClass( 'btn-primary' );
+            inner.find( '#save' ).addClass( 'btn-success' );
+            inner.find( '#save' ).html( 'Saved' );
+            inner.find( '#usage' ).fadeIn( 2000 );
+            inner.find( '#script-tag' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt;</code>' );
+            inner.find( '#html-tag' ).html('<code>'+ embed_code +'</code>');
+            inner.find( '#id' ).html('<pre>'+result.key+'</pre>');
+
+            resizeHeight();
+          } );
+        } );
+      };
+
+      // render component preview bei changing component factory settings
+      config.onchange = function ( instance ) { renderPreview( instance, data ); };
+      config.submit_button = false;
+      config.preview = false;
+
+      var factory = data.factories[0];
+      ccm.start( factory.url, config, callback );
+
+      function getEmbedCode( name, version, store_settings, key ) {
+        var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
+        return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
+      }
+
+      function callback( instance ) {
+        inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
+        inner.find( '#render-factory' ).html('');
+        inner.find('#save').on('click', function () { instance.submit(); });
+        inner.find( '#render-factory' ).append(instance.root);
+        renderPreview( instance, data );
+      }
+
+      function renderPreview( instance,  data ) {
+        if(!instance.getValue) return;
+
+        ccm.start( data.versions[0].source, instance.getValue(), function ( inst ) {
+          ccm.helper.setContent( inner.find( '.preview' )[0], inst.root );
+
+          resizeHeight();
+        } );
+      }
+
+    }
   }
 
   function renderComponentDetail( data ) {
@@ -153,71 +185,18 @@ $( document ).ready( function() {
     $( '#detail' ).html( '' );
     $( '#detail' ).append( clone );
 
-
-    if ( data.factories ) {
-      inner.find( '.createFrom' ).click ( function () {
-        $( '#createApp' ).modal( 'show' );
-        renderCreateApp( data );
-      } );
-    }
-
   }
 
-  function renderCreateApp( data ) {
+  function resizeHeight() {
+    $(window).resize( function () {
+      var max_height =  $( '.gallery-expander-contents' ).outerHeight();
+      var height =  $( '.gallery-contents' ).outerHeight() + max_height;
 
-    var factory = data.factories[0];
-
-    //set click Event of load-app button
-    $( '.load-app' ).on( 'click', function ( event ) {
-      event.preventDefault();
-
-      if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
-        ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
-          ccm.helper.encodeDependencies( result );
-          factory.config.start_state = result;
-          ccm.start( factory.url, factory.config, callback );
-        });
-      }
+      $('.gallery-item active').css( 'height', height);
+      $('.gallery-item active > .gallery-expander').css( 'max-height', max_height );
     });
 
-    var config = data.factories[0].config;
-
-    config.onfinish = function ( instance, cloze_config ) {
-      var store = { value: $( '#storage' ).attr( 'value' ) };
-      ccm.helper.decodeDependencies( store );
-
-      if ( $( '#key' ).val() )
-        cloze_config.key = $( '#key' ).val();
-
-      ccm.helper.solveDependency( store, 'value', function ( store ) {
-        store.set( cloze_config, function ( result ) {
-
-          var embed_code = getEmbedCode( data.versions[0].source, data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
-
-          $( '#save' ).attr('onclick','').unbind('click');
-          $( '#save' ).removeClass( 'btn-primary' );
-          $( '#save' ).addClass( 'btn-success' );
-          $( '#save' ).html( 'Saved' );
-          $( '#usage' ).fadeIn( 2000 );
-          $( '#script-tag' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt;</code>' );
-          $( '#html-tag' ).html('<code>'+ embed_code +'</code>');
-          $( '#id' ).html('<pre>'+result.key+'</pre>');
-        } );
-      } );
-    };
-    ccm.start( factory.url, config, callback );
-
-    function getEmbedCode( url, name, version, store_settings, key ) {
-      var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
-      return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
-    }
-
-    function callback( instance ) {
-      $('#storage').attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
-      $('#create').html('');
-      $('#save').on('click', function () { instance.submit(); });
-      $('#create').append(instance.root);
-    }
+    $(window).trigger('resize');
 
   }
 } );
