@@ -42,7 +42,7 @@
             </section>
             <!----------- Load existing app ----------->
             <section>
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loadApp">Load App</button>
+              <button type="button" class="load-app-btn btn btn-info" data-toggle="modal" data-target="#loadApp">Load App</button>
             </section>
 
 
@@ -100,6 +100,51 @@
       </div>
     </div>
   </li>
+</template>
+
+<template id="load">
+  <!-- Modal Container (Load existing app)
+================================================== -->
+  <div class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+        </div>
+        <div class="modal-body">
+
+          <!----------- Load existing app ----------->
+          <section id="load-start-state">
+            <form>
+              <div class="form-group">
+                <legend class="text-primary">Load existing App</legend>
+                <label for="src">Where is your app?</label>
+                <select class="form-control" id="src">
+                  <option>Web Component Cloud (W2C)</option>
+                  <option value="">Own Server/Database</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="conf">Give here your app identifier</label>
+                <input id="key" type="text" class="form-control" placeholder="Id..." id="conf">
+              </div>
+            </form>
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="load-app btn btn-info" data-dismiss="modal" aria-label="Load App">
+            Load App
+            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <template id="component-detail">
@@ -251,50 +296,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- Modal Container (Load existing app)
-================================================== -->
-<div id="loadApp" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">x</button>
-      </div>
-      <div class="modal-body">
-
-        <!----------- Load existing app ----------->
-        <section id="load-start-state">
-          <form>
-            <div class="form-group">
-              <legend class="text-primary">Load existing App</legend>
-              <label for="src">Where is your app?</label>
-              <select class="form-control" id="src">
-                <option>Web Component Cloud (W2C)</option>
-                <option value="">Own Server/Database</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="conf">Give here your app identifier</label>
-              <input id="key" type="text" class="form-control" placeholder="Id..." id="conf">
-            </div>
-          </form>
-        </section>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="load-app btn btn-info" data-dismiss="modal" aria-label="Load App">
-          Load App
-          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-        </button>
       </div>
     </div>
 

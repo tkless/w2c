@@ -8,7 +8,6 @@ $( document ).ready( function() {
 
   var ccm = window.ccm[ '12.3.1' ];
   var datasets;
-  var unsorted_array = [];
 
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
     datasets = result;
@@ -16,21 +15,22 @@ $( document ).ready( function() {
   } );
 
   function renderAllComponents() {
-    sortCompByName();
+    var sorted_data = [];
+    sortComponentByName();
 
-    for ( var i = 0; i < unsorted_array.length; i++ ) {
-      setPreviewsContent( unsorted_array[i].data );
+    for ( var i = 0; i < sorted_data.length; i++ ) {
+      setPreviewsContent( sorted_data[i].data );
     }
 
     // expand thumbnail for create-component view
     $('.gallery-items').imagelistexpander({ prefix: "gallery-" });
 
-    function sortCompByName() {
+    function sortComponentByName() {
       for ( var data in datasets ) {
-        unsorted_array.push( { "name": datasets[ data ].title, "data": datasets[ data ] } );
+        sorted_data.push( { "name": datasets[ data ].title, "data": datasets[ data ] } );
       }
 
-      unsorted_array.sort( compare );
+      sorted_data.sort( compare );
 
       //sort components bei name
       function compare( a, b ) {
@@ -50,9 +50,27 @@ $( document ).ready( function() {
     inner.find( '.detail' ).click ( function () {
       renderComponentDetail( data );
     } );
+    inner.find( '.load-app-btn' ).attr(  'data-target', '#ccm-'+ data.name );
+
+    // click event for rendering of load app modal dialog
+    inner.find( '.load-app-btn' ).click( function () {
+      var modal_clone = document.importNode( document.querySelector( '#load' ).content, true );
+      modal_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name;
+      var modal_inner = $( modal_clone.querySelector('div') );
+
+      // click Event of load-app button
+      modal_inner.find( '.load-app' ).click( function ( event ) {
+        event.preventDefault();
+        renderCreateComponent( data );
+      });
+
+      document.body.appendChild( modal_clone );
+    });
 
     if ( data.factories ) {
-      renderCreateComponent( data );
+      inner.find( '.create' ).click( function () {
+        renderCreateComponent( data );
+      });
     }
     else inner.find( '.create' ).addClass( 'disabled' );
 
@@ -60,18 +78,14 @@ $( document ).ready( function() {
 
     function renderCreateComponent( data ) {
 
-      //set click Event of load-app button
-      $( '.load-app' ).on( 'click', function ( event ) {
-        event.preventDefault();
+      if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
+        ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
+          ccm.helper.encodeDependencies( result );
+          factory.config.start_values = result;
+          ccm.start( factory.url, factory.config, callback );
+        });
+      }
 
-        if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
-          ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
-            ccm.helper.encodeDependencies( result );
-            factory.config.start_values = result;
-            ccm.start( factory.url, factory.config, callback );
-          });
-        }
-      });
 
       var config = data.factories[0].config;
 
@@ -112,8 +126,9 @@ $( document ).ready( function() {
       function callback( instance ) {
         inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
         inner.find( '#render-factory' ).html('');
-        inner.find('#save').on('click', function () { instance.submit(); });
+        inner.find( '#save' ).on('click', function () { instance.submit(); });
         inner.find( '#render-factory' ).append(instance.root);
+        resizeHeight();
         renderPreview( instance, data );
       }
 
