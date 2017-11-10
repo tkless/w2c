@@ -77,6 +77,11 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "cloze",
     "versions": [
       {
+        "version": "3.0.0",
+        "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.0.0.min.js"
+      },
+      {
         "version": "2.2.0",
         "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.2.0.js",
         "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-2.2.0.min.js"
