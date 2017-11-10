@@ -9,7 +9,6 @@ $( document ).ready( function() {
   var ccm = window.ccm[ '11.5.0' ];
   var datasets;
   var unsorted_array = [];
-// Add smooth scrolling to all links in navbar + footer link
 
   // Add smooth scrolling to all links in navbar + footer link
   $( ".navbar a, footer a[href='#w2c']" ).on( 'click', function(event) {
