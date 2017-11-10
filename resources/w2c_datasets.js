@@ -261,9 +261,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "kanban_board",
     "versions": [
       {
-        "version": "latest",
-        "source": "https://akless.github.io/ccm-components/kanban_board/ccm.kanban_board.js",
-        "minified": "https://akless.github.io/ccm-components/kanban_board/ccm.kanban_board.min.js"
+        "version": "1.1.0",
+        "source": "https://akless.github.io/ccm-components/kanban_board/versions/ccm.kanban_board-1.1.0.js",
+        "minified": "https://akless.github.io/ccm-components/kanban_board/versions/ccm.kanban_board-1.1.0.min.js"
+      },
+      {
+        "version": "1.0.0",
+        "source": "https://akless.github.io/ccm-components/kanban_board/versions/ccm.kanban_board-1.0.0.js",
+        "minified": "https://akless.github.io/ccm-components/kanban_board/versions/ccm.kanban_board-1.0.0.min.js"
       }
     ],
     "developer": "André Kless",
