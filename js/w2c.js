@@ -47,25 +47,11 @@ $( document ).ready( function() {
     inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
     inner.find( 'h3' ).html( data.title );
     inner.find( '.abstract' ).html( data.abstract );
-    inner.find( '.detail' ).click ( function () {
+    inner.find( '.detail' ).click( function () {
       renderComponentDetail( data );
     } );
     inner.find( '.load-app-btn' ).attr(  'data-target', '#ccm-'+ data.name );
-
-    // click event for rendering of load app modal dialog
-    inner.find( '.load-app-btn' ).click( function () {
-      var modal_clone = document.importNode( document.querySelector( '#load' ).content, true );
-      modal_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name;
-      var modal_inner = $( modal_clone.querySelector('div') );
-
-      // click Event of load-app button
-      modal_inner.find( '.load-app' ).click( function ( event ) {
-        event.preventDefault();
-        renderCreateComponent( data );
-      });
-
-      document.body.appendChild( modal_clone );
-    });
+    inner.find( '.save-btn' ).attr(  'data-target', '#ccm-'+ data.name +'-saved' );
 
     if ( data.factories ) {
       inner.find( '.create' ).click( function () {
@@ -78,13 +64,25 @@ $( document ).ready( function() {
 
     function renderCreateComponent( data ) {
 
-      if ( 'Web Component Cloud (W2C)' === $( '#src option:selected' ).text() ) {
-        ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, $('#key').val(), function ( result ) {
-          ccm.helper.encodeDependencies( result );
-          factory.config.start_values = result;
-          ccm.start( factory.url, factory.config, callback );
+      // click event for rendering of load app modal dialog
+      inner.find( '.load-app-btn' ).click( function () {
+        var modal_clone = document.importNode( document.querySelector( '#load' ).content, true );
+        modal_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name;
+        var modal_inner = $( modal_clone.querySelector('div') );
+
+        // click Event of load-app button
+        modal_inner.find( '.load-app' ).click( function () {
+          if ( 'Web Component Cloud (W2C)' === modal_inner.find ( '#src option:selected' ).text() ) {
+            ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, modal_inner.find ('#key').val(), function ( result ) {
+              ccm.helper.encodeDependencies( result );
+              factory.config.start_values = result;
+              ccm.start( factory.url, factory.config, callback );
+            });
+          }
         });
-      }
+
+        document.body.appendChild( modal_clone );
+      });
 
 
       var config = data.factories[0].config;
@@ -100,16 +98,8 @@ $( document ).ready( function() {
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
             var embed_code = getEmbedCode( data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
-
-            inner.find( '#save' ).attr('onclick','').unbind('click');
-            inner.find( '#save' ).removeClass( 'btn-primary' );
-            inner.find( '#save' ).addClass( 'btn-success' );
-            inner.find( '#save' ).html( 'Saved' );
-            inner.find( '#usage' ).fadeIn( 2000 );
-            inner.find( '#embed-code' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
-            inner.find( '#id' ).html('<pre>'+result.key+'</pre>');
-
-            resizeHeight();
+            $( '#embed-code' ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
+            $( '#id' ).html('<pre>'+result.key+'</pre>');
             copyToClipboard();
           } );
         } );
@@ -126,8 +116,16 @@ $( document ).ready( function() {
       function callback( instance ) {
         inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
         inner.find( '#render-factory' ).html('');
-        inner.find( '#save' ).on('click', function () { instance.submit(); });
-        inner.find( '#render-factory' ).append(instance.root);
+
+        // click event for rendering modal dialog  with app usage information
+        inner.find( '.save-btn' ).click( function () {
+          var modal_saved_clone = document.importNode( document.querySelector( '#saved' ).content, true );
+          modal_saved_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name +'-saved';
+          document.body.appendChild(  modal_saved_clone );
+          instance.submit();
+        });
+
+        inner.find( '#render-factory' ).append( instance.root );
         resizeHeight();
         renderPreview( instance, data );
       }
@@ -149,7 +147,7 @@ $( document ).ready( function() {
       
       function copyToClipboard() {
 
-        inner.find( '.copy' ).click( function() {
+        $( '.copy' ).click( function() {
           var textarea = document.createElement('textarea');
           textarea.id = 't';
           textarea.style.height = 0;

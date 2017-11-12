@@ -68,28 +68,7 @@
             </section>
 
             <section>
-              <button id="save" type="button" class="btn btn-md btn-primary">Save App</button>
-            </section>
-
-            <!----------- How to use the app ----------->
-            <section id="usage">
-              <legend class="text-primary">How can you use the app?
-                <span class="copy btn btn-sm btn-warning pull-right">COPY</span>
-              </legend>
-              <dl>
-                <dt>Add the following <code>EMBED CODE</code> to your page:
-                </dt>
-                <dd>
-                  <span id="embed-code"></span>
-                </dd>
-              </dl>
-
-              <legend class="text-primary">If you want to change created app...</legend>
-              <div class="alert alert-info" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="sr-only">Atention:</span>
-                Note this Id: <span id="id"></span>
-              </div>
+              <button type="button" class="save-btn btn btn-md btn-primary" data-toggle="modal" data-target="#saved">Save App</button>
             </section>
 
             <section>
@@ -139,6 +118,52 @@
           <button type="button" class="load-app btn btn-info" data-dismiss="modal" aria-label="Load App">
             Load App
             <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<template id="saved">
+  <!-- Modal Container (Show usage information)
+================================================== -->
+  <div class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+        </div>
+        <div class="modal-body">
+
+          <!----------- How to use the app ----------->
+          <section>
+            <legend class="text-primary">How can you use the app?
+              <span class="copy btn btn-sm btn-warning pull-right">COPY</span>
+            </legend>
+            <dl>
+              <dt>Add the following <code>EMBED CODE</code> to your page:
+              </dt>
+              <dd>
+                <span id="embed-code"></span>
+              </dd>
+            </dl>
+
+            <legend class="text-primary">If you want to change created app...</legend>
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Atention:</span>
+              Note this Id: <span id="id"></span>
+            </div>
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Load App">
+            Close
           </button>
         </div>
       </div>

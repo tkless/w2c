@@ -4,7 +4,7 @@ body {
     color: #818181 !important;
 }
 
-#loadApp {
+.modal {
     margin-top: 30px;
 }
 
@@ -183,6 +183,11 @@ section {
 }
 #embed-code {
     word-break: break-all;
+}
+
+#portfolio {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /*--------- thumbnail-expander ----------*/
 .gallery-item {
