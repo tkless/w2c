@@ -51,7 +51,7 @@ $( document ).ready( function() {
       renderComponentDetail( data );
     } );
     inner.find( '.load-app-btn' ).attr(  'data-target', '#ccm-'+ data.name );
-    inner.find( '.save-btn' ).attr(  'data-target', '#ccm-'+ data.name +'-saved' );
+    inner.find( '.save-as-new-btn' ).attr(  'data-target', '#ccm-'+ data.name +'-save-as-new' );
 
     if ( data.factories ) {
       inner.find( '.create' ).click( function () {
@@ -118,9 +118,9 @@ $( document ).ready( function() {
         inner.find( '#render-factory' ).html('');
 
         // click event for rendering modal dialog  with app usage information
-        inner.find( '.save-btn' ).click( function () {
-          var modal_saved_clone = document.importNode( document.querySelector( '#saved' ).content, true );
-          modal_saved_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name +'-saved';
+        inner.find( '.save-as-new-btn' ).click( function () {
+          var modal_saved_clone = document.importNode( document.querySelector( '#save-as-new' ).content, true );
+          modal_saved_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name +'-save-as-new';
           document.body.appendChild(  modal_saved_clone );
           instance.submit();
         });
