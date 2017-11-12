@@ -40,12 +40,6 @@
             <section>
               <span class="glyphicon glyphicon-remove gallery-trigger-close close"></span>
             </section>
-            <!----------- Load existing app ----------->
-            <section>
-              <button type="button" class="load-app-btn btn btn-info" data-toggle="modal" data-target="#loadApp">Load App</button>
-            </section>
-
-
             <!-------------- create new app -------------->
             <section id="render-factory"></section>
 
@@ -68,7 +62,15 @@
             </section>
 
             <section>
-              <button type="button" class="save-btn btn btn-md btn-primary" data-toggle="modal" data-target="#saved">Save App</button>
+
+            </section>
+
+            <section>
+              <div class="navigation text-center">
+                <button type="button" class="save-btn btn btn-md btn-primary" data-toggle="modal" data-target="#saved">Save App</button>
+                <button type="button" class="load-app-btn btn btn-default" data-toggle="modal" data-target="#loadApp">Load App</button>
+                <button type="button" class=" disabled save-as-new-btn btn btn-info" data-toggle="modal" data-target="#save-new">Save As New</button>
+              </div>
             </section>
 
             <section>
