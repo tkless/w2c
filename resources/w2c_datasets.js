@@ -77,6 +77,11 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "cloze",
     "versions": [
       {
+        "version": "3.4.0",
+        "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.4.0.js",
+        "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.4.0.min.js"
+      },
+      {
         "version": "3.3.0",
         "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.3.0.js",
         "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.3.0.min.js"
@@ -129,6 +134,10 @@ ccm.files[ "w2c_datasets.js" ] = {
       [ "ccm.get", "https://akless.github.io/ccm-components/cloze/resources/configs.min.js", "demo" ]
     ],
     "factories": [
+      {
+        "url": "https://akless.github.io/ccm-components/cloze_builder/versions/ccm.cloze_builder-1.4.0.min.js",
+        "config": {}
+      },
       {
         "url": "https://akless.github.io/ccm-components/cloze_builder/versions/ccm.cloze_builder-1.3.0.min.js",
         "config": {}
@@ -534,6 +543,10 @@ ccm.files[ "w2c_datasets.js" ] = {
       [ "ccm.get", "https://akless.github.io/ccm-components/teambuild/resources/configs.min.js", "demo" ]
     ],
     "factories": [
+      {
+        "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.3.0.min.js",
+        "config": {}
+      },
       {
         "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.2.0.min.js",
         "config": {}
