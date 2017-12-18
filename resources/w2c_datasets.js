@@ -77,6 +77,11 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "cloze",
     "versions": [
       {
+        "version": "3.5.0",
+        "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.5.0.js",
+        "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.5.0.min.js"
+      },
+      {
         "version": "3.4.0",
         "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.4.0.js",
         "minified": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-3.4.0.min.js"
@@ -134,6 +139,10 @@ ccm.files[ "w2c_datasets.js" ] = {
       [ "ccm.get", "https://akless.github.io/ccm-components/cloze/resources/configs.min.js", "demo" ]
     ],
     "factories": [
+      {
+        "url": "https://akless.github.io/ccm-components/cloze_builder/versions/ccm.cloze_builder-1.5.1.min.js",
+        "config": {}
+      },
       {
         "url": "https://akless.github.io/ccm-components/cloze_builder/versions/ccm.cloze_builder-1.5.0.min.js",
         "config": {}
