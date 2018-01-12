@@ -6,7 +6,7 @@
  */
 $( document ).ready( function() {
 
-  var ccm = window.ccm[ '12.3.1' ];
+  var ccm = window.ccm[ '12.12.0' ];
   var datasets;
 
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
