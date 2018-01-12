@@ -138,7 +138,7 @@ $( document ).ready( function() {
             var embed_code = getEmbedCode( data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
             $( embed_code_div_id ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
             $( ccm_key_div_id ).html('<pre>'+result.key+'</pre>');
-            copyToClipboard();
+            copyToClipboard( embed_code_div_id );
           } );
         } );
       };
@@ -244,21 +244,15 @@ $( document ).ready( function() {
         } );
       }
       
-      function copyToClipboard() {
+      function copyToClipboard( div ) {
 
         $( '.copy' ).click( function() {
-          var textarea = document.createElement('textarea');
-          textarea.id = 't';
-          textarea.style.height = 0;
-          document.body.appendChild(textarea);
-
-          textarea.value = document.querySelector( '#embed-code > code' ).innerText;
-
-          // Now copy inside the textarea to clipboard
-          var selector = document.querySelector('#t');
-          selector.select();
+          var range = document.createRange();
+          range.selectNode( document.querySelector( div ));
+          var selection = window.getSelection();
+          selection.removeAllRanges();
+          if( ! selection.containsNode( document.querySelector( div ) ) ) selection.addRange(range);
           document.execCommand('copy');
-          document.body.removeChild(textarea);
         });
 
       }
