@@ -6,6 +6,35 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "pdf_viewer": {
+    "title": "PDF Viewer",
+    "abstract": "For rendering a PDF",
+    "name": "pdf-viewer",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "source": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.min.js"
+      },
+      {
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-1.0.0.min.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [
+      [ {} ]
+    ],
+    "factories": [
+      {
+        "url": "https://tkless.github.io/ccm-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-1.0.0.min.js",
+        "config": {}
+      }
+    ]
+  },
   "content": {
     "title": "Content",
     "abstract": "For rendering a predefined content.",
