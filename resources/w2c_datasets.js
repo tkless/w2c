@@ -6,6 +6,23 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "difference_chart": {
+    "title": "Difference Chart",
+    "abstract": "To show the results of a questionaire for different groups",
+    "name": "difference_chart",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://kaul.inf.h-brs.de/data/ccm/difference_chart/versions/ccm.difference_chart-1.0.0.js"
+      }
+    ],
+    "developer": "Manfred Kaul",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/mkaul/ccm-components/",
+    "demos":[
+      [ "ccm.get", "https://kaul.inf.h-brs.de/data/ccm/difference_chart/resources/configs.js", "research" ]
+    ]
+  },
   "pdf_viewer": {
     "title": "PDF Viewer",
     "abstract": "For rendering a PDF",
@@ -33,7 +50,7 @@ ccm.files[ "w2c_datasets.js" ] = {
         "url": "https://tkless.github.io/ccm-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-1.0.0.min.js",
         "config": {}
       },
-      {
+  /*    {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js",
@@ -41,7 +58,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "display_final_component_and_config": false,
           "no_bootstrap_container": true
         }
-      }
+      }*/
     ]
   },
   "content": {
@@ -65,8 +82,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/content/resources/configs.min.js", "demo" ]
-    ],
-    "factories": [
+    ]
+    /*"factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -78,7 +95,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "comment": {
     "title": "Comment",
@@ -93,8 +110,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos":[ {} ],
-    "factories": [
+    "demos":[ {} ]
+   /* "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -104,7 +121,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "eval": {
     "title": "Eval",
@@ -125,8 +142,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/eval/resources/configs.min.js", "demo" ]
-    ],
-    "factories": [
+    ]
+    /*"factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -138,7 +155,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "cloze": {
     "title": "Fill-in-the-Blank Text",
@@ -201,14 +218,15 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
-    "factories": [
+    "demos": [ {} ]
+    /*"factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -218,7 +236,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "fine_upload": {
     "title": "Fine Uploader Connector",
@@ -231,13 +249,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/fine_upload/ccm.fine_upload.js"
+        "source": "https://mkaul.github.io/ccm-components/fine_upload/versions/ccm.fine_upload-1.0.0.js",
+        "minified":"https://mkaul.github.io/ccm-components/fine_upload/versions/ccm.fine_upload-1.0.0.min.js"
       }
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -248,7 +267,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "forum": {
     "title": "Forum",
@@ -260,13 +279,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/forum/versions/ccm.forum-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/forum/versions/ccm.forum-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/forum/versions/ccm.forum-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -277,7 +297,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "feedback": {
     "title": "Feedback",
@@ -286,13 +306,19 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.min.js"
+        "source": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.min.js"
+      },
+      {
+        "version": "2.0.0",
+        "source": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-2.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-2.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [  [ "ccm.get", "https://tkless.github.io/ccm-components/feedback/resources/configs.min.js", "demo" ] ],
+    "demos": [  [ "ccm.get", "https://tkless.github.io/ccm-components/feedback/resources/configs.min.js", "demo" ] ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -305,7 +331,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "game_chooser": {
     "title": "Game Chooser",
@@ -320,13 +346,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js"
+        "source": "https://mkaul.github.io/ccm-components/game_chooser/versions/ccm.game_chooser-1.0.0.js",
+        "minified": "https://mkaul.github.io/ccm-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js"
       }
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -337,7 +364,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "geogebra": {
     "title": "GeoGebra Connector",
@@ -350,13 +377,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/geogebra/ccm.geogebra.js"
+        "source": "https://mkaul.github.io/ccm-components/geogebra/versions/ccm.geogebra-1.0.0.js",
+        "minified": "https://mkaul.github.io/ccm-components/geogebra/versions/ccm.geogebra-1.0.0.min.js"
       }
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -367,7 +395,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "highlight": {
     "title": "Code Highlighting",
@@ -381,7 +409,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
+    "website": "https://github.com/mkaul/ccm-components/"/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -392,7 +420,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "input": {
     "title": "Input",
@@ -410,7 +438,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/input/resources/configs.min.js", "demo" ]
-    ],
+    ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -423,7 +451,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "kanban_board": {
     "title": "Kanban Board",
@@ -449,7 +477,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/kanban_board/resources/configs.min.js", "demo" ]
-    ],
+    ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -462,7 +490,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "kanban_card": {
     "title": "Kanban Card",
@@ -523,7 +551,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/akless/ccm/ccm-overview/configs.min.js", "le" ]
-    ],
+    ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -536,7 +564,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "learning_app": {
     "title": "LearningApp Connector",
@@ -549,13 +577,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/learning_app/ccm.learning_app.js"
+        "source": "https://mkaul.github.io/ccm-components/learning_app/versions/ccm.learning_app-1.0.0.js",
+        "minified": "https://mkaul.github.io/ccm-components/learning_app/versions/ccm.learning_app-1.0.0.min.js"
       }
     ],
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -566,7 +595,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "log": {
     "title": "Logger",
@@ -581,7 +610,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "André Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
+    "website": "https://github.com/akless/ccm-components/"/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -592,7 +621,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "posts": {
     "title": "News",
@@ -604,13 +633,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -621,7 +651,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "question": {
     "title": "Question",
@@ -633,13 +663,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/question/versions/ccm.question-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/question/versions/ccm.question-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/question/versions/ccm.question-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -650,7 +681,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "quiz": {
     "title": "Quiz",
@@ -677,7 +708,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/quiz/resources/configs.min.js", "demo" ]
-    ],
+    ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -690,7 +721,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "star_rating": {
     "title": "Star Rating",
@@ -708,7 +739,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -719,7 +750,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "star_rating_result": {
     "title": "Star Rating Result",
@@ -737,7 +768,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -748,7 +779,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "slidecast": {
     "title": "Slidecast",
@@ -767,7 +798,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -778,7 +809,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "teambuild": {
     "title": "Team Building",
@@ -837,7 +868,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "developer": "André Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
+    "website": "https://github.com/akless/ccm-components/"/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -848,7 +879,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "thumb_rating": {
     "title": "Thumb Rating",
@@ -866,7 +897,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -877,7 +908,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "user": {
     "title": "User",
@@ -895,7 +926,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/ccm-components/user/resources/configs.min.js", "demo" ]
-    ],
+    ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -908,7 +939,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "uml": {
     "title": "UML Connector",
@@ -927,7 +958,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -938,7 +969,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "upload": {
     "title": "Upload",
@@ -957,7 +988,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Manfred Kaul",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -968,7 +999,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   },
   "voting": {
     "title": "Voting",
@@ -986,7 +1017,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ],
+    "demos": [ {} ]/*,
     "factories": [
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
@@ -997,6 +1028,6 @@ ccm.files[ "w2c_datasets.js" ] = {
           "no_bootstrap_container": true
         }
       }
-    ]
+    ]*/
   }
 };

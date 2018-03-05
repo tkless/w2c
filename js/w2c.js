@@ -6,7 +6,7 @@
  */
 $( document ).ready( function() {
 
-  var ccm = window.ccm[ '12.12.0' ];
+  var ccm = window.ccm[ '14.3.0' ];
   var datasets;
 
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
@@ -56,7 +56,7 @@ $( document ).ready( function() {
         renderCreateAppView( data );
       });
     }
-    else inner.find( '.create' ).addClass( 'disabled' );
+    else inner.find( '.create' ).remove();
 
     $( '#all' ).append( clone );
 
