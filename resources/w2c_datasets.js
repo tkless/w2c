@@ -512,8 +512,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js", "homework" ],
-      [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js", "presentation" ],
       [ "ccm.get", "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js", "realtime" ]
     ],
     "factories": [
