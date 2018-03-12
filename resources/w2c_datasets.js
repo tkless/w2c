@@ -520,7 +520,7 @@ ccm.files[ "w2c_datasets.js" ] = {
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/kanban_card/versions/ccm.kanban_card-1.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js",
-          "key_in_external_config": "homework",
+          "key_in_external_config": "realtime",
           "preview": false,
           "display_final_component_and_config": false,
           "no_bootstrap_container": true
