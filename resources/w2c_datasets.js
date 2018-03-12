@@ -731,7 +731,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/star_rating/versions/ccm.star_rating-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/star_rating/versions/ccm.star_rating-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/star_rating/versions/ccm.star_rating-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
@@ -760,7 +761,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
@@ -790,7 +792,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/slidecast/versions/ccm.slidecast-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/slidecast/versions/ccm.slidecast-1.0.0.js",
+        "monified": "https://tkless.github.io/ccm-components/slidecast/versions/ccm.slidecast-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
@@ -839,7 +842,7 @@ ccm.files[ "w2c_datasets.js" ] = {
       {
         "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.2.0.min.js",
         "config": {}
-      },
+      }/*,
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -850,7 +853,7 @@ ccm.files[ "w2c_datasets.js" ] = {
           "display_final_component_and_config": false,
           "no_bootstrap_container": true
         }
-      }
+      }*/
     ]
   },
   "testsuite": {
@@ -889,7 +892,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
@@ -950,7 +954,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/uml/ccm.uml.js"
+        "source": "https://mkaul.github.io/ccm-components/uml/versions/ccm.uml.1.0.0.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -980,7 +984,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://mkaul.github.io/ccm-components/upload/ccm.upload.js"
+        "source": "https://mkaul.github.io/ccm-components/upload/versions/ccm.upload-1.0.0.js",
+        "minified": "https://mkaul.github.io/ccm-components/upload/versions/ccm.upload-1.0.0.min.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -1009,7 +1014,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/voting/versions/ccm.voting-1.0.0.js"
+        "source": "https://tkless.github.io/ccm-components/voting/versions/ccm.voting-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/voting/versions/ccm.voting-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
