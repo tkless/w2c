@@ -108,8 +108,7 @@ $( document ).ready( function() {
         inner.find( '.demo' ).remove();
       }
 
-      $( '#detail' ).html( '' );
-      $( '#detail' ).append( clone );
+      $( '#detail' ).html( '' ).append( clone );
 
     }
 
@@ -122,7 +121,7 @@ $( document ).ready( function() {
 
       initializeModalDilogs();
 
-      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
+      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de","method":"POST"}]');
 
       var config = data.factories[0].config;
 
