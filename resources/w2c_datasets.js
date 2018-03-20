@@ -26,7 +26,27 @@ ccm.files[ "w2c_datasets.js" ] = {
     "factories": [
       {
         "url": "https://tkless.github.io/ccm-components/exercise_builder/versions/ccm.exercise_builder-1.0.0.min.js",
-        "config": {}
+        "config": {
+          "css": [ "ccm.load", "https://tkless.github.io/ccm-components/libs/bootstrap/css/bootstrap.css",
+            { "context": "head", "url": "https://tkless.github.io/ccm-components/libs/bootstrap/css/font-face.css" },
+            "https://tkless.github.io/ccm-components/pdf_viewer_builder/resources/default.css"
+          ],
+          "target": [ "ccm.component", "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js", {  "pdf": null  } ],
+          //"submit_button": true,
+          //"preview": true,
+          "file_upload": [ "ccm.component", "https://tkless.github.io/ccm-components/file_upload/versions/ccm.file_upload-1.0.0.js", {
+            data: { store: [ "ccm.store", { "store": "file_upload", "url": "https://ccm.inf.h-brs.de", "method": "POST" } ] },
+          } ]
+          /*
+          "start_values": {
+            "pdf": [ "ccm.get", { url: "http://localhost:8080", store: "file_upload" }, "1518776028787X4201785986475841" ],
+            "css": "['ccm.load','https://tkless.github.io/ccm-components/pdf-viewer/resources/default.css']",
+            "user": "['ccm.instance','https://akless.github.io/ccm-components/user/versions/ccm.user-2.0.0.min.js',{'sign_on':'demo'}]"
+          }*/
+
+          //  onchange
+          //  onfinish
+        }
       }
       /*    {
             "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
