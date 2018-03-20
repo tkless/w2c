@@ -59,7 +59,7 @@ ccm.files[ "w2c_datasets.js" ] = {
   "pdf_viewer": {
     "title": "PDF Viewer",
     "abstract": "For rendering a PDF",
-    "name": "pdf-viewer",
+    "name": "pdf_viewer",
     "versions": [
       {
         "version": "2.0.0",
