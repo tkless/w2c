@@ -6,7 +6,7 @@
  */
 $( document ).ready( function() {
 
-  var ccm = window.ccm[ '14.3.0' ];
+  var ccm = window.ccm[ '15.0.2' ];
   var datasets;
 
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
@@ -53,7 +53,7 @@ $( document ).ready( function() {
 
     if ( data.factories ) {
       inner.find( '.create' ).click( function () {
-        renderCreateAppView( data );
+        renderCreateAppView( ccm.helper.clone( data ) );
       });
     }
     else inner.find( '.create' ).remove();
@@ -108,8 +108,7 @@ $( document ).ready( function() {
         inner.find( '.demo' ).remove();
       }
 
-      $( '#detail' ).html( '' );
-      $( '#detail' ).append( clone );
+      $( '#detail' ).html( '' ).append( clone );
 
     }
 
@@ -122,7 +121,7 @@ $( document ).ready( function() {
 
       initializeModalDilogs();
 
-      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de"}]');
+      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de","method":"POST"}]');
 
       var config = data.factories[0].config;
 
@@ -151,7 +150,6 @@ $( document ).ready( function() {
       config.preview = false;
 
       ccm.start( data.factories[0].url, config, onAfterFactoryStarted );
-
 
       function onAfterFactoryStarted( instance ) {
 

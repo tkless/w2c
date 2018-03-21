@@ -6,6 +6,39 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "exercise": {
+    "title": "Exercise",
+    "abstract": "Free Text Task",
+    "name": "exercise",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://tkless.github.io/ccm-components/exercise/versions/ccm.exercise-1.0.0.js",
+        "minified":"https://tkless.github.io/ccm-components/exercise/versions/ccm.exercise-1.0.0.min.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/tkless/ccm-components/",
+    "demos": [
+      [  "ccm.get", "https://tkless.github.io/ccm-components/exercise/resources/configs.js", "demo"  ]
+    ],
+    "factories": [
+      {
+        "url": "https://tkless.github.io/ccm-components/exercise_builder/versions/ccm.exercise_builder-1.0.0.min.js",
+        "config": { }
+      }
+      /*    {
+            "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+            "config": {
+              "url_to_modify": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js",
+              "preview": false,
+              "display_final_component_and_config": false,
+              "no_bootstrap_container": true
+            }
+          }*/
+    ]
+  },
   "difference_chart": {
     "title": "Difference Chart",
     "abstract": "To show the results of a questionaire for different groups",
@@ -26,7 +59,7 @@ ccm.files[ "w2c_datasets.js" ] = {
   "pdf_viewer": {
     "title": "PDF Viewer",
     "abstract": "For rendering a PDF",
-    "name": "pdf-viewer",
+    "name": "pdf_viewer",
     "versions": [
       {
         "version": "2.0.0",
@@ -43,13 +76,34 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [
-      [ {} ]
+       { pdf: //[ "ccm.get", { url: "https://ccm.inf.h-brs.de", store: "file_upload" }, "1517228670954X509252249813553" ],
+          "//cdn.mozilla.net/pdfjs/tracemonkey.pdf"  }
     ],
     "factories": [
       {
         "url": "https://tkless.github.io/ccm-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-1.0.0.min.js",
-        "config": {}
-      },
+        "config": {
+          "css": [ "ccm.load", "https://tkless.github.io/ccm-components/libs/bootstrap/css/bootstrap.css",
+            { "context": "head", "url": "https://tkless.github.io/ccm-components/libs/bootstrap/css/font-face.css" },
+            "https://tkless.github.io/ccm-components/pdf_viewer_builder/resources/default.css"
+          ],
+          "target": [ "ccm.component", "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js", {  "pdf": null  } ],
+          //"submit_button": true,
+          //"preview": true,
+          "file_upload": [ "ccm.component", "https://tkless.github.io/ccm-components/file_upload/versions/ccm.file_upload-1.0.0.js", {
+            data: { store: [ "ccm.store", { "store": "file_upload", "url": "https://ccm.inf.h-brs.de", "method": "POST" } ] },
+          } ]
+          /*
+          "start_values": {
+            "pdf": [ "ccm.get", { url: "http://localhost:8080", store: "file_upload" }, "1518776028787X4201785986475841" ],
+            "css": "['ccm.load','https://tkless.github.io/ccm-components/pdf-viewer/resources/default.css']",
+            "user": "['ccm.instance','https://akless.github.io/ccm-components/user/versions/ccm.user-2.0.0.min.js',{'sign_on':'demo'}]"
+          }*/
+
+          //  onchange
+          //  onfinish
+        }
+      }
   /*    {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -217,9 +271,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "name": "editor",
     "versions": [
       {
-        "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js",
-        "minified": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.min.js"
+        "version": "2.0.0",
+        "source": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-2.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-2.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
