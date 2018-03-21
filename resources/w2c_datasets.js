@@ -192,7 +192,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://akless.github.io/ccm-components/cloze_builder/versions/ccm.cloze_builder-1.6.0.min.js",
+        "url": "https://akless.github.io/ccm-components/cloze_builder/versions/ccm.cloze_builder-1.7.0.min.js",
         "config": {}
       },
       {
