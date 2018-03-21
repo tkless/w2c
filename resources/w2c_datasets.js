@@ -890,11 +890,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.3.0.min.js",
-        "config": {}
-      },
-      {
-        "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.2.0.min.js",
+        "url": "https://akless.github.io/ccm-components/teambuild_builder/versions/ccm.teambuild_builder-2.4.0.min.js",
         "config": {}
       }/*,
       {
