@@ -53,7 +53,7 @@ $( document ).ready( function() {
 
     if ( data.factories ) {
       inner.find( '.create' ).click( function () {
-        renderCreateAppView( data );
+        renderCreateAppView( ccm.helper.clone( data ) );
       });
     }
     else inner.find( '.create' ).remove();
@@ -150,7 +150,6 @@ $( document ).ready( function() {
       config.preview = false;
 
       ccm.start( data.factories[0].url, config, onAfterFactoryStarted );
-
 
       function onAfterFactoryStarted( instance ) {
 
