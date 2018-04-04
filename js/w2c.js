@@ -190,7 +190,7 @@ $( document ).ready( function() {
             if ( 'Web Component Cloud (W2C)' === load_app_inner.find ( '#src option:selected' ).text() ) {
               ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, load_app_inner.find ('#key').val(), function ( result ) {
                 loaded_app_key = load_app_inner.find ('#key').val();
-                ccm.helper.encodeDependencies( result );
+                //ccm.helper.encodeDependencies( result );
                 factory.config.start_values = result;
                 ccm.start( factory.url, factory.config, onAfterFactoryStarted );
 
