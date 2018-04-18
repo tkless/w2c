@@ -286,8 +286,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="getting_started.html">GETTING STARTED</a></li>
-        <li class="active"><a href="#all">COMPONENTS</a></li>
+        <li class="active"><a href="#getting_started">GETTING STARTED</a></li>
+        <li><a href="all_components.html">COMPONENTS</a></li>
         <li><a href="#sign-in">SIGN UP</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
@@ -298,78 +298,26 @@
 <!-- Jumbotron
  ================================================== -->
 <div class="jumbotron text-center">
-  <h1>Web Components</h1>
-  <h2>We have already crated</h2>
-  <br>
-  <br>
-  <p class="warning">!!! This site is still under construction. !!!
-    <br>Feel free to explore what is already working.
-  </p>
+  <h1>Getting started with W2C</h1>
 </div>
 
-
-<!-- Container (Component Detail)
-================================================== -->
-<div id="componentDetail" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Component Overview</h4>
-      </div>
-      <div class="modal-body">
-        <section id="detail"></section>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
+<div id="getting_started" class="container-fluid">
+  <h1>Getting started</h1>
+  On the Web Component Cloud (W2C) you can find modular Web Components that can be used in your own projects to enhance the feature set of your website. This guide shows you how to do that.
+  <h1>Step 1: Find a component</h1>
+  Head over to the <a href="all_components.html" target="_blank">list of all components</a> currently available on W2C. Choose one that you would like to embed on your own site. In this tutorial we are going to use the "Fill-in-the-Blank Text" Component.
+  <h1>Step 2: Customize the component</h1>
+  When you click on "Create App" you can customize the component, so that it suits your needs. Insert the following text into the editor:
+  <div class="well">
+    <samp>Hello, [[(W)o(rl)d]]! This [[is]] my custom Web Component.</samp>
   </div>
+  After you have done that you can immediately see and test how the new component looks.
+  <h1>Step 3: Save your App</h1>
+  When you are done with the customization of your component you can click on the "Save As New" button. A new window opens, which will present you with an embed code. Copy this code to your clipboard.
+  <h1>Step 4: Embedding the component in your website</h1>
+  Head over to the HTML file in which you would like your new component to show up. At the position where the component should be displayed paste the embed code from the last step. Now your are done and your newly created component is ready to be used on your own site.
 </div>
 
-
-<!-- Container (All Components Section)
-================================================== -->
-<div id="portfolio">
-  <ul id="all" class="gallery-items"></ul>
-</div>
-
-<!-- Container (Contact Section)
-================================================== -->
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Germany, GER</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;
-        <a href="mailto:andre.kless@web.de?subject=W2C&amp;bcc=tea.kless@web.de">andre.kless@web.de</a>
-      </p>
-      <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;
-        <a href="mailto:tea.kless@web.de?subject=W2C&amp;bcc=andre.kless@web.de">tea.kless@web.de</a>
-      </p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit" disabled="disabled">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Container (Footer Section)
 ================================================== -->
