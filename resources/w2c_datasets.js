@@ -690,8 +690,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.js",
-        "minified": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.min.js"
+        "source": "https://tkless.github.io/ccm-components/news/versions/ccm.news-1.0.0.js",
+        "minified": "https://tkless.github.io/ccm-components/news/versions/ccm.news-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
