@@ -29,7 +29,7 @@ ccm.files[ "w2c_datasets.js" ] = {
         "config": { }
       }
       /*    {
-            "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+            "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
             "config": {
               "url_to_modify": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js",
               "preview": false,
@@ -105,7 +105,7 @@ ccm.files[ "w2c_datasets.js" ] = {
         }
       }
   /*    {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/pdf-viewer/versions/ccm.pdf_viewer-2.0.0.js",
           "preview": false,
@@ -139,7 +139,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]
     /*"factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/content/versions/ccm.content-2.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/content/resources/configs.min.js",
@@ -167,7 +167,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos":[ {} ]
    /* "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/comment/versions/ccm.comment-1.0.0.js",
           "preview": false,
@@ -199,7 +199,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]
     /*"factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/eval/versions/ccm.eval-1.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/eval/resources/configs.min.js",
@@ -255,7 +255,7 @@ ccm.files[ "w2c_datasets.js" ] = {
         "config": {}
       },
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/cloze/versions/beta/ccm.cloze-3.9.0.js",
           "external_config": "https://akless.github.io/ccm-components/cloze/resources/configs.min.js",
@@ -287,7 +287,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]
     /*"factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/editor/versions/ccm.editor-1.0.0.js",
           "preview": false,
@@ -318,7 +318,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/fine_upload/ccm.fine_upload.js",
           "preview": false,
@@ -348,7 +348,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/forum/versions/ccm.forum-1.0.0.js",
           "preview": false,
@@ -380,7 +380,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [  [ "ccm.get", "https://tkless.github.io/ccm-components/feedback/resources/configs.min.js", "demo" ] ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/feedback/versions/ccm.feedback-1.0.0.min.js",
           "external_config": "https://tkless.github.io/ccm-components/feedback/resources/configs.min.js",
@@ -415,7 +415,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js",
           "preview": false,
@@ -446,7 +446,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/geogebra/ccm.geogebra.js",
           "preview": false,
@@ -471,7 +471,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/mkaul/ccm-components/"/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/highlight/ccm.highlight.js",
           "preview": false,
@@ -500,7 +500,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/input/versions/ccm.input-1.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/input/resources/configs.min.js",
@@ -539,7 +539,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/kanban_board/versions/ccm.kanban_board-1.1.0.js",
           "external_config": "https://akless.github.io/ccm-components/kanban_board/resources/configs.min.js",
@@ -575,7 +575,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/kanban_card/versions/ccm.kanban_card-1.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/kanban_card/resources/configs.min.js",
@@ -611,7 +611,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/le/versions/ccm.le-2.0.0.js",
           "external_config": "https://akless.github.io/akless/ccm/ccm-overview/configs.min.js",
@@ -644,7 +644,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/learning_app/ccm.learning_app.js",
           "preview": false,
@@ -670,7 +670,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/"/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/log/versions/ccm.log-1.0.0.js",
           "preview": false,
@@ -700,7 +700,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/news/versions/ccm.posts-1.0.0.js",
           "preview": false,
@@ -730,7 +730,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/question/versions/ccm.question-1.0.0.js",
           "preview": false,
@@ -768,7 +768,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/quiz/versions/ccm.quiz-2.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/quiz/resources/configs.min.js",
@@ -800,7 +800,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/star_rating/versions/ccm.star_rating-1.0.0.js",
           "preview": false,
@@ -830,7 +830,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js",
           "preview": false,
@@ -861,7 +861,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/slidecast/versions/ccm.slidecast-1.0.0.js",
           "preview": false,
@@ -899,7 +899,7 @@ ccm.files[ "w2c_datasets.js" ] = {
         "config": {}
       }/*,
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/teambuild/versions/ccm.teambuild-1.0.1.js",
           "external_config": "https://akless.github.io/ccm-components/teambuild/resources/configs.min.js",
@@ -927,7 +927,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/akless/ccm-components/"/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/testsuite/versions/ccm.testsuite-1.0.0.js",
           "preview": false,
@@ -957,7 +957,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js",
           "preview": false,
@@ -986,7 +986,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://akless.github.io/ccm-components/user/versions/ccm.user-1.0.0.js",
           "external_config": "https://akless.github.io/ccm-components/user/resources/configs.min.js",
@@ -1018,7 +1018,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/uml/ccm.uml.js",
           "preview": false,
@@ -1049,7 +1049,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://mkaul.github.io/ccm-components/upload/ccm.upload.js",
           "preview": false,
@@ -1079,7 +1079,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [ {} ]/*,
     "factories": [
       {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
           "url_to_modify": "https://tkless.github.io/ccm-components/voting/versions/ccm.voting-1.0.0.js",
           "preview": false,
