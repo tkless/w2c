@@ -61,7 +61,6 @@ $( document ).ready( function() {
     $( '#all' ).append( clone );
 
     function renderComponentDetail( data ) {
-      console.log( data );
       var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
       var inner = $( clone.querySelector('div') );
 

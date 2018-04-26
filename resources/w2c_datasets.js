@@ -697,18 +697,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/news/versions/ccm.posts-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
+    "demos": [ "ccm.get", "https://ccmjs.github.io/tkless-components/news/resources/configs.min.js", "demo" ]
   },
   "question": {
     "key": "question",
@@ -858,18 +847,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/slidecast/versions/ccm.slidecast-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
+    "demos": [ "ccm.get", "https://ccmjs.github.io/tkless-components/slidecast/resources/configs.min.js", "demo" ]
   },
   "teambuild": {
     "key": "teambuild",
