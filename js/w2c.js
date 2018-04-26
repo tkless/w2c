@@ -18,8 +18,8 @@ $( document ).ready( function() {
     var sorted_data = [];
     sortComponentByName();
 
-    for ( var i = 0; i < sorted_data.length; i++ ) {
-      setPreviewsContent( sorted_data[i].data );
+    for ( var key in sorted_data ) {
+      setPreviewsContent( sorted_data[ key ].data );
     }
 
     // expand thumbnail for create-component view
@@ -61,6 +61,7 @@ $( document ).ready( function() {
     $( '#all' ).append( clone );
 
     function renderComponentDetail( data ) {
+      console.log( data );
       var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
       var inner = $( clone.querySelector('div') );
 
@@ -68,7 +69,7 @@ $( document ).ready( function() {
       inner.find( '#title' ).html( data.title );
       inner.find( '.developer' ).html( data.developer + '<span class="glyphicon glyphicon-chevron-right"></span>' );
       inner.find( '.lead' ).html = data.abstract;
-      inner.find( '#comp-name' ).html( data.name );
+      inner.find( '#comp-name' ).html( data.key );
       inner.find( '.developer' ).html( data.developer );
       inner.find( '.developer' ).attr( 'href', data.website );
       inner.find( '#developer' ).html( data.developer );
@@ -121,7 +122,7 @@ $( document ).ready( function() {
 
       initializeModalDilogs();
 
-      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.name + '","url":"https://ccm.inf.h-brs.de","method":"POST"}]');
+      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.key + '","url":"https://ccm.inf.h-brs.de","method":"POST"}]');
 
       var config = data.factories[0].config;
 
@@ -136,7 +137,7 @@ $( document ).ready( function() {
 
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
-            var embed_code = getEmbedCode( data.name, data.versions[0].version, { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, result.key );
+            var embed_code = getEmbedCode( data.key, data.versions[0].version, { store: 'w2c_' + data.key, url: 'https://ccm.inf.h-brs.de' }, result.key );
             $( embed_code_div_id ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
             $( ccm_key_div_id ).html('<pre>'+result.key+'</pre>');
             copyToClipboard( embed_code_div_id );
@@ -159,14 +160,14 @@ $( document ).ready( function() {
         renderPreview( instance, data );
 
         inner.find( '.save-as-new-btn' ).click( function() {
-          embed_code_div_id = '#ccm-embed-code-'+ data.name+'-save-as';
-          ccm_key_div_id = '#ccm-id-'+ data.name+'-save-as';
+          embed_code_div_id = '#ccm-embed-code-'+ data.key+'-save-as';
+          ccm_key_div_id = '#ccm-id-'+ data.key+'-save-as';
           is_save_btn = false;
           instance.submit();
         });
         inner.find( '.save-btn' ).click( function() {
-          embed_code_div_id = '#ccm-embed-code-'+ data.name+'-save';
-          ccm_key_div_id = '#ccm-id-'+ data.name+'-save';
+          embed_code_div_id = '#ccm-embed-code-'+ data.key+'-save';
+          ccm_key_div_id = '#ccm-id-'+ data.key+'-save';
           is_save_btn = true;
           instance.submit();
         });
@@ -179,16 +180,16 @@ $( document ).ready( function() {
         inner.find( '.load-app-btn' ).click( function () {
 
           // set data-target attr. of modal dialog
-          inner.find( '.load-app-btn' ).attr(  'data-target', '#ccm-'+ data.name );
+          inner.find( '.load-app-btn' ).attr(  'data-target', '#ccm-'+ data.key );
 
           var load_app_clone = document.importNode( document.querySelector( '#load' ).content, true );
-          load_app_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name;
+          load_app_clone.querySelector( '.modal' ).id = 'ccm-'+ data.key;
           var load_app_inner = $( load_app_clone.querySelector('div') );
 
           // click Event of load-app button
           load_app_inner.find( '.load-app' ).click( function () {
             if ( 'Web Component Cloud (W2C)' === load_app_inner.find ( '#src option:selected' ).text() ) {
-              ccm.get( { store: 'w2c_' + data.name, url: 'https://ccm.inf.h-brs.de' }, load_app_inner.find ('#key').val(), function ( result ) {
+              ccm.get( { store: 'w2c_' + data.key, url: 'https://ccm.inf.h-brs.de' }, load_app_inner.find ('#key').val(), function ( result ) {
                 loaded_app_key = load_app_inner.find ('#key').val();
                 //ccm.helper.encodeDependencies( result );
                 factory.config.start_values = result;
@@ -205,24 +206,24 @@ $( document ).ready( function() {
 
         // click event for rendering modal dialog  with app usage information
         inner.find( '.save-as-new-btn' ).click( function () {
-          inner.find( '.save-as-new-btn' ).attr(  'data-target', '#ccm-'+ data.name +'-save-as-new' );
+          inner.find( '.save-as-new-btn' ).attr(  'data-target', '#ccm-'+ data.key +'-save-as-new' );
           var modal_save_as_clone = document.importNode( document.querySelector( '#save' ).content, true );
-          modal_save_as_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name +'-save-as-new';
+          modal_save_as_clone.querySelector( '.modal' ).id = 'ccm-'+ data.key +'-save-as-new';
           var modal_save_as_clone_inner = $( modal_save_as_clone.querySelector( 'div' ) );
-          modal_save_as_clone_inner.find('div span' ).eq(1).attr( 'id', 'ccm-embed-code-'+ data.name+'-save-as' );
-          modal_save_as_clone_inner.find( 'div span' ).eq(4).attr( 'id', 'ccm-id-'+ data.name+'-save-as' );
+          modal_save_as_clone_inner.find('div span' ).eq(1).attr( 'id', 'ccm-embed-code-'+ data.key+'-save-as' );
+          modal_save_as_clone_inner.find( 'div span' ).eq(4).attr( 'id', 'ccm-id-'+ data.key+'-save-as' );
           document.body.appendChild(  modal_save_as_clone );
           $( this ).unbind( 'click' );
         });
 
         // click event for rendering of save-app modal dialog
         inner.find( '.save-btn' ).click( function () {
-          inner.find( '.save-btn' ).attr( 'data-target', '#ccm-'+ data.name +'-save' );
+          inner.find( '.save-btn' ).attr( 'data-target', '#ccm-'+ data.key +'-save' );
           var modal_saved_clone = document.importNode( document.querySelector( '#save' ).content, true );
-          modal_saved_clone.querySelector( '.modal' ).id = 'ccm-'+ data.name +'-save';
+          modal_saved_clone.querySelector( '.modal' ).id = 'ccm-'+ data.key +'-save';
           var modal_saved_clone_inner = $( modal_saved_clone.querySelector( 'div' ) );
-          modal_saved_clone_inner.find('div span' ).eq(1).attr( 'id', 'ccm-embed-code-'+ data.name+'-save' );
-          modal_saved_clone_inner.find( 'div span' ).eq(4).attr( 'id', 'ccm-id-'+ data.name+'-save' );
+          modal_saved_clone_inner.find('div span' ).eq(1).attr( 'id', 'ccm-embed-code-'+ data.key+'-save' );
+          modal_saved_clone_inner.find( 'div span' ).eq(4).attr( 'id', 'ccm-id-'+ data.key+'-save' );
           document.body.appendChild(  modal_saved_clone );
           $( this ).unbind( 'click' );
         });
