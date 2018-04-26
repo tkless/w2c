@@ -41,7 +41,7 @@ $( document ).ready( function() {
 
   function setPreviewsContent( data ) {
 
-    var clone = document.importNode( document.querySelector( '#all-components' ).content, true );
+    var clone = document.importNode( document.querySelector( '#components' ).content, true );
     var inner = $( clone.querySelector('li') );
 
     inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
