@@ -6,6 +6,24 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "marking_words": {
+    "key": "marking_words",
+    "title": "Marking Words",
+    "abstract": "Component for marking the specific words.",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/marking_words/versions/ccm.marking_words-1.0.0.js",
+        "minified":"https://ccmjs.github.io/tkless-components/marking_words/versions/ccm.marking_words-1.0.0.min.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/tkless-components/",
+    "demos": [
+      [  "ccm.get", "https://ccmjs.github.io/tkless-components/marking_words/resources/configs.js", "demo"  ]
+    ]
+  },
   "exercise": {
     "key": "exercise",
     "title": "Exercise",
@@ -28,32 +46,6 @@ ccm.files[ "w2c_datasets.js" ] = {
         "url": "https://ccmjs.github.io/tkless-components/exercise_builder/versions/ccm.exercise_builder-1.0.0.min.js",
         "config": { }
       }
-      /*    {
-            "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-            "config": {
-              "url_to_modify": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.0.0.js",
-              "preview": false,
-              "display_final_component_and_config": false,
-              "no_bootstrap_container": true
-            }
-          }*/
-    ]
-  },
-  "difference_chart": {
-    "key": "difference_chart",
-    "title": "Difference Chart",
-    "abstract": "To show the results of a questionaire for different groups",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://kaul.inf.h-brs.de/data/ccm/difference_chart/versions/ccm.difference_chart-1.0.0.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos":[
-      [ "ccm.get", "https://kaul.inf.h-brs.de/data/ccm/difference_chart/resources/configs.js", "research" ]
     ]
   },
   "pdf_viewer": {
@@ -115,42 +107,6 @@ ccm.files[ "w2c_datasets.js" ] = {
           }*/
     ]
   },
-  "content": {
-    "key": "content",
-    "title": "Content",
-    "abstract": "For rendering a predefined content.",
-    "versions": [
-      {
-        "version": "2.0.0",
-        "source": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-2.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-2.0.0.min.js"
-      },
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/content/resources/configs.min.js", "demo" ]
-    ]
-    /*"factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-2.0.0.js",
-          "external_config": "https://ccmjs.github.io/akless-components/content/resources/configs.min.js",
-          "key_in_external_config": "demo",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
   "comment": {
     "key": "comment",
     "title": "Comment",
@@ -177,70 +133,21 @@ ccm.files[ "w2c_datasets.js" ] = {
        }
      ]*/
   },
-  "eval": {
-    "key": "eval",
-    "title": "Eval",
-    "abstract": "For interpreting a given JavaScript expression.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/eval/resources/screenshot_1.jpg"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/eval/versions/ccm.eval-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/eval/versions/ccm.eval-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/eval/resources/configs.min.js", "demo" ]
-    ]
-    /*"factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/eval/versions/ccm.eval-1.0.0.js",
-          "external_config": "https://ccmjs.github.io/akless-components/eval/resources/configs.min.js",
-          "key_in_external_config": "demo",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
   "cloze": {
     "key": "cloze",
     "title": "Fill-in-the-Blank Text",
     "abstract": "For rendering a fill-in-the-blank text.",
     "screenshots": [
-      "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_1.jpg",
-      "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_2.jpg",
-      "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_3.jpg"
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_1.jpg",
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_2.jpg",
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_3.jpg"
     ],
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
     "versions": [
-      /*{
+      {
         "version": "4.0.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-4.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-4.0.0.min.js"
-      },*/
-      {
-        "version": "3.9.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-3.9.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-3.9.0.min.js"
-      },
-      {
-        "version": "2.2.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-2.2.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-2.2.0.min.js"
-      },
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.js",
+        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.min.js"
       }
     ],
     "developer": "André Kless",
@@ -257,7 +164,7 @@ ccm.files[ "w2c_datasets.js" ] = {
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-3.9.0.js",
+          "url_to_modify": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.js",
           "external_config": "https://ccmjs.github.io/akless-components/cloze/resources/configs.min.js",
           "key_in_external_config": "demo",
           "preview": false,
@@ -266,251 +173,6 @@ ccm.files[ "w2c_datasets.js" ] = {
         }
       }
     ]
-  },
-  "editor": {
-    "key": "editor",
-    "title": "Quill Texteditor",
-    "abstract": "For rendering a quill text editor.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/libs/screenshots/editor_preview_1.jpg"
-    ],
-    "versions": [
-      {
-        "version": "2.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-2.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-2.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]
-    /*"factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "fine_upload": {
-    "key": "fine_upload",
-    "title": "Fine Uploader Connector",
-    "abstract": "Upload a file to a server via Fine Uploader",
-    "screenshots": [
-      "https://ccmjs.github.io/mkaul-components/fine_upload/resources/screenshot_1.jpg"
-    ],
-    "description": "In order to embed the famous Fine Uploader software anywhere, use this connector. see <a href='https://fineuploader.com/' target='_blank'>https://fineuploader.com/</a>: 'Fine Uploader aims to make file-uploading on the web possible in every browser and mobile device. It is cross-browser, dependency-free, and 100% JavaScript. The product is highly customizable, and allows integrators to fine-tune every aspect of their users’ upload experience. Implementation requires only a single CSS file, a JavaScript file, and a server to upload to. Fine Uploader users enjoy widespread browser support and a suite of features, resulting in a smooth experience when uploading files to a website.'",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/fine_upload/versions/ccm.fine_upload-1.0.0.js",
-        "minified":"https://ccmjs.github.io/mkaul-components/fine_upload/versions/ccm.fine_upload-1.0.0.min.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/fine_upload/ccm.fine_upload.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "forum": {
-    "key": "forum",
-    "title": "Forum",
-    "abstract": "For rendering a forum.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/libs/screenshots/forum_preview_1.png"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/forum/versions/ccm.forum-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/forum/versions/ccm.forum-1.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/forum/versions/ccm.forum-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "feedback": {
-    "key": "feedback",
-    "title": "Feedback",
-    "abstract": "For rendering a feedback.",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-1.0.0.min.js"
-      },
-      {
-        "version": "2.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-2.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-2.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/",
-    "demos": [  [ "ccm.get", "https://ccmjs.github.io/tkless-components/feedback/resources/configs.min.js", "demo" ] ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-1.0.0.min.js",
-          "external_config": "https://ccmjs.github.io/tkless-components/feedback/resources/configs.min.js",
-          "key_in_external_config": "demo",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "game_chooser": {
-    "key": "game_chooser",
-    "title": "Game Chooser",
-    "abstract": "Game for quickly choosing one of two answers.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/game_chooser/resources/screenshot_1.jpg",
-      "https://ccmjs.github.io/akless-components/game_chooser/resources/screenshot_2.jpg",
-      "https://ccmjs.github.io/akless-components/game_chooser/resources/screenshot_3.jpg"
-    ],
-    "description": "Game Chooser is a little game implemented in ccm. Game Rules: A number is given and the user has to decide, whether the sum of digits is even or odd as fast as possible. There are two buttons, which the user can press accordingly. The time for choosing is recorded. The range of the numbers can be adjusted via a slider.",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/akless-components/game_chooser/versions/ccm.game_chooser-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "geogebra": {
-    "key": "geogebra",
-    "title": "GeoGebra Connector",
-    "abstract": "<i>ccm</i> connector for GeoGebra",
-    "screenshots": [
-      "https://ccmjs.github.io/mkaul-components/geogebra/resources/screenshot_1.jpg"
-    ],
-    "description": "In order to embed the famous GeoGebra software anywhere, use this connector. For GeoGebra see https://www.geogebra.org: 'GeoGebra is dynamic mathematics software for all levels of education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus in one easy-to-use package. GeoGebra is a rapidly expanding community of millions of users located in just about every country. GeoGebra has become the leading provider of dynamic mathematics software, supporting science, technology, engineering and mathematics (STEM) education and innovations in teaching and learning worldwide.'",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/geogebra/versions/ccm.geogebra-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/geogebra/versions/ccm.geogebra-1.0.0.min.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/geogebra/ccm.geogebra.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "highlight": {
-    "key": "highlight",
-    "title": "Code Highlighting",
-    "abstract": "For Code Highlighting",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/highlight/ccm.highlight.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/"/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/highlight/ccm.highlight.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "input": {
-    "key": "input",
-    "title": "Input",
-    "abstract": "For user inputs.",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/input/versions/ccm.input-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/input/versions/ccm.input-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/input/resources/configs.min.js", "demo" ]
-    ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/input/versions/ccm.input-1.0.0.js",
-          "external_config": "https://ccmjs.github.io/akless-components/input/resources/configs.min.js",
-          "key_in_external_config": "demo",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
   },
   "kanban_board": {
     "key": "kanban_board",
@@ -556,9 +218,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     "title": "Kanban Card",
     "abstract": "For rendering a kanban card.",
     "screenshots": [
-      "https://ccmjs.github.io/akless-components/kanban_card/resources/preview_1.jpg",
-      "https://ccmjs.github.io/akless-components/kanban_card/resources/preview_2.png",
-      "https://ccmjs.github.io/akless-components/kanban_card/resources/preview_3.png"
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_1.jpg",
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_2.png",
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_3.png"
     ],
     "versions": [
       {
@@ -623,63 +285,6 @@ ccm.files[ "w2c_datasets.js" ] = {
       }
     ]*/
   },
-  "learning_app": {
-    "key": "learning_app",
-    "title": "LearningApp Connector",
-    "abstract": "<i>ccm</i> connector for learning apps",
-    "screenshots": [
-      "https://ccmjs.github.io/mkaul-components/learning_app/resources/screenshot_1.jpg"
-    ],
-    "description": "In order to embed the famous LearningApps software anywhere, use this connector. 'LearningApps.org is a Web 2.0 application, to support learning and teaching processes with small interactive modules. Those modules can be used directly in learning materials, but also for self studying. The aim is to collect reusable building blocks and make them available to everyone. Blocks (called Apps) include no specific framework or a specific learning scenario. The blocks are therefore not suitable as complete lessons or tasks, instead they must be embedded in an appropriate teaching scenario', see <a href='http://learningapps.org' target='_blank'>http://learningapps.org</a>.",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/learning_app/versions/ccm.learning_app-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/learning_app/versions/ccm.learning_app-1.0.0.min.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/learning_app/ccm.learning_app.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "log": {
-    "key": "log",
-    "title": "Logger",
-    "abstract": "For data logging.",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/log/versions/ccm.log-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/log/versions/ccm.log-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/"/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/log/versions/ccm.log-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
   "news": {
     "key": "news",
     "title": "News",
@@ -698,36 +303,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ "ccm.get", "https://ccmjs.github.io/tkless-components/news/resources/configs.min.js", "demo" ]
-  },
-  "question": {
-    "key": "question",
-    "title": "Question",
-    "abstract": "For rendering a question and given answers.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/libs/screenshots/question_preview_1.png"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/question/versions/ccm.question-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/question/versions/ccm.question-1.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/question/versions/ccm.question-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
   },
   "quiz": {
     "key": "quiz",
@@ -888,154 +463,6 @@ ccm.files[ "w2c_datasets.js" ] = {
         }
       }*/
     ]
-  },
-  "testsuite": {
-    "key": "testsuite",
-    "title": "Test Suite",
-    "abstract": "For running unit tests.",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/testsuite/versions/ccm.testsuite-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/testsuite/versions/ccm.testsuite-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/"/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/testsuite/versions/ccm.testsuite-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "thumb_rating": {
-    "key": "thumb_rating",
-    "title": "Thumb Rating",
-    "abstract": "For rendering a thumb rating.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/libs/screenshots/thumb_rating_preview_1.png"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/tkless/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "user": {
-    "key": "user",
-    "title": "User",
-    "abstract": "For user authentication.",
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/user/versions/ccm.user-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/user/versions/ccm.user-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/user/resources/configs.min.js", "demo" ]
-    ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/user/versions/ccm.user-1.0.0.js",
-          "external_config": "https://ccmjs.github.io/akless-components/user/resources/configs.min.js",
-          "key_in_external_config": "demo",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "uml": {
-    "key": "uml",
-    "title": "UML Connector",
-    "abstract": "<i>ccm</i> connector for PlantUML",
-    "screenshots": [
-      "https://ccmjs.github.io/mkaul-components/uml/resources/screenshot_1.jpg"
-    ],
-    "description": "In order to embed the famous PlantUML software anywhere, use this connector. PlantUML.com is a web server that generates diagrams in the cloud. There are also various extensions or add-ons that incorporate PlantUML, see <a href='http://plantuml.com/' target='_blank'>http://plantuml.com/</a>",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/uml/versions/ccm.uml.1.0.0.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/uml/ccm.uml.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
-  },
-  "upload": {
-    "key": "upload",
-    "title": "Upload",
-    "abstract": "Upload a file to a server",
-    "screenshots": [
-      "https://ccmjs.github.io/mkaul-components/upload/resources/screenshot_1.jpg"
-    ],
-    "description": "With a file chooser you can choose any file from your computer. Upload lets you upload the file to a server.",
-    "versions": [
-      {
-        "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/upload/versions/ccm.upload-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/upload/versions/ccm.upload-1.0.0.min.js"
-      }
-    ],
-    "developer": "Manfred Kaul",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/mkaul/ccm-components/",
-    "demos": [ {} ]/*,
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/mkaul-components/upload/ccm.upload.js",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]*/
   },
   "voting": {
     "key": "voting",
