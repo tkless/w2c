@@ -151,26 +151,15 @@ ccm.files[ "w2c_datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
+    "license": "MIT License",
+    "website": "https://github.com/ccmjs/akless-components/",
     "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.min.js", "demo" ]
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo" ]
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.1.3.min.js",
+        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.1.3.js",
         "config": {}
-      },
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.js",
-          "external_config": "https://ccmjs.github.io/akless-components/cloze/resources/configs.min.js",
-          "key_in_external_config": "demo",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
       }
     ]
   },
