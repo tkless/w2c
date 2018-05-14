@@ -96,15 +96,6 @@ ccm.files[ "w2c_datasets.js" ] = {
           //  onfinish
         }
       }
-      /*    {
-            "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-            "config": {
-              "url_to_modify": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.0.0.js",
-              "preview": false,
-              "display_final_component_and_config": false,
-              "no_bootstrap_container": true
-            }
-          }*/
     ]
   },
   "comment": {
@@ -135,7 +126,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "4.0.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.js",
+        "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-4.0.0.js",
         "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.min.js"
       }
     ],
