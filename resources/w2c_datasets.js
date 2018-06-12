@@ -6,6 +6,105 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "pdf_viewer": {
+    "key": "pdf_viewer",
+    "title": "PDF Viewer",
+    "abstract": "For rendering a PDF",
+    "versions": [
+      {
+        "version": "3.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js"
+      },
+      {
+        "version": "2.1.0",
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js",
+        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.min.js"
+      },
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.js",
+        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.min.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/tkless-components/",
+    "demos": [
+      { pdf: //[ "ccm.get", { url: "https://ccm.inf.h-brs.de", store: "file_upload" }, "1517228670954X509252249813553" ],
+          "//cdn.mozilla.net/pdfjs/tracemonkey.pdf"  }
+    ],
+    "factories": [
+      {
+        "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-2.0.0.js",
+        "config": {
+          "html.inner.1.inner.0": "",
+          "css": [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/bootstrap.css",
+            { "context": "head", "url": "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/font-face.css" },
+            "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/resources/default.css"
+          ],
+          "target": [ "ccm.component", "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-3.0.0.js" ],
+          "file_upload": [ "ccm.component", "https://ccmjs.github.io/tkless-components/file_upload/versions/ccm.file_upload-2.0.0.js", {
+            "data_type": "pdf",
+            "data": { "store": [ "ccm.store", { "store": "file_upload", "url": "https://ccm2.inf.h-brs.de", "method": "POST" } ] }
+          } ]
+        }
+      }
+    ]
+  },
+  "cloze": {
+    "key": "cloze",
+    "title": "Fill-in-the-Blank Text",
+    "abstract": "For rendering a fill-in-the-blank text.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_1.jpg",
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_2.jpg",
+      "https://akless.github.io/ccm-components/cloze/resources/screenshot_3.jpg"
+    ],
+    "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
+    "versions": [
+      {
+        "version": "4.1.0",
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.1.0.js",
+      }
+    ],
+    "developer": "André Kless",
+    "license": "MIT License",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo" ]
+    ],
+    "factories": [
+      {
+        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.2.0.js",
+        "config": {}
+      }
+    ]
+  },
+  "teambuild": {
+    "key": "teambuild",
+    "title": "Team Building",
+    "abstract": "For realtime team building.",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "source": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-2.0.0.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.min.js", "demo" ]
+    ],
+    "factories": [
+      {
+        "url": "https://ccmjs.github.io/akless-components/teambuild_builder/versions/ccm.teambuild_builder-3.0.0.js",
+        "config": {}
+      }
+    ]
+  },
+
+
   "marking_words": {
     "key": "marking_words",
     "title": "Marking Words",
@@ -48,56 +147,6 @@ ccm.files[ "w2c_datasets.js" ] = {
       }
     ]
   },
-  "pdf_viewer": {
-    "key": "pdf_viewer",
-    "title": "PDF Viewer",
-    "abstract": "For rendering a PDF",
-    "versions": [
-      {
-        "version": "2.1.0",
-        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.min.js"
-      },
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/tkless-components/",
-    "demos": [
-      { pdf: //[ "ccm.get", { url: "https://ccm.inf.h-brs.de", store: "file_upload" }, "1517228670954X509252249813553" ],
-          "//cdn.mozilla.net/pdfjs/tracemonkey.pdf"  }
-    ],
-    "factories": [
-      {
-        "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-1.0.0.min.js",
-        "config": {
-          "css": [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/bootstrap.css",
-            { "context": "head", "url": "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/font-face.css" },
-            "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/resources/default.css"
-          ],
-          "target": [ "ccm.component", "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js" ],
-          //"submit_button": true,
-          //"preview": true,
-          "file_upload": [ "ccm.component", "https://ccmjs.github.io/tkless-components/file_upload/versions/ccm.file_upload-1.0.0.js", {
-            data: { store: [ "ccm.store", { "store": "file_upload", "url": "https://ccm.inf.h-brs.de", "method": "POST" } ] }
-          } ]
-          /*
-          "start_values": {
-            "pdf": [ "ccm.get", { url: "http://localhost:8080", store: "file_upload" }, "1518776028787X4201785986475841" ],
-            "css": "['ccm.load','https://ccmjs.github.io/tkless-components/pdf_viewer/resources/default.css']",
-            "user": "['ccm.instance','https://ccmjs.github.io/akless-components/user/versions/ccm.user-2.0.0.min.js',{'sign_on':'demo'}]"
-          }*/
-
-          //  onchange
-          //  onfinish
-        }
-      }
-    ]
-  },
   "comment": {
     "key": "comment",
     "title": "Comment",
@@ -112,35 +161,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos":[ ]
-  },
-  "cloze": {
-    "key": "cloze",
-    "title": "Fill-in-the-Blank Text",
-    "abstract": "For rendering a fill-in-the-blank text.",
-    "screenshots": [
-      "https://akless.github.io/ccm-components/cloze/resources/screenshot_1.jpg",
-      "https://akless.github.io/ccm-components/cloze/resources/screenshot_2.jpg",
-      "https://akless.github.io/ccm-components/cloze/resources/screenshot_3.jpg"
-    ],
-    "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
-    "versions": [
-      {
-        "version": "4.1.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.1.0.js",
-      }
-    ],
-    "developer": "André Kless",
-    "license": "MIT License",
-    "website": "https://github.com/ccmjs/akless-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo" ]
-    ],
-    "factories": [
-      {
-        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.2.0.js",
-        "config": {}
-      }
-    ]
   },
   "kanban_board": {
     "key": "kanban_board",
@@ -325,29 +345,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/tkless-components/slidecast/resources/configs.min.js", "demo" ]
-    ]
-  },
-  "teambuild": {
-    "key": "teambuild",
-    "title": "Team Building",
-    "abstract": "For realtime team building.",
-    "versions": [
-      {
-        "version": "1.0.1",
-        "source": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-1.0.1.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/akless-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.min.js", "demo" ]
-    ],
-    "factories": [
-      {
-        "url": "https://ccmjs.github.io/akless-components/teambuild_builder/versions/ccm.teambuild_builder-2.4.0.min.js",
-        "config": {}
-      }
     ]
   },
   "voting": {
