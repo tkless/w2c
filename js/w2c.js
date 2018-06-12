@@ -6,8 +6,8 @@
  */
 $( document ).ready( function() {
 
-  var ccm = window.ccm[ '15.0.2' ];
-  var datasets;
+  const ccm = window.ccm[ '16.6.0' ];
+  let datasets;
 
   ccm.load( 'resources/w2c_datasets.js', function ( result ) {
     datasets = result;
@@ -41,8 +41,8 @@ $( document ).ready( function() {
 
   function setPreviewsContent( data ) {
 
-    var clone = document.importNode( document.querySelector( '#components' ).content, true );
-    var inner = $( clone.querySelector('li') );
+    const clone = document.importNode( document.querySelector( '#components' ).content, true );
+    const inner = $( clone.querySelector('li') );
 
     inner.find( 'img' ).attr ( 'src', ( data.screenshots ? data.screenshots[ 0 ] : 'resources/preview.jpg' ) );
     inner.find( 'h3' ).html( data.title );
@@ -61,8 +61,8 @@ $( document ).ready( function() {
     $( '#all' ).append( clone );
 
     function renderComponentDetail( data ) {
-      var clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
-      var inner = $( clone.querySelector('div') );
+      const clone = document.importNode( document.querySelector( '#component-detail' ).content, true );
+      const inner = $( clone.querySelector('div') );
 
       inner.find( 'img' ).attr( 'src', 'resources/component.png' );
       inner.find( '#title' ).html( data.title );
@@ -82,7 +82,7 @@ $( document ).ready( function() {
         inner.find( '.descr' ).remove();
       }
 
-      var versions_elem = inner.find( '#versions' );
+      const versions_elem = inner.find( '#versions' );
       data.versions.map( function ( entry ) {
         versions_elem.append( entry.version + ' - <a target="_blank" href="' + entry.source + '">source</a>' + ( entry.minified ? ' - <a target="_blank" href="' + entry.minified + '">minified</a>' : '' ) + '<br>' );
       } );
@@ -113,21 +113,21 @@ $( document ).ready( function() {
     }
 
     function renderCreateAppView( data ) {
-      var loaded_app_key;
-      var is_save_btn;
+      let loaded_app_key;
+      let is_save_btn;
 
-      var embed_code_div_id;
-      var ccm_key_div_id;
+      let embed_code_div_id;
+      let ccm_key_div_id;
 
       initializeModalDilogs();
 
-      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.key + '","url":"https://ccm.inf.h-brs.de","method":"POST"}]');
+      inner.find( '#storage' ).attr('value', '["ccm.store",{"store":"w2c_' + data.key + '","url":"https://ccm2.inf.h-brs.de","method":"POST"}]');
 
-      var config = data.factories[0].config;
+      let config = data.factories[0].config;
 
       config.onfinish = function ( instance ) {
-        var comp_config = instance.getValue();
-        var store = { value: inner.find( '#storage' ).attr( 'value' ) };
+        let comp_config = instance.getValue();
+        let store = { value: inner.find( '#storage' ).attr( 'value' ) };
         ccm.helper.decodeDependencies( store );
 
         if ( loaded_app_key && is_save_btn ) {
@@ -136,7 +136,7 @@ $( document ).ready( function() {
 
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
-            var embed_code = getEmbedCode( data.key, data.versions[0].version, { store: 'w2c_' + data.key, url: 'https://ccm.inf.h-brs.de' }, result.key );
+            let embed_code = getEmbedCode( data.key, data.versions[0].version, { store: 'w2c_' + data.key, url: 'https://ccm2.inf.h-brs.de' }, result.key );
             $( embed_code_div_id ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
             $( ccm_key_div_id ).html('<pre>'+result.key+'</pre>');
             copyToClipboard( embed_code_div_id );
@@ -173,7 +173,7 @@ $( document ).ready( function() {
       }
 
       function initializeModalDilogs() {
-        var factory = data.factories[0];
+        let factory = data.factories[0];
 
         // click event for rendering of load app modal dialog
         inner.find( '.load-app-btn' ).click( function () {
@@ -181,14 +181,14 @@ $( document ).ready( function() {
           // set data-target attr. of modal dialog
           inner.find( '.load-app-btn' ).attr(  'data-target', '#ccm-'+ data.key );
 
-          var load_app_clone = document.importNode( document.querySelector( '#load' ).content, true );
+          let load_app_clone = document.importNode( document.querySelector( '#load' ).content, true );
           load_app_clone.querySelector( '.modal' ).id = 'ccm-'+ data.key;
-          var load_app_inner = $( load_app_clone.querySelector('div') );
+          let load_app_inner = $( load_app_clone.querySelector('div') );
 
           // click Event of load-app button
           load_app_inner.find( '.load-app' ).click( function () {
             if ( 'Web Component Cloud (W2C)' === load_app_inner.find ( '#src option:selected' ).text() ) {
-              ccm.get( { store: 'w2c_' + data.key, url: 'https://ccm.inf.h-brs.de' }, load_app_inner.find ('#key').val(), function ( result ) {
+              ccm.get( { store: 'w2c_' + data.key, url: 'https://ccm2.inf.h-brs.de' }, load_app_inner.find ('#key').val(), function ( result ) {
                 loaded_app_key = load_app_inner.find ('#key').val();
                 //ccm.helper.encodeDependencies( result );
                 factory.config.start_values = result;
@@ -206,9 +206,9 @@ $( document ).ready( function() {
         // click event for rendering modal dialog  with app usage information
         inner.find( '.save-as-new-btn' ).click( function () {
           inner.find( '.save-as-new-btn' ).attr(  'data-target', '#ccm-'+ data.key +'-save-as-new' );
-          var modal_save_as_clone = document.importNode( document.querySelector( '#save' ).content, true );
+          const modal_save_as_clone = document.importNode( document.querySelector( '#save' ).content, true );
           modal_save_as_clone.querySelector( '.modal' ).id = 'ccm-'+ data.key +'-save-as-new';
-          var modal_save_as_clone_inner = $( modal_save_as_clone.querySelector( 'div' ) );
+          const modal_save_as_clone_inner = $( modal_save_as_clone.querySelector( 'div' ) );
           modal_save_as_clone_inner.find('div span' ).eq(1).attr( 'id', 'ccm-embed-code-'+ data.key+'-save-as' );
           modal_save_as_clone_inner.find( 'div span' ).eq(4).attr( 'id', 'ccm-id-'+ data.key+'-save-as' );
           document.body.appendChild(  modal_save_as_clone );
@@ -218,9 +218,9 @@ $( document ).ready( function() {
         // click event for rendering of save-app modal dialog
         inner.find( '.save-btn' ).click( function () {
           inner.find( '.save-btn' ).attr( 'data-target', '#ccm-'+ data.key +'-save' );
-          var modal_saved_clone = document.importNode( document.querySelector( '#save' ).content, true );
+          const modal_saved_clone = document.importNode( document.querySelector( '#save' ).content, true );
           modal_saved_clone.querySelector( '.modal' ).id = 'ccm-'+ data.key +'-save';
-          var modal_saved_clone_inner = $( modal_saved_clone.querySelector( 'div' ) );
+          const modal_saved_clone_inner = $( modal_saved_clone.querySelector( 'div' ) );
           modal_saved_clone_inner.find('div span' ).eq(1).attr( 'id', 'ccm-embed-code-'+ data.key+'-save' );
           modal_saved_clone_inner.find( 'div span' ).eq(4).attr( 'id', 'ccm-id-'+ data.key+'-save' );
           document.body.appendChild(  modal_saved_clone );
@@ -230,7 +230,7 @@ $( document ).ready( function() {
       }
 
       function getEmbedCode( name, version, store_settings, key ) {
-        var index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
+        const index = name + ( version ? '-' + version.replace( /\./g, '-' ) : '' );
         return '&lt;ccm-'+index+' key=\'["ccm.get",'+JSON.stringify(store_settings)+',"'+key+'"]\'>&lt;/ccm-'+index+'&gt;';
       }
 
@@ -247,9 +247,9 @@ $( document ).ready( function() {
       function copyToClipboard( div ) {
 
         $( '.copy' ).click( function() {
-          var range = document.createRange();
+          const range = document.createRange();
           range.selectNode( document.querySelector( div ));
-          var selection = window.getSelection();
+          const selection = window.getSelection();
           selection.removeAllRanges();
           if( ! selection.containsNode( document.querySelector( div ) ) ) selection.addRange(range);
           document.execCommand('copy');
@@ -262,8 +262,8 @@ $( document ).ready( function() {
 
   function resizeHeight() {
     $(window).resize( function () {
-      var max_height =  $( '.gallery-expander-contents' ).outerHeight();
-      var height =  $( '.gallery-contents' ).outerHeight() + max_height;
+      const max_height =  $( '.gallery-expander-contents' ).outerHeight();
+      const height =  $( '.gallery-contents' ).outerHeight() + max_height;
 
       $('.gallery-item active').css( 'height', height);
       $('.gallery-item active > .gallery-expander').css( 'max-height', max_height );

@@ -125,9 +125,8 @@ ccm.files[ "w2c_datasets.js" ] = {
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
     "versions": [
       {
-        "version": "4.0.0",
-        "source": "https://akless.github.io/ccm-components/cloze/versions/ccm.cloze-4.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.min.js"
+        "version": "4.1.0",
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.1.0.js",
       }
     ],
     "developer": "André Kless",
@@ -138,7 +137,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-1.7.0.js",
+        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.2.0.js",
         "config": {}
       }
     ]
@@ -335,8 +334,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.1",
-        "source": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-1.0.1.js",
-        "minified": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-1.0.1.min.js"
+        "source": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-1.0.1.js"
       }
     ],
     "developer": "André Kless",
