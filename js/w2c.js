@@ -127,8 +127,9 @@ $( document ).ready( function() {
 
       config.onfinish = function ( instance ) {
         let comp_config = instance.getValue();
+
         let store = { value: inner.find( '#storage' ).attr( 'value' ) };
-        ccm.helper.decodeDependencies( store );
+        ccm.helper.decodeObject( store );
 
         if ( loaded_app_key && is_save_btn ) {
           comp_config.key = loaded_app_key;
@@ -136,9 +137,9 @@ $( document ).ready( function() {
 
         ccm.helper.solveDependency( store, 'value', function ( store ) {
           store.set( comp_config, function ( result ) {
-            let embed_code = getEmbedCode( data.key, data.versions[0].version, { store: 'w2c_' + data.key, url: 'https://ccm2.inf.h-brs.de' }, result.key );
+            let embed_code = getEmbedCode( data.key, data.versions[0].version, { store: 'w2c_' + data.key, url: 'https://ccm2.inf.h-brs.de' }, result );
             $( embed_code_div_id ).html( '<code>&lt;script src="'+ data.versions[0].source + '"&gt;&lt;/script&gt; '+ embed_code +'</code>' );
-            $( ccm_key_div_id ).html('<pre>'+result.key+'</pre>');
+            $( ccm_key_div_id ).html('<pre>'+result+'</pre>');
             copyToClipboard( embed_code_div_id );
           } );
         } );
@@ -190,8 +191,7 @@ $( document ).ready( function() {
             if ( 'Web Component Cloud (W2C)' === load_app_inner.find ( '#src option:selected' ).text() ) {
               ccm.get( { store: 'w2c_' + data.key, url: 'https://ccm2.inf.h-brs.de' }, load_app_inner.find ('#key').val(), function ( result ) {
                 loaded_app_key = load_app_inner.find ('#key').val();
-                //ccm.helper.encodeDependencies( result );
-                factory.config.start_values = result;
+                factory.config.data = { store: [ 'ccm.store', { x: result } ], key: 'x' };
                 ccm.start( factory.url, factory.config, onAfterFactoryStarted );
 
                 // display save-btn
