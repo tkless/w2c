@@ -17,13 +17,11 @@ ccm.files[ "w2c_datasets.js" ] = {
       },
       {
         "version": "2.1.0",
-        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js"
       },
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -103,8 +101,145 @@ ccm.files[ "w2c_datasets.js" ] = {
       }
     ]
   },
-
-
+  "le": {
+    "key": "le",
+    "title": "Learning Unit",
+    "abstract": "For rendering a learning unit.",
+    "versions": [
+      {
+        "version": "3.0.0",
+        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-3.0.0.js"
+      },
+      {
+        "version": "2.0.0",
+        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-2.0.0.js"
+      },
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-1.0.0.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://akless.github.io/akless/ccm/ccm-overview/configs.min.js", "le" ]
+    ]
+  },
+  "quiz": {
+    "key": "quiz",
+    "title": "Quiz",
+    "abstract": "For rendering a quiz.",
+    "screenshots": [
+      "https://ccmjs.github.io/akless-components/quiz/resources/preview_1.png",
+      "https://ccmjs.github.io/akless-components/quiz/resources/preview_2.png"
+    ],
+    "versions": [
+      {
+        "version": "2.1.1",
+        "source": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-2.1.1.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/quiz/resources/configs.js", "demo" ]
+    ]
+  },
+  "star_rating": {
+    "key": "star_rating",
+    "title": "Star Rating",
+    "abstract": "For rendering a star rating.",
+    "screenshots": [
+      "https://ccmjs.github.io/akless-components/libs/screenshots/star_rating_preview_1.png"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/tkless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/tkless-components/star_rating/resources/configs.js", "local" ]
+    ]
+  },
+  "star_rating_result": {
+    "key": "star_rating_result",
+    "title": "Star Rating Result",
+    "abstract": "For rendering a star rating result.",
+    "screenshots": [
+      "https://ccmjs.github.io/akless-components/libs/screenshots/star_rating_result_preview_1.png"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/tkless-components/",
+    "demos": [  [ "ccm.get", "https://ccmjs.github.io/tkless-components/star_rating/resources/configs.js", "local" ] ]
+  },
+  "kanban_board": {
+    "key": "kanban_board",
+    "title": "Kanban Board",
+    "abstract": "For rendering a kanban board.",
+    "screenshots": [
+      "https://ccmjs.github.io/akless-components/kanban_board/resources/preview_1.png"
+    ],
+    "versions": [
+      {
+        "version": "1.2.0",
+        "source": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.2.0.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/kanban_board/resources/configs.js", "showcase" ]
+    ]
+  },
+  "kanban_card": {
+    "key": "kanban_card",
+    "title": "Kanban Card",
+    "abstract": "For rendering a kanban card.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_1.jpg",
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_2.png",
+      "https://akless.github.io/ccm-components/kanban_card/resources/preview_3.png"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/kanban_card/resources/configs.js", "realtime" ]
+    ],
+    "factories": [
+      {
+        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
+        "config": {
+          "url_to_modify": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.js",
+          "external_config": "https://ccmjs.github.io/akless-components/kanban_card/resources/configs.js",
+          "key_in_external_config": "realtime",
+          "preview": false,
+          "display_final_component_and_config": false,
+          "no_bootstrap_container": true
+        }
+      }
+    ]
+  },
   "marking_words": {
     "key": "marking_words",
     "title": "Marking Words",
@@ -162,86 +297,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos":[ ]
   },
-  "kanban_board": {
-    "key": "kanban_board",
-    "title": "Kanban Board",
-    "abstract": "For rendering a kanban board.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/kanban_board/resources/preview_1.png"
-    ],
-    "versions": [
-      {
-        "version": "1.2.0",
-        "source": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.2.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.2.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/akless-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/kanban_board/resources/configs.min.js", "showcase" ]
-    ]
-  },
-  "kanban_card": {
-    "key": "kanban_card",
-    "title": "Kanban Card",
-    "abstract": "For rendering a kanban card.",
-    "screenshots": [
-      "https://akless.github.io/ccm-components/kanban_card/resources/preview_1.jpg",
-      "https://akless.github.io/ccm-components/kanban_card/resources/preview_2.png",
-      "https://akless.github.io/ccm-components/kanban_card/resources/preview_3.png"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/akless-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/kanban_card/resources/configs.min.js", "realtime" ]
-    ],
-    "factories": [
-      {
-        "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
-        "config": {
-          "url_to_modify": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.js",
-          "external_config": "https://ccmjs.github.io/akless-components/kanban_card/resources/configs.min.js",
-          "key_in_external_config": "realtime",
-          "preview": false,
-          "display_final_component_and_config": false,
-          "no_bootstrap_container": true
-        }
-      }
-    ]
-  },
-  "le": {
-    "key": "le",
-    "title": "Learning Unit",
-    "abstract": "For rendering a learning unit.",
-    "versions": [
-      {
-        "version": "2.0.0",
-        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-2.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-2.0.0.min.js"
-      },
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-1.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/akless-components/",
-    "demos": [
-      [ "ccm.get", "https://akless.github.io/akless/ccm/ccm-overview/configs.min.js", "le" ]
-    ]
-  },
   "news": {
     "key": "news",
     "title": "News",
@@ -262,68 +317,6 @@ ccm.files[ "w2c_datasets.js" ] = {
     "demos": [
       ["ccm.get", "https://ccmjs.github.io/tkless-components/news/resources/configs.min.js", "demo" ]
     ]
-  },
-  "quiz": {
-    "key": "quiz",
-    "title": "Quiz",
-    "abstract": "For rendering a quiz.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/quiz/resources/preview_1.png",
-      "https://ccmjs.github.io/akless-components/quiz/resources/preview_2.png"
-    ],
-    "versions": [
-      {
-        "version": "2.1.0",
-        "source": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-2.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-2.0.0.min.js"
-      }
-    ],
-    "developer": "André Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/akless-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/quiz/resources/configs.min.js", "demo" ]
-    ]
-  },
-  "star_rating": {
-    "key": "star_rating",
-    "title": "Star Rating",
-    "abstract": "For rendering a star rating.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/libs/screenshots/star_rating_preview_1.png"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/tkless-components/",
-    "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/tkless-components/star_rating/resources/configs.min.js", "local" ]
-    ]
-  },
-  "star_rating_result": {
-    "key": "star_rating_result",
-    "title": "Star Rating Result",
-    "abstract": "For rendering a star rating result.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/libs/screenshots/star_rating_result_preview_1.png"
-    ],
-    "versions": [
-      {
-        "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.min.js"
-      }
-    ],
-    "developer": "Tea Kless",
-    "license": "The MIT License (MIT)",
-    "website": "https://github.com/ccmjs/tkless-components/",
-    "demos": [  [ "ccm.get", "https://ccmjs.github.io/tkless-components/star_rating/resources/configs.min.js", "local" ] ]
   },
   "slidecast": {
     "key": "slidecast",
