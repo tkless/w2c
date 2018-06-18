@@ -264,9 +264,12 @@ ccm.files[ "w2c_datasets.js" ] = {
     "abstract": "Free Text Task",
     "versions": [
       {
+        "version": "2.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-2.0.0.js"
+      },
+      {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-1.0.0.js",
-        "minified":"https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -277,7 +280,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/tkless-components/exercise_builder/versions/ccm.exercise_builder-1.0.0.min.js",
+        "url": "https://ccmjs.github.io/tkless-components/exercise_builder/versions/ccm.exercise_builder-2.0.0.js",
         "config": { }
       }
     ]
