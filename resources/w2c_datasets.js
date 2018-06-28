@@ -13,7 +13,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "3.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js"
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-3.0.0.js"
       },
       {
         "version": "2.1.0",
@@ -33,18 +33,9 @@ ccm.files[ "w2c_datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-2.0.0.js",
+        "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-2.1.0.js",
         "config": {
           "html.inner.1.inner.0": "",
-          "css": [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/bootstrap.css",
-            { "context": "head", "url": "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/font-face.css" },
-            "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/resources/default.css"
-          ],
-          "target": [ "ccm.component", "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-3.0.0.js" ],
-          "file_upload": [ "ccm.component", "https://ccmjs.github.io/tkless-components/file_upload/versions/ccm.file_upload-2.0.0.js", {
-            "data_type": "pdf",
-            "data": { "store": [ "ccm.store", { "store": "file_upload", "url": "https://ccm2.inf.h-brs.de", "method": "POST" } ] }
-          } ]
         }
       }
     ]
