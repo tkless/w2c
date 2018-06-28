@@ -28,14 +28,20 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos": [
-      { pdf: //[ "ccm.get", { url: "https://ccm.inf.h-brs.de", store: "file_upload" }, "1517228670954X509252249813553" ],
+      { "pdf": //[ "ccm.get", { "url": "https://ccm.inf.h-brs.de", store: "file_upload" }, "1517228670954X509252249813553" ],
           "//cdn.mozilla.net/pdfjs/tracemonkey.pdf"  }
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-2.1.0.js",
+        "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-2.2.0.js",
         "config": {
           "html.inner.1.inner.0": "",
+          "defaults": {
+            "data.store": "[ 'ccm.store',{ 'store':'pdf_viewer' } ]",
+          },
+          "data": {
+            "store": [ "ccm.store", { "store": "w2c_pdf_viewer", "url": "https://ccm2.inf.h-brs.de" } ]
+          }
         }
       }
     ]
@@ -83,7 +89,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/akless-components/",
     "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.min.js", "demo" ]
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.js", "demo" ]
     ],
     "factories": [
       {
@@ -114,7 +120,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/akless-components/",
     "demos": [
-      [ "ccm.get", "https://akless.github.io/akless/ccm/ccm-overview/configs.min.js", "le" ]
+      [ "ccm.get", "https://akless.github.io/akless/ccm/ccm-overview/configs.js", "le" ]
     ]
   },
   "quiz": {
@@ -156,6 +162,22 @@ ccm.files[ "w2c_datasets.js" ] = {
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/tkless-components/star_rating/resources/configs.js", "local" ]
+    ],
+    "factories": [
+      {
+        "url": "https://ccmjs.github.io/tkless-components/star_rating_builder/versions/ccm.star_rating_builder-1.0.0.js",
+        "config": {
+          "js": [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/selectize/selectize.min.js" ],
+          "data": {
+            "store": [ "ccm.store", { "store": "w2c_star_rating", "url": "https://ccm2.inf.h-brs.de" } ]
+          },
+          "defaults": {
+            "star_title": '[ "Gefällt mir gar nicht", "Gefällt mir nicht", "Ist Ok", "Gefällt mir", "Gefällt mir sehr" ]',
+            "data.store": "[ 'ccm.store',{ 'store':'star_rating_data' } ]",
+            "user": "['ccm.instance','https://ccmjs.github.io/akless-components/user/versions/ccm.user-7.0.1.js',['ccm.get','https://ccmjs.github.io/akless-components/user/resources/configs.js','guest']]"
+          },
+        }
+      }
     ]
   },
   "star_rating_result": {
@@ -239,7 +261,6 @@ ccm.files[ "w2c_datasets.js" ] = {
       {
         "version": "1.0.0",
         "source": "https://ccmjs.github.io/tkless-components/marking_words/versions/ccm.marking_words-1.0.0.js",
-        "minified":"https://ccmjs.github.io/tkless-components/marking_words/versions/ccm.marking_words-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
@@ -302,14 +323,13 @@ ccm.files[ "w2c_datasets.js" ] = {
       {
         "version": "1.0.0",
         "source": "https://ccmjs.github.io/tkless-components/news/versions/ccm.news-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/news/versions/ccm.news-1.0.0.min.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos": [
-      ["ccm.get", "https://ccmjs.github.io/tkless-components/news/resources/configs.min.js", "demo" ]
+      ["ccm.get", "https://ccmjs.github.io/tkless-components/news/resources/configs.js", "demo" ]
     ]
   },
   "slidecast": {
@@ -323,15 +343,14 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/slidecast/versions/ccm.slidecast-1.0.0.js",
-        "monified": "https://ccmjs.github.io/tkless-components/slidecast/versions/ccm.slidecast-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/slidecast/versions/ccm.slidecast-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/tkless-components/",
     "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/tkless-components/slidecast/resources/configs.min.js", "demo" ]
+      [ "ccm.get", "https://ccmjs.github.io/tkless-components/slidecast/resources/configs.js", "demo" ]
     ]
   },
   "voting": {
@@ -344,13 +363,62 @@ ccm.files[ "w2c_datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/voting/versions/ccm.voting-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/voting/versions/ccm.voting-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/voting/versions/ccm.voting-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
     "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/tkless-components/",
-    "demos": [ ]
+    "demos": [ ],
+    "factories": [
+      {
+        "url": "https://ccmjs.github.io/tkless-components/voting_builder/versions/ccm.voting_builder-1.0.0.js",
+        "config": {
+          "data": {
+            "store": [ "ccm.store", { "store": "w2c_voting", "url": "https://ccm2.inf.h-brs.de" } ]
+          },
+          "defaults": {
+            "data.store": "[ 'ccm.store',{ 'store':'voting_data' } ]",
+            "user": "['ccm.instance','https://ccmjs.github.io/akless-components/user/versions/ccm.user-7.0.1.js',['ccm.get','https://ccmjs.github.io/akless-components/user/resources/configs.js','guest']]"
+          },
+        }
+      }
+    ]
+  },
+  "thumb_rating": {
+    "title": "Thumb Rating",
+    "abstract": "For rendering a thumb rating.",
+    "screenshots": [
+      "https://akless.github.io/ccm-components/libs/screenshots/thumb_rating_preview_1.png"
+    ],
+    "name": "thumb_rating",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-2.0.0.js"
+      },
+      {
+        "version": "1.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/tkless-components/",
+    "demos": [ ],
+    "factories": [
+      {
+        "url": "https://ccmjs.github.io/tkless-components/thumb_rating_builder/versions/ccm.thumb_rating_builder-1.0.0.js",
+        "config": {
+          "data": {
+            "store": [ "ccm.store", { "store": "w2c_thumb_rating", "url": "https://ccm2.inf.h-brs.de" } ]
+          },
+          "defaults": {
+            "data.store": "[ 'ccm.store',{ 'store':'thumb_rating_data' } ]",
+            "user": "['ccm.instance','https://ccmjs.github.io/akless-components/user/versions/ccm.user-7.0.1.js',['ccm.get','https://ccmjs.github.io/akless-components/user/resources/configs.js','guest']]"
+          },
+        }
+      }
+    ]
   }
 };
