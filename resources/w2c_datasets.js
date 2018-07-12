@@ -6,6 +6,79 @@
  */
 
 ccm.files[ "w2c_datasets.js" ] = {
+  "chat": {
+    "key": "chat",
+    "title": "Chat",
+    "abstract": "For rendering a chat to any component.",
+    "versions": [
+      {
+        "version": "3.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/comment/versions/ccm.comment-3.0.0.js"
+      }
+    ],
+    "developer": "Tea Kless",
+    "license": "The MIT License (MIT)",
+    "website": "https://github.com/ccmjs/tkless-components/",
+    "demos":[ {
+      "chat": true,
+      "editable": true,
+      "data": {
+        "store": [ "ccm.store", { "store": "chat" } ],
+        "key": "demo"
+      },
+      "user": [ "ccm.instance", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-7.0.1.js",
+        {
+          "html.logged_in": {
+            "id": "logged_in",
+            "class": "row",
+            "style": "float:none",
+            "inner":
+              {
+                "id": "button",
+                "class": "btn btn-default",
+                "inner": [
+                  {
+                    "tag": "span",
+                    "id": "user",
+                    "inner": [
+                      { "class": "glyphicon glyphicon-user" },
+                      "%user%&#8196;"
+                    ]
+                  },
+                  {
+                    "tag": "span",
+                    "class": "glyphicon glyphicon-log-out",
+                  },
+                  "Logout"
+                ],
+                "onclick": "%click%"
+              }
+
+          },
+          "html.logged_out": {
+            "id": "logged_out",
+            "class": "row",
+            "style": "float:none",
+            "inner": {
+              "id": "button",
+              "class": "btn btn-default",
+              "inner": [
+                {
+                  "tag": "span",
+                  "class": "glyphicon glyphicon-log-in"
+                },
+                "Login"
+              ],
+              "onclick": "%click%"
+            }
+          },
+          "realm": "guest",
+          "title": "Guest Mode: Please enter any username",
+          "no_password": true
+        }
+      ]
+    } ]
+  },
   "pdf_viewer": {
     "key": "pdf_viewer",
     "title": "PDF Viewer",
