@@ -109,9 +109,6 @@ ccm.files[ "w2c_datasets.js" ] = {
         "url": "https://ccmjs.github.io/tkless-components/pdf_viewer_builder/versions/ccm.pdf_viewer_builder-2.2.0.js",
         "config": {
           "html.inner.1.inner.0": "",
-          "defaults": {
-            "data.store": "[ 'ccm.store',{ 'store':'pdf_viewer' } ]",
-          },
           "data": {
             "store": [ "ccm.store", { "store": "w2c_pdf_viewer", "url": "https://ccm2.inf.h-brs.de" } ]
           }
