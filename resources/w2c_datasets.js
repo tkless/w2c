@@ -139,7 +139,7 @@ ccm.files[ "w2c_datasets.js" ] = {
     "license": "MIT License",
     "website": "https://github.com/ccmjs/akless-components/",
     "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo" ]
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo_old" ]
     ],
     "factories": [
       {
