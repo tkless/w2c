@@ -13,27 +13,10 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 
 <body id="w2c" data-spy="scroll" data-target=".navbar" data-offset="60">
+
   <!-- Navbar
-  ================================================== -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#w2c">W2C</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-main">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="components.html">COMPONENTS</a></li>
-          <li><a href="getting_started.html">DOCUMENTATION</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    ================================================== -->
+  <div id="nav"></div>
 
   <!-- Jumbotron
   ================================================== -->
@@ -66,37 +49,7 @@
   </div>
 
   <!-- Container (Contact Section) -->
-  <div id="contact" class="container-fluid bg-grey">
-    <h2 class="text-center">CONTACT</h2>
-    <div class="row">
-      <div class="col-sm-5">
-        <p>Contact us and we'll get back to you within 24 hours.</p>
-        <p><span class="glyphicon glyphicon-map-marker"></span> Germany, GER</p>
-        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;
-          <a href="mailto:andre.kless@web.de?subject=W2C&amp;bcc=tea.kless@web.de">Andre Kless</a>
-        </p>
-        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;
-          <a href="mailto:tea.kless@web.de?subject=W2C&amp;bcc=andre.kless@web.de">Tea Kless</a>
-        </p>
-      </div>
-      <div class="col-sm-7 slideanim">
-        <div class="row">
-          <div class="col-sm-6 form-group">
-            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-          </div>
-          <div class="col-sm-6 form-group">
-            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-          </div>
-        </div>
-        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-        <div class="row">
-          <div class="col-sm-12 form-group">
-            <button class="btn btn-default pull-right" type="submit" disabled="disabled">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="contact" class="container-fluid bg-grey"></div>
 
   <!-- Container (Footer Section) -->
   <footer class="container-fluid text-center">
@@ -116,7 +69,7 @@
         event.preventDefault();
 
         // Store hash
-        var hash = this.hash;
+        let hash = this.hash;
 
         // Using jQuery's animate() method to add smooth page scroll
         // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
@@ -131,14 +84,17 @@
     });
     $( window ).scroll( function() {
       $( ".slideanim").each( function(){
-        var pos = $( this ).offset().top;
+        let pos = $( this ).offset().top;
 
-        var winTop = $ (window ).scrollTop();
+        let winTop = $ (window ).scrollTop();
         if ( pos < winTop + 600 ) {
           $( this ).addClass( "slide" );
         }
       });
     });
+
+    $( "#contact" ).load( "html/contact.html" );
+    $( "#nav" ).load( "html/navigation.html" );
   </script>
 
 </body>
