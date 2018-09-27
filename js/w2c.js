@@ -158,6 +158,9 @@ $( document ).ready( function() {
         inner.find( '#render-factory' ).append( instance.root );
         resizeHeight();
         renderPreview( instance, data );
+        instance.element.querySelector( '#button-advanced' ).addEventListener( 'click', function () {
+          resizeHeight();
+        } );
 
         inner.find( '.save-as-new-btn' ).click( function() {
           embed_code_div_id = '#ccm-embed-code-'+ data.key+'-save-as';
