@@ -1,0 +1,7 @@
+.screenshot:hover{
+  cursor: pointer;
+}
+
+.screenshot > h5:hover {
+  color: lightgray !important;
+}
