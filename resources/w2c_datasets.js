@@ -240,7 +240,7 @@ ccm.files[ "w2c_datasets.js" ] = {
       {
         "url": "https://ccmjs.github.io/tkless-components/star_rating_builder/versions/ccm.star_rating_builder-1.0.0.js",
         "config": {
-          "js": [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/selectize/selectize.js" ],
+          "js": [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/selectize/selectize.min.js" ],
           "data": {
             "store": [ "ccm.store", { "store": "w2c_star_rating", "url": "https://ccm2.inf.h-brs.de" } ]
           },
