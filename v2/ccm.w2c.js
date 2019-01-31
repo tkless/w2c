@@ -131,7 +131,6 @@
 
         }
       },
-      nav: [ "ccm.load", { "url": "resources/navbar.html", "type": "data" } ],
       data: {
         "store": [ "ccm.store", { "name": "w&s_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
         "key": { }
