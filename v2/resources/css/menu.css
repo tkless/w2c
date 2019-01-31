@@ -1,0 +1,42 @@
+#element, #main {
+  height: 100%;
+}
+
+#main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.container-fluid {
+  padding: 0 60px 0 50px;
+}
+
+.bg-gray {
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+  padding: 60px 50px;
+}
+
+#component{
+  padding-top: 2em;
+}
+
+#abstract {
+  padding-bottom: 3em;
+}
+
+#section {
+  color: #626c6e;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  line-height: 1em;
+  font-size: 1.3em;
+}
+
+#content {
+  height: 100%;
+}
+
+#content > * {
+  height: 100%;
+}
