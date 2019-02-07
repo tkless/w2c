@@ -10,7 +10,7 @@
 
     name: 'w2c',
 
-    ccm: 'https://ccmjs.github.io/ccm/versions/ccm-19.0.0.js',
+    ccm: 'https://ccmjs.github.io/ccm/versions/ccm-20.0.0.js',
 
     config: {
       html: {
@@ -135,7 +135,7 @@
         "store": [ "ccm.store", { "name": "w&s_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
         "key": { }
       },
-      menu:  [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.4.3.js", {
+      menu:  [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.4.4.js", {
         "html": {
           "main": {
             "id": "main",
@@ -167,7 +167,7 @@
           "resources/css/menu.css"
         ]
         } ],
-      listing: [ "ccm.component", "https://ccmjs.github.io/akless-components/listing/versions/ccm.listing-2.0.1.js", {
+      listing: [ "ccm.component", "https://ccmjs.github.io/akless-components/listing/versions/ccm.listing-2.0.3.js", {
         "key": "local",
         "html": {
           "main": {
@@ -178,7 +178,7 @@
             }
           },
           "entry": {
-            "class": "entry col-md-2 col-sm-4 mx-auto",
+            "class": "entry col-md-2 col-sm-4 mx-auto mt-3 mb-3",
             "inner": [
               {
                 "class": "screenshot",
@@ -207,7 +207,7 @@
         },
         "css": [ "ccm.load", "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", "resources/css/listing.css" ]
       } ],
-      component_manager: [ "ccm.component", "https://ccmjs.github.io/akless-components/component_manager/versions/ccm.component_manager-2.0.0.js",
+      component_manager: [ "ccm.component", "https://ccmjs.github.io/akless-components/component_manager/versions/ccm.component_manager-2.2.5.js",
         [ "ccm.get", "https://ccmjs.github.io/akless-components/component_manager/resources/configs.js", "demo", {
           "menu": {
             "component": [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.3.0.js" ],
@@ -392,7 +392,6 @@
                   data: { entries: [ {"title": 'Overview'}, {"title": 'Create App'} ] },
                   onclick: async ( event, menu ) => {
                     const tab = event.nr;
-;
                     switch ( tab ) {
                       case 2:
                         const builder = await self.ccm.component( data.ignore.builder[0].url );
@@ -414,8 +413,9 @@
                         } );
                         $.setContent( menu.element.querySelector( '#content' ), comp_element );
                         const demo = await self.ccm.component( data.url );
-                        const demo_inst = await demo.start( data.ignore.demos[0].config );
-                        menu.element.querySelector( '#demo' ).appendChild( demo_inst.root );
+                        const config = await $.solveDependency( data.ignore.demos[0].config );
+                        config.root = menu.element.querySelector( '#demo' );
+                        await demo.start( config );
                         break;
                     }
 
