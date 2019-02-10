@@ -19,7 +19,6 @@
           "inner": [
             {
               "id": "head",
-              "class": "mb-5",
               "inner": [
                 {
                   "id": "nav-items",
@@ -362,7 +361,6 @@
             }
           }
         } );
-        $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
 
         setUpNavItems();
         renderHome();
@@ -390,12 +388,20 @@
               $.setContent(  main_elem.querySelector( '#footer-section' ), ''  );
               $.setContent( main_elem.querySelector( '#content' ), ( $.html({
                 "id": "title",
-                "inner": {
-                  "tag": "h2",
-                  "class": "text-monospace",
-                  "style": "font-weight: bold !important; color: #239BD1;",
-                  "inner": data.title
-                }
+                "class": "d-flex mb-4 align-items-center",
+                "inner": [
+                  {
+                    "id": "icon",
+                    "tag": "img",
+                    "src": data.icon
+                  },
+                  {
+                    "tag": "h2",
+                    "class": "text-monospace ml-3",
+                    "style": "font-weight: bold !important; color: #239BD1;",
+                    "inner": data.title
+                  }
+                ]
               } ) ) );
 
               const menu = await my.menu.start( {
@@ -441,10 +447,12 @@
 
         function renderHome() {
           setNavItemActive( '#home' );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
         }
         
         function renderHowTo() {
           setNavItemActive( '#how-to' );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
         }
 
         function clearContentDiv() {
