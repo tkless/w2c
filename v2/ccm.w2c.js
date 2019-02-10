@@ -1,7 +1,7 @@
 /**
  * @overview ccm component component cloud
  * @author Tea Kless <tea.kless@web.de> 2018
- * @license MIT License
+ * @copyright Tea Kless - All rights reserved.
  */
 
 ( function () {
@@ -19,6 +19,7 @@
           "inner": [
             {
               "id": "head",
+              "class": "mb-5",
               "inner": [
                 {
                   "id": "nav-items",
@@ -29,8 +30,8 @@
                       "id": "brand",
                       "inner": {
                         "tag": "img",
-                        "src": "resources/w&s.svg",
-                        "width": "50px",
+                        "src": "resources/img/learningApp_market_logo.svg",
+                        "width": "140px",
                         "alt": "work&study Logo"
                       }
                     },
@@ -67,7 +68,12 @@
               ]
             },
             {
-              "id": "content"
+              "id": "content",
+              "class": "mb-5 mt-5"
+            },
+            {
+              "id": "footer-section",
+              "class": "mt-5"
             }
           ]
         },
@@ -135,6 +141,7 @@
         "store": [ "ccm.store", { "name": "w&s_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
         "key": { }
       },
+      footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data" } ],
       menu:  [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.4.4.js", {
         "html": {
           "main": {
@@ -178,7 +185,7 @@
             }
           },
           "entry": {
-            "class": "entry col-md-2 col-sm-4 mx-auto mt-3 mb-3",
+            "class": "entry col-md-4 col-sm-4 mx-auto mt-3 mb-3",
             "inner": [
               {
                 "class": "screenshot",
@@ -355,13 +362,16 @@
             }
           }
         } );
+        $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
 
         setUpNavItems();
-        await renderAllComponents();
+        renderHome();
 
         $.setContent( self.element, main_elem );
 
         async function renderAllComponents() {
+          setNavItemActive( '#all-components' );
+
           await my.listing.start( {
             root: main_elem.querySelector( '#content' ),
             data: my.data,
@@ -377,6 +387,7 @@
               return 0;
             },
             onclick: async ( event, element, data ) => {
+              $.setContent(  main_elem.querySelector( '#footer-section' ), ''  );
               $.setContent( main_elem.querySelector( '#content' ), ( $.html({
                 "id": "title",
                 "inner": {
@@ -428,6 +439,18 @@
           } );
         }
 
+        function renderHome() {
+          setNavItemActive( '#home' );
+        }
+        
+        function renderHowTo() {
+          setNavItemActive( '#how-to' );
+        }
+
+        function clearContentDiv() {
+          $.setContent( main_elem.querySelector( '#content' ), '' );
+        }
+
         function setUpNavItems() {
           main_elem.querySelectorAll( '.nav-a' ).forEach( item => {
             item.addEventListener( "click", event => {
@@ -443,6 +466,7 @@
                   event.target.classList.add( 'active' );
                   main_elem.querySelector( '#nav-items' ).classList.remove( 'responsive' );
                   clearContentDiv();
+                  $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
                   renderAllComponents();
                   break;
                 case 'how-to':
@@ -457,12 +481,8 @@
 
         }
 
-        function renderHome() {}
-        
-        function renderHowTo() {}
-
-        function clearContentDiv() {
-          $.setContent( main_elem.querySelector( '#content' ), '' );
+        function setNavItemActive( nav_id ) {
+          main_elem.querySelector( nav_id ).classList.add( 'active' );
         }
 
       };
