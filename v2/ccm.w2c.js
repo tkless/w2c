@@ -30,7 +30,7 @@
                       "inner": {
                         "tag": "img",
                         "src": "resources/img/learningApp_market_logo.svg",
-                        "width": "140px",
+                        "width": "160px;",
                         "alt": "work&study Logo"
                       }
                     },
@@ -69,6 +69,9 @@
             {
               "id": "content",
               "class": "mb-5 mt-5"
+            },
+            {
+              "id": "feedback",
             },
             {
               "id": "footer-section",
@@ -212,6 +215,11 @@
           }
         },
         "css": [ "ccm.load", "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", "resources/css/listing.css" ]
+      } ],
+      feedback: [  "ccm.component", "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-4.0.0.js", {
+        from_above: 20,
+        css: [ "ccm.load", "resources/css/feedback.css"],
+        data: { "store": [ "ccm.store", { "name": "w&s_feedback", "url": "https://ccm2.inf.h-brs.de" } ] }
       } ],
       component_manager: [ "ccm.component", "https://ccmjs.github.io/akless-components/component_manager/versions/ccm.component_manager-2.2.5.js",
         [ "ccm.get", "https://ccmjs.github.io/akless-components/component_manager/resources/configs.js", "demo", {
@@ -361,6 +369,7 @@
             }
           }
         } );
+        await my.feedback.start( { root: main_elem.querySelector( '#feedback' )} );
 
         setUpNavItems();
         renderHome();
