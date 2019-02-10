@@ -35,9 +35,9 @@
                       }
                     },
                     {
+                      "id": "home",
                       "tag": "a",
                       "class": "nav-a",
-                      "id": "home",
                       "inner": "Home"
                     },
                     {
