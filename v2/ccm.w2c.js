@@ -444,8 +444,7 @@
                       case 1:
                         const comp_element = $.html( my.html.overview, {
                           autor: data.developer,
-                          note: "Our components can be used platform-independent and therefore the generated content can be " +
-                            "embedded on any website and used in real time. For more information please check out our getting started pages.",
+                          note: data.description? data.description: $.html( { "class": "text-muted", "inner": "No Content provided. No Content provided. No Content provided. No Content provided. No Content provided. No Content provided." } ),
                           abstract: data.abstract
                         } );
                         $.setContent( menu.element.querySelector( '#content' ), comp_element );
