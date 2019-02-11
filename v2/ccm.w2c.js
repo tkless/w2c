@@ -148,7 +148,7 @@
         "store": [ "ccm.store", { "name": "w&s_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
         "key": { }
       },
-      footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data" } ],
+      footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data", "method": "get" } ],
       menu:  [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.4.4.js", {
         "html": {
           "main": {
