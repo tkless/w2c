@@ -53,7 +53,7 @@
                       "inner": "How To"
                     },
                     {
-                      "id": "lock",
+                      "id": "dashboard",
                       "tag": "a",
                       "class": "nav-a fas fa-lock"
                     }
@@ -475,7 +475,7 @@
           $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
         }
         
-        async function renderFeedback() {
+        async function renderDashboard() {
           await self.user.login();
           setNavItemActive( '#lock' );
           $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
@@ -487,7 +487,7 @@
 
         function setUpNavItems() {
           main_elem.querySelectorAll( '.nav-a' ).forEach( item => {
-            item.addEventListener( "click", event => {
+            item.addEventListener( "click", async event => {
               main_elem.querySelectorAll(  '.nav-a' ).forEach( item => { item.classList.remove( 'active' )});
               switch ( event.target.id ) {
                 case 'home':
@@ -509,9 +509,9 @@
                   clearContentDiv();
                   renderHowTo();
                   break;
-                case 'lock':
-                  main_elem.querySelector( '#lock' ).classList.add( 'active' );
-                  renderFeedback();
+                case 'dashboard':
+                  event.target.classList.add( 'active' );
+                  await renderDashboard();
               }
             } )
           } );
