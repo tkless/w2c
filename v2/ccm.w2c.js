@@ -47,10 +47,15 @@
                       "inner": "All Components"
                     },
                     {
+                      "id": "how-to",
                       "tag": "a",
                       "class": "nav-a",
-                      "id": "how-to",
                       "inner": "How To"
+                    },
+                    {
+                      "id": "lock",
+                      "tag": "a",
+                      "class": "nav-a fas fa-lock"
                     }
                   ]
                 },
@@ -322,6 +327,12 @@
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
         "resources/css/w2c.css"
+      ],
+      user: [ "ccm.instance", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-8.3.1.js",
+        {
+          "title": "Log in for Admins only.",
+        },
+        [ "ccm.get", "https://ccmjs.github.io/akless-components/user/resources/configs.js", "cloud" ]
       ]
     },
 
@@ -463,6 +474,12 @@
           setNavItemActive( '#how-to' );
           $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
         }
+        
+        async function renderFeedback() {
+          await self.user.login();
+          setNavItemActive( '#lock' );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
+        }
 
         function clearContentDiv() {
           $.setContent( main_elem.querySelector( '#content' ), '' );
@@ -492,6 +509,9 @@
                   clearContentDiv();
                   renderHowTo();
                   break;
+                case 'lock':
+                  main_elem.querySelector( '#lock' ).classList.add( 'active' );
+                  renderFeedback();
               }
             } )
           } );
