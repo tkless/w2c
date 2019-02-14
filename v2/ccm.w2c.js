@@ -320,8 +320,8 @@
           },
         } ]
       ],
-      source : { url: 'http://localhost:8080' },
-      db_prefix: 'w&s',
+      source : { url: "https://ccm2.inf.h-brs.de" },
+      db_prefix: "w&s",
       css: [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/bootstrap-4/css/bootstrap.css",
         { "context": "head", "url":"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" },
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
