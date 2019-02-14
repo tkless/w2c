@@ -2,7 +2,7 @@
  * @overview ccm component for creating apps
  * @author Tea Kless <tea.kless@web.de> 2019
  * @copyright Tea Kless - All rights reserved.
- * @version latest (2.0.0)
+ * @version latest (3.0.0)
  * @based on ccm.app_builder by Andrè Kless
  */
 
@@ -11,8 +11,9 @@
   const component = {
 
     name: 'app_creator',
+    version: [3,0,0],
 
-    ccm: 'https://ccmjs.github.io/ccm/ccm.js',
+    ccm: 'https://ccmjs.github.io/ccm/versions/ccm-20.0.0.js',
 
     config: {
 
@@ -270,7 +271,7 @@
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
         { "context": "head", "url": "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" },
-        "resources/default.css"
+        "https://tkless.github.io/w2c/v2/resources/js/app_creator/resources/default.css"
       ]
 
       //  "convert": { "app_to_builder": json => json, "builder_to_app": json => json },
