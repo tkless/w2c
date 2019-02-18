@@ -431,7 +431,7 @@
                     const tab = event.nr;
                     switch ( tab ) {
                       case 2:
-                        const builder = await self.ccm.component( data.ignore.builder[0].url );
+                        const builder = await self.ccm.component( data.ignore.builder[0].url, { parent: self } );
                         data.ignore.builder[0].config.app = [ 'ccm.component', data.url ];
 
                         if ( my.source.url && !my.source.name )
