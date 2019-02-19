@@ -389,6 +389,7 @@
 
         async function renderAllComponents() {
           setNavItemActive( '#all-components' );
+          my.source.name = undefined;
 
           await my.listing.start( {
             root: main_elem.querySelector( '#content' ),
