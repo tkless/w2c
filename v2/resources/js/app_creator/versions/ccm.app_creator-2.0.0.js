@@ -3,6 +3,12 @@
  * @author Tea Kless <tea.kless@web.de> 2019
  * @copyright Tea Kless - All rights reserved.
  * @version latest (2.0.0)
+ * @changes
+ * version 2.0.0 (18.02.2019):
+ * - changed default instance configuration
+ * - more ways for handover app (Embed Code, App ID, URL, QR Code, Download, iBook Widget and SCORM)
+ * - more ways for loading existing app (Embed Code, App ID and URL)
+ * - use of modal dialogs
  */
 
 ( function () {
@@ -54,7 +60,7 @@
                       "tag": "button",
                       "id": "button-load",
                       "class": "btn",
-                      "onclick": "%open_modal%",
+                      "onclick": "%onLoad%",
                       "inner": [
                         {
                           "tag": "span",
@@ -260,12 +266,182 @@
             "class": "lead text-danger",
             "inner": "App was deleted successfully."
           }
+        },
+
+        "handover": {
+          "id": "handover",
+          "inner": [
+            {
+              "class": "d-flex",
+              "inner": [
+                {
+                  "inner": [
+                    {
+                      "id": "embed",
+                      "class": "input-group mb-3",
+                      "inner": [
+                        {
+                          "class": "input-group-prepend",
+                          "inner": {
+                            "tag": "span",
+                            "class": "input-group-text",
+                            "inner": "Embed"
+                          }
+                        },
+                        {
+                          "tag": "input",
+                          "readonly": true,
+                          "type": "text",
+                          "id": "embed_code",
+                          "class": "form-control bg-white",
+                          "aria-label": "Embed Code"
+                        },
+                        {
+                          "class": "input-group-append",
+                          "inner": {
+                            "tag": "button",
+                            "id": "embed_copy",
+                            "class": "btn btn-success",
+                            "type": "button",
+                            "inner": "Copy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "class": "input-group mb-3",
+                      "inner": [
+                        {
+                          "class": "input-group-prepend",
+                          "inner": {
+                            "tag": "span",
+                            "class": "input-group-text",
+                            "inner": "App ID"
+                          }
+                        },
+                        {
+                          "tag": "input",
+                          "readonly": true,
+                          "type": "text",
+                          "id": "app_id",
+                          "class": "form-control bg-white",
+                          "aria-label": "App ID"
+                        },
+                        {
+                          "class": "input-group-append",
+                          "inner": {
+                            "tag": "button",
+                            "id": "id_copy",
+                            "class": "btn btn-success",
+                            "type": "button",
+                            "inner": "Copy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "class": "input-group mb-3",
+                      "inner": [
+                        {
+                          "class": "input-group-prepend",
+                          "inner": {
+                            "tag": "span",
+                            "class": "input-group-text",
+                            "inner": "URL"
+                          }
+                        },
+                        {
+                          "tag": "input",
+                          "readonly": true,
+                          "type": "text",
+                          "id": "app_url",
+                          "class": "form-control bg-white",
+                          "aria-label": "URL"
+                        },
+                        {
+                          "class": "input-group-append",
+                          "inner": {
+                            "tag": "button",
+                            "id": "url_copy",
+                            "class": "btn btn-success",
+                            "type": "button",
+                            "inner": "Copy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                { "id": "qr_code", "class": "pl-2" }
+              ]
+            },
+            {
+              "class": "text-center",
+              "inner": [
+                {
+                  "tag": "button",
+                  "type": "button",
+                  "id": "download",
+                  "class": "btn btn-primary mr-2",
+                  "inner": [
+                    {
+                      "tag": "span",
+                      "class": "fas fa-file-download"
+                    },
+                    " File"
+                  ]
+                },
+                {
+                  "tag": "a",
+                  "id": "booklet",
+                  "class": "btn btn-secondary mr-2",
+                  "inner": [
+                    {
+                      "tag": "span",
+                      "class": "fas fa-bookmark"
+                    },
+                    " Booklet"
+                  ]
+                },
+                {
+                  "tag": "button",
+                  "type": "button",
+                  "id": "ibook",
+                  "class": "btn btn-info mr-2",
+                  "inner": [
+                    {
+                      "tag": "span",
+                      "class": "fas fa-book"
+                    },
+                    " iBook Widget"
+                  ]
+                },
+                {
+                  "tag": "button",
+                  "type": "button",
+                  "id": "scorm",
+                  "class": "btn btn-danger",
+                  "inner": [
+                    {
+                      "tag": "span",
+                      "class": "fas fa-archive"
+                    },
+                    " SCORM"
+                  ]
+                }
+              ]
+            }
+          ]
         }
 
       },
       "data": { "store": [ "ccm.store" ] },
       "warning": "Are you sure you want to delete this App?",
-      "modal": [ "ccm.component",  "https://ccmjs.github.io/tkless-components/modal/ccm.modal.js" ],
+      "modal": [ "ccm.component",  "https://ccmjs.github.io/tkless-components/modal/ccm.modal.js", {
+        "css": [ "ccm.load", "https://use.fontawesome.com/releases/v5.6.3/css/all.css" ]
+      } ],
+      "qr_code": [ "ccm.load", "https://ccmjs.github.io/akless-components/libs/qrcode-generator/qrcode.min.js" ],
+      "helper": [ "ccm.load", { "url": "https://ccmjs.github.io/akless-components/modules/helper.js", "type": "module" } ],
       "css": [ "ccm.load", "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
@@ -328,25 +504,7 @@
 
         // render main HTML structure
         $.setContent( self.element, $.html( self.html.main, {
-          open_modal: async () => {
-            const inst =  await self.modal.start( {
-              modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
-              modal_content: self.html.read,
-              footer: [
-                { "caption": "Load App", "style": "success disabled", "onclick": function () { loadApp( this ); } },
-              ]
-            } );
-            self.element.appendChild( inst.root );
-
-            inst.element.querySelector( "#key" ).oninput = function () {
-              const key = inst.element.querySelector( "#key" ).value.trim();
-              if ( key !== "" && $.isKey( key ) )
-                inst.element.querySelector( 'footer > button' ).classList.remove( 'disabled' );
-              else
-                inst.element.querySelector( 'footer > button' ).classList.add( 'disabled' );
-            };
-            inst.open();
-          },
+          onLoad: loadApp,
           onCreate: createApp,
           onUpdate: updateApp,
           onDelete: deleteApp
@@ -434,7 +592,22 @@
         }
 
         /** when "Load" button has been clicked */
-        async function loadApp( modal ) {
+        async function loadApp() {
+          const modal =  await self.modal.start( {
+            modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
+            modal_content: self.html.read,
+            footer: [
+              { "caption": "Load App", "style": "success disabled", "onclick": function () { loadApp( this ); } },
+            ]
+          } );
+
+          modal.element.querySelector( "#key" ).oninput = function () {
+            const key = inst.element.querySelector( "#key" ).value.trim();
+            if ( key !== "" && $.isKey( key ) )
+              modal.element.querySelector( 'footer > button' ).classList.remove( 'disabled' );
+            else
+              modal.element.querySelector( 'footer > button' ).classList.add( 'disabled' );
+          };
 
           // has user instance? => perform login
           self.user && await self.user.login();
@@ -525,14 +698,11 @@
           app_id = undefined;
 
           // render success message (and slowly fade it out)
-          const inst =  await self.modal.start( {
+          await self.modal.start( {
             modal_title: ' ',
             modal_content: self.html.deleted,
             footer: [ { "caption": "Ok", "style": "success", "onclick": function () { this.close(); } } ]
           } );
-
-          self.element.appendChild( inst.root );
-          inst.open();
 
           // disable "Update" and "Delete" button
           buttons_elem.querySelector( '#button-update' ).classList.add( 'disabled' );
@@ -544,7 +714,7 @@
         }
 
         /** gives app to user */
-        async function handoverApp() {
+        async function handoverApp1() {
 
           // activate "Update" and "Delete" button
           !isLocalStore && [ ...buttons_elem.querySelectorAll( '.disabled' ) ].map( button => button.classList.remove( 'disabled' ) );
@@ -558,10 +728,6 @@
 
           inst.element.querySelector( '#embed-code' ).innerHTML = getEmbedCode();
           inst.element.querySelector( '#id'         ).innerHTML = app_id;
-
-          self.element.appendChild( inst.root );
-
-          inst.open();
 
           inst.element.querySelector( '.copy-embed-code' ).addEventListener( 'click', ()=> {
             copyToClipboard( inst.element.querySelector( '#embed-code' ) );
@@ -596,6 +762,106 @@
 
         }
 
+        /** gives app to user */
+        async function handoverApp() {
+
+          // activate "Update" and "Delete" button
+          !isLocalStore && buttons_elem.querySelectorAll( '.disabled' ).forEach( button => button.classList.remove( 'disabled' ) );
+
+          /**
+           * modal dialog content for handover of the app
+           * @type {Element}
+           */
+          const content = $.html( self.html.handover );
+
+          // render modal dialog
+          await self.modal.start( {
+            "modal_title": "Handover of the App",
+            "modal_content": content,
+            "footer": null
+          } );
+
+          // prepare data store settings (needed for embed code)
+          let store_settings = self.data.store.source(); if ( !isLocalStore ) { store_settings = {}; store_settings[ app_id ] = dataset; }
+
+          /**
+           * embed code for saved app
+           * @type {string}
+           */
+          const embed_code = self.helper.embedCode ? await self.helper.embedCode( self.app.url, store_settings, app_id, undefined, self.ccm ) : undefined;
+
+          // provide App via Embed Code
+          if ( embed_code ) {
+            content.querySelector( '#embed_code' ).value = embed_code;
+            content.querySelector( '#embed_copy' ).addEventListener( 'click', () => copyToClipboard( content.querySelector( '#embed_code' ) ) );
+          }
+          else $.removeElement( content.querySelector( '#embed' ) );
+
+          // provide App ID
+          content.querySelector( '#app_id'  ).value = app_id;
+          content.querySelector( '#id_copy' ).addEventListener( 'click', () => copyToClipboard( content.querySelector( '#app_id' ) ) );
+
+          // provide App via URL
+          const app_url = self.helper.appURL( self.app.url, store_settings, app_id );
+          content.querySelector( '#app_url'  ).value = app_url;
+          content.querySelector( '#url_copy' ).addEventListener( 'click', () => copyToClipboard( content.querySelector( '#app_url' ) ) );
+
+          // provide App via QR Code
+          if ( self.qr_code && qrcode ) {
+            let demoQRCode = qrcode( 0, 'M' );
+            demoQRCode.addData( app_url );
+            demoQRCode.make();
+            let qrCodeSVGTag = document.createElement( 'div' );
+            qrCodeSVGTag.innerHTML = demoQRCode.createImgTag();
+            $.setContent( content.querySelector( '#qr_code' ), qrCodeSVGTag.firstChild );
+          }
+          else $.removeElement( content.querySelector( '#qr_code' ) );
+
+          // provide App via Download as HTML File
+          if ( embed_code && self.helper.downloadApp )
+            content.querySelector( '#download' ).addEventListener( 'click', () => self.helper.downloadApp( embed_code ) );
+          else
+            $.removeElement( content.querySelector( '#download' ) );
+
+          // provide App via Booklet
+          if ( self.booklet )
+            content.querySelector( '#booklet' ).setAttribute( 'href', ( await self.booklet.instance( {
+              app: [ 'ccm.start', self.app.url, self.getValue() ],
+              icon: self.icon
+            } ) ).booklet() );
+          else
+            $.removeElement( content.querySelector( '#booklet' ) );
+
+          // provide App via iBook Widget
+          if ( embed_code && self.helper.iBookWidget )
+            content.querySelector( '#ibook' ).addEventListener( 'click', () => self.helper.iBookWidget( embed_code ) );
+          else
+            $.removeElement( content.querySelector( '#ibook' ) );
+
+          // provide App via SCORM
+          if ( embed_code && self.helper.scorm )
+            content.querySelector( '#scorm' ).addEventListener( 'click', () => self.helper.scorm( embed_code ) );
+          else
+            $.removeElement( content.querySelector( '#scorm' ) );
+
+          /**
+           * copies text inside a HTML element to clipboard
+           * @param element
+           */
+          function copyToClipboard( element ) {
+
+            const range = document.createRange();
+            range.selectNode( element );
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            if ( !selection.containsNode( element ) )
+              selection.addRange( range );
+            document.execCommand( 'copy' );
+
+          }
+
+        }
+
         /**
          * fades out an element
          * @param {Element} elem
@@ -621,7 +887,7 @@
        * returns resulting instance configuration for target component
        * @returns {Object} instance configuration for target component
        */
-      this.getValue = () => builder && builder.getValue && builder.getValue() || null;
+      this.getValue = () => builder && builder.getValue && $.clone( builder.getValue() ) || null;
 
     }
 
