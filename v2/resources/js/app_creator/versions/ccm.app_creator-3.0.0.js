@@ -815,9 +815,9 @@
 
           // render modal dialog
           await self.modal.start( {
-            "modal_title": "Handover of the App",
-            "modal_content": content,
-            "footer": null
+            modal_title: "Handover of the App",
+            modal_content: content,
+            footer: [ { "caption": "Close", "style": "danger", "onclick": function () { this.close(); } } ]
           } );
 
           // prepare data store settings (needed for embed code)
