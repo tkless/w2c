@@ -141,7 +141,7 @@
               "class": "text-primary",
               "inner": "Load an existing App"
             },
-            {
+            /*{
               "class": "form-group",
               "inner": [
                 {
@@ -166,7 +166,7 @@
                   ]
                 }
               ]
-            },
+            },*/
             {
               "class": "form-group",
               "inner": [
@@ -499,7 +499,22 @@
 
         // render main HTML structure
         $.setContent( self.element, $.html( self.html.main, {
-          onLoad: loadApp,
+          onLoad: async () => {
+            const inst =  await self.modal.start( {
+              modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
+              modal_content: self.html.read,
+              footer: [
+                { "caption": "Load App", "style": "success disabled", "onclick": function () { loadApp( this ); } },
+              ]
+            } );
+            inst.element.querySelector( "#key" ).oninput = function () {
+              const key = inst.element.querySelector( "#key" ).value.trim();
+              if ( key !== "" && $.isKey( key ) )
+                inst.element.querySelector( 'footer > button' ).classList.remove( 'disabled' );
+              else
+                inst.element.querySelector( 'footer > button' ).classList.add( 'disabled' );
+            };
+          },
           onCreate: createApp,
           onUpdate: updateApp,
           onDelete: deleteApp
@@ -587,22 +602,7 @@
         }
 
         /** when "Load" button has been clicked */
-        async function loadApp() {
-          const modal =  await self.modal.start( {
-            modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
-            modal_content: self.html.read,
-            footer: [
-              { "caption": "Load App", "style": "success disabled", "onclick": function () { loadApp( this ); } },
-            ]
-          } );
-
-          modal.element.querySelector( "#key" ).oninput = function () {
-            const key = inst.element.querySelector( "#key" ).value.trim();
-            if ( key !== "" && $.isKey( key ) )
-              modal.element.querySelector( 'footer > button' ).classList.remove( 'disabled' );
-            else
-              modal.element.querySelector( 'footer > button' ).classList.add( 'disabled' );
-          };
+        async function loadApp( modal ) {
 
           // has user instance? => perform login
           self.user && await self.user.login();
