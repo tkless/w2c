@@ -800,7 +800,10 @@
         async function handoverApp() {
 
           // activate "Update" and "Delete" button
-          !isLocalStore && buttons_elem.querySelectorAll( '.disabled' ).forEach( button => button.classList.remove( 'disabled' ) );
+          !isLocalStore && buttons_elem.querySelectorAll( 'buttons' ).forEach( button => {
+            if ( button.disabled )
+              button.classList.remove( 'disabled' );
+          } );
 
           /**
            * modal dialog content for handover of the app
