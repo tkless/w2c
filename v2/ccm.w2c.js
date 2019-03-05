@@ -222,7 +222,7 @@
         "css": [ "ccm.load", "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", "resources/css/listing.css" ]
       } ],
       feedback: [  "ccm.component", "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-4.0.0.js", {
-        from_above: 20,
+        from_above: "20",
         css: [ "ccm.load", "resources/css/feedback.css"],
         data: { "store": [ "ccm.store", { "name": "w&s_feedback", "url": "https://ccm2.inf.h-brs.de" } ] }
       } ],
