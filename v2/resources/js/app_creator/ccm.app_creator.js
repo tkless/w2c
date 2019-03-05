@@ -468,7 +468,7 @@
                   "tag": "button",
                   "type": "button",
                   "id": "scorm",
-                  "class": "btn btn-danger",
+                  "class": "btn btn-warning",
                   "inner": [
                     {
                       "tag": "span",
@@ -629,6 +629,9 @@
 
           // save app configuration
           app_id = await self.data.store.set( dataset ); delete dataset.key;
+
+          // no more a new app configuration
+          is_new = false;
 
           // logging of 'create' event
           self.logger && self.logger.log( 'create', $.clone( dataset ) );
