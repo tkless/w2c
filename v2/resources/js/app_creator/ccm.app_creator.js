@@ -132,7 +132,6 @@
         },
 
         "read": {
-          "tag": "form",
           "id": "read",
           "inner": [
             {
@@ -140,46 +139,101 @@
               "class": "text-primary",
               "inner": "Load an existing App"
             },
-            /*{
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "for": "src",
-                  "inner": "Where is your App?",
-                },
-                {
-                  "tag": "select",
-                  "class": "form-control",
-                  "id": "src",
-                  "inner": [
-                    {
-                      "tag": "option",
-                      "inner": "Web Component Cloud (W2C)"
-                    },
-                    {
-                      "tag": "option",
-                      "class": "disabled",
-                      "inner": "Own Server/Database"
-                    }
-                  ]
-                }
-              ]
-            },*/
             {
-              "class": "form-group",
+              "tag": "p",
+              "inner": "Use one of the following ways to load an app:"
+            },
+            {
+              "id": "embed",
+              "class": "input-group mb-3",
               "inner": [
                 {
-                  "tag": "label",
-                  "for": "src",
-                  "inner": "Give here your App Identifier: ",
+                  "class": "input-group-prepend",
+                  "inner": {
+                    "tag": "span",
+                    "class": "input-group-text",
+                    "inner": "Embed"
+                  }
                 },
                 {
                   "tag": "input",
-                  "id": "key",
                   "type": "text",
+                  "id": "embed_code",
                   "class": "form-control",
-                  "placeholder": "ID:"
+                  "aria-label": "Embed Code"
+                },
+                {
+                  "class": "input-group-append",
+                  "inner": {
+                    "tag": "button",
+                    "id": "embed_load",
+                    "class": "btn btn-success",
+                    "type": "button",
+                    "inner": "Load App",
+                    "onclick": "%embed%"
+                  }
+                }
+              ]
+            },
+            {
+              "class": "input-group mb-3",
+              "inner": [
+                {
+                  "class": "input-group-prepend",
+                  "inner": {
+                    "tag": "span",
+                    "class": "input-group-text",
+                    "inner": "App ID"
+                  }
+                },
+                {
+                  "tag": "input",
+                  "type": "text",
+                  "id": "app_id",
+                  "class": "form-control",
+                  "aria-label": "App ID"
+                },
+                {
+                  "class": "input-group-append",
+                  "inner": {
+                    "tag": "button",
+                    "id": "id_copy",
+                    "class": "btn btn-success",
+                    "type": "button",
+                    "inner": "Load App",
+                    "onclick": "%app_id%"
+                  }
+                }
+              ]
+            },
+            {
+              "class": "input-group mb-3",
+              "inner": [
+                {
+                  "class": "input-group-prepend",
+                  "inner": {
+                    "tag": "span",
+                    "class": "input-group-text",
+                    "inner": "URL"
+                  }
+                },
+                {
+                  "tag": "input",
+                  "type": "text",
+                  "id": "app_url",
+                  "class": "form-control",
+                  "aria-label": "URL"
+                },
+                {
+                  "class": "input-group-append",
+                  "inner": {
+                    "tag": "button",
+                    "id": "url_copy",
+                    "class": "btn btn-success",
+                    "type": "button",
+                    "inner": "Load App",
+                    "onclick": "%url%"
+                  }
                 }
               ]
             }
@@ -498,22 +552,7 @@
 
         // render main HTML structure
         $.setContent( self.element, $.html( self.html.main, {
-          onLoad: async () => {
-            const inst =  await self.modal.start( {
-              modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
-              modal_content: self.html.read,
-              footer: [
-                { "caption": "Load App", "style": "success disabled", "onclick": function () { loadApp( this ); } },
-              ]
-            } );
-            inst.element.querySelector( "#key" ).oninput = function () {
-              const key = inst.element.querySelector( "#key" ).value.trim();
-              if ( key !== "" && $.isKey( key ) )
-                inst.element.querySelector( 'footer > button' ).classList.remove( 'disabled' );
-              else
-                inst.element.querySelector( 'footer > button' ).classList.add( 'disabled' );
-            };
-          },
+          onLoad: loadApp,
           onCreate: createApp,
           onUpdate: updateApp,
           onDelete: deleteApp
@@ -601,47 +640,97 @@
         }
 
         /** when "Load" button has been clicked */
-        async function loadApp( modal ) {
+        async function loadApp() {
 
-          // has user instance? => perform login
-          self.user && await self.user.login();
+          // logging of 'read' event
+          self.logger && self.logger.log( 'read' );
 
           /**
-           * entered App-ID
-           * @type {string}
+           * modal dialog content for loading an existing app
+           * @type {Element}
            */
-          const key = modal.element.querySelector( '#key' ).value.trim();
+          const content = $.html( self.html.read, {
+            embed: async () => {
 
-          // load app configuration
-          dataset = await self.data.store.get( key );
+              /**
+               * decomposed embed code
+               * @type {Object}
+               */
+              const result = self.helper.decomposeEmbedCode( content.querySelector( '#embed_code' ).value.trim() );
 
-          // no app configuration with entered App-ID exists? => show failed message
-          if ( !dataset ) return failed();
+              // load app
+              result && await load( result.key, result.store.name ? await ccm.store( result.store ) : undefined );
 
-          // activate "Update" and "Delete" button
-          is_new = false;
-          !isLocalStore && !is_new && buttons_elem.querySelectorAll( 'button[disabled]' ).forEach( button => button.removeAttribute( 'disabled' ) );
+            },
+            app_id: async () => await load( content.querySelector( '#app_id' ).value.trim() ),
+            url: async () => {
 
-          // logging of 'load' event
-          self.logger && self.logger.log( 'load', $.clone( dataset ) );
+              /**
+               * decomposed app URL
+               * @type {Object}
+               */
+              const result = self.helper.decomposeAppURL( content.querySelector( '#app_url' ).value.trim() );
 
-          // remember App-ID
-          app_id = dataset.key; delete dataset.key;
+              // load app
+              result && await load( result.key, result.store.name ? await ccm.store( result.store ) : undefined );
 
-          // render loaded app
-          await renderApp();
+            }
+          } );
 
-          modal.close();
+          // render modal dialog
+          const dialog = await self.modal.start( {
+            modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
+            modal_content: content,
+            footer: null
+          } );
 
-          // perform 'change' callback
-          self.onchange && self.onchange( self );
+          /**
+           * loads a ccm-based app
+           * @param {string|string[]} key - app ID
+           * @param {Object} store - settings for the ccm data store that contains the ccm-based app instance configuration
+           * @returns {Promise<void>}
+           */
+          async function load( key, store=self.data.store ) {
 
-          /** shows failed message */
-          function failed() {
-            const failed_elem = modal.element.querySelector( '#failed' );
-            failed_elem.style.display = 'block';
-            fadeOut( failed_elem );
+            // has user instance? => perform login
+            self.user && await self.user.login();
+
+            // no app ID? => abort
+            if ( !key ) return;
+
+            // load app configuration
+            dataset = await store.get( key );
+
+            // no app configuration with entered App-ID exists? => show failed message
+            if ( !dataset ) return failed();
+
+            // remove modal dialog
+            dialog.close();
+
+            // logging of 'load' event
+            self.logger && self.logger.log( 'load', $.clone( dataset ) );
+
+            // remember App ID
+            app_id = dataset.key; delete dataset.key;
+
+            // starts not from new app configuration
+            is_new = false;
+
+            // render loaded app
+            await renderApp();
+
+            // perform 'change' callback
+            self.onchange && self.onchange( self, 'read' );
+
+            /** shows failed message */
+            function failed() {
+              const failed_elem = dialog.element.querySelector( '#failed' );
+              failed_elem.style.display = 'block';
+              fadeOut( failed_elem );
+            }
+
           }
+
         }
 
         /** when "Update" button has been clicked */
