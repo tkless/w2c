@@ -789,8 +789,8 @@
           } );
 
           // disable "Update" and "Delete" button
-          buttons_elem.querySelector( '#button-update' ).classList.add( 'disabled' );
-          buttons_elem.querySelector( '#button-delete' ).classList.add( 'disabled' );
+          buttons_elem.querySelector( '#button-update' ).removeAttribute( 'disabled' );
+          buttons_elem.querySelector( '#button-delete' ).removeAttribute( 'disabled' );
 
           // has 'change' callback? => perform it
           self.onchange && self.onchange( self );
@@ -802,8 +802,7 @@
 
           // activate "Update" and "Delete" button
           !isLocalStore && buttons_elem.querySelectorAll( 'button' ).forEach( button => {
-            if ( button.disabled )
-              button.classList.remove( 'disabled' );
+            if ( button.disabled ) button.classList.removeAttribute( 'disabled' );
           } );
 
           /**
