@@ -708,55 +708,6 @@
         }
 
         /** gives app to user */
-        async function handoverApp1() {
-
-          // activate "Update" and "Delete" button
-          !isLocalStore && [ ...buttons_elem.querySelectorAll( '.disabled' ) ].map( button => button.classList.remove( 'disabled' ) );
-
-          // render app usage informations
-          const inst = await self.modal.start( {
-            modal_title: '',
-            modal_content: self.html.usage,
-            footer: [ { "caption": "Close", "style": "danger", "onclick": function () { this.close(); } } ]
-          } );
-
-          inst.element.querySelector( '#embed-code' ).innerHTML = getEmbedCode();
-          inst.element.querySelector( '#id'         ).innerHTML = app_id;
-
-          inst.element.querySelector( '.copy-embed-code' ).addEventListener( 'click', ()=> {
-            copyToClipboard( inst.element.querySelector( '#embed-code' ) );
-          } );
-
-          inst.element.querySelector( '.copy-id' ).addEventListener( 'click', ()=> {
-            copyToClipboard( inst.element.querySelector( '#id' ) );
-          } );
-
-          /**
-           * returns embed code for saved app
-           * @returns {string} embed code of saved app
-           */
-          function getEmbedCode() {
-
-            const index = $.getIndex( self.app.url );
-            let store_settings = self.data.store.source(); if ( isLocalStore ) { store_settings = {}; store_settings[ app_id ] = dataset; }
-            return $.escapeHTML( '<script src="' + self.app.url + '"></script><ccm-' + index + ' key=\'["ccm.get",' + JSON.stringify( store_settings ) + ',"' + app_id + '"]\'></ccm-' + index + '>' );
-
-          }
-
-          function copyToClipboard( element ) {
-
-            const range = document.createRange();
-            range.selectNode( element );
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            if( !selection.containsNode( element ) )
-              selection.addRange(range);
-            document.execCommand('copy');
-          }
-
-        }
-
-        /** gives app to user */
         async function handoverApp() {
 
           // activate "Update" and "Delete" button
