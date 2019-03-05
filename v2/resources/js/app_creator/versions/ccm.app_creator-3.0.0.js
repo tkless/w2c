@@ -801,7 +801,7 @@
         async function handoverApp() {
 
           // activate "Update" and "Delete" button
-          !isLocalStore && buttons_elem.querySelectorAll( 'buttons' ).forEach( button => {
+          !isLocalStore && buttons_elem.querySelectorAll( 'button' ).forEach( button => {
             if ( button.disabled )
               button.classList.remove( 'disabled' );
           } );
