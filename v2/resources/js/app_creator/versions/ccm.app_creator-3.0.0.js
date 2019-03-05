@@ -684,7 +684,7 @@
           const dialog = await self.modal.start( {
             modal_title: $.html ( { "tag": "span", "id": "failed", "class": "text-danger", "style": "display: none;", "inner": "App-ID not found" } ) ,
             modal_content: content,
-            footer: null
+            footer: { "caption": "Close", "style": "warning" }
           } );
 
           /**
