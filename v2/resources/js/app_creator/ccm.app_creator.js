@@ -606,7 +606,9 @@
           } );
 
           // activate "Update" and "Delete" button
-          !isLocalStore && !is_new && buttons_elem.querySelectorAll( '.disabled' ).forEach( button => button.removeAttribute( 'disabled' ) );
+          !isLocalStore && !is_new && buttons_elem.querySelectorAll( 'button' ).forEach( button => {
+            if ( button.disabled ) button.removeAttribute( 'disabled' );
+          } );
 
           // update preview of build app
           await updatePreview();
