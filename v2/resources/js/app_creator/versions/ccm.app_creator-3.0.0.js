@@ -802,7 +802,7 @@
 
           // activate "Update" and "Delete" button
           !isLocalStore && buttons_elem.querySelectorAll( 'button' ).forEach( button => {
-            if ( button.disabled ) button.classList.removeAttribute( 'disabled' );
+            if ( button.disabled ) button.removeAttribute( 'disabled' );
           } );
 
           /**
