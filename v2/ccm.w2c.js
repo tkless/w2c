@@ -434,14 +434,15 @@
                     switch ( tab ) {
                       case 2:
                         const builder = await self.ccm.component( data.ignore.builder[0].url, { parent: self } );
-                        data.ignore.builder[0].config.app = [ 'ccm.component', data.url ];
+                        const cfg = $.clone( data.ignore.builder[0].config );
+                        cfg.app = [ 'ccm.component', data.url ];
 
                         if ( my.source.url && !my.source.name )
                           my.source.name = my.db_prefix? my.db_prefix + '_' + data.key: data.key;
 
-                        data.ignore.builder[0].config.data = { store: [ 'ccm.store', my.source ] };
-                        const builder_inst = await builder.start( data.ignore.builder[0].config );
-                        $.setContent( menu.element.querySelector( '#content' ), builder_inst.root );
+                        cfg.data = { store: [ 'ccm.store', my.source ] };
+                        cfg.root = menu.element.querySelector( '#content' );
+                        await builder.start( cfg );
                         break;
                       case 1:
                         const comp_element = $.html( my.html.overview, {
