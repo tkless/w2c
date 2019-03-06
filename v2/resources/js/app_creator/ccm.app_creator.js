@@ -824,7 +824,7 @@
           } );
 
           // prepare data store settings (needed for embed code)
-          let store_settings = self.data.store.source(); if ( !isLocalStore ) { store_settings = {}; store_settings[ app_id ] = dataset; }
+          let store_settings = self.data.store.source(); if ( isLocalStore ) { store_settings = {}; store_settings[ app_id ] = dataset; }
 
           /**
            * embed code for saved app
