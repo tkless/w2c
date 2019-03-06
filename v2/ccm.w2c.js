@@ -414,6 +414,7 @@
                   {
                     "id": "icon",
                     "tag": "img",
+                    "width": "64px",
                     "src": data.icon
                   },
                   {
