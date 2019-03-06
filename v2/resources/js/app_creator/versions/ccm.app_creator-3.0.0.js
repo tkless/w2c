@@ -786,6 +786,7 @@
 
           // forget App-ID
           app_id = undefined;
+          is_new = true;
 
           // render success message (and slowly fade it out)
           await self.modal.start( {
