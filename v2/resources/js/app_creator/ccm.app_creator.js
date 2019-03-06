@@ -606,10 +606,13 @@
             onchange: updatePreview
           } );
 
-          // activate "Update" and "Delete" button
-          !isLocalStore && !is_new && buttons_elem.querySelectorAll( 'button' ).forEach( button => {
-            if ( button.disabled ) button.removeAttribute( 'disabled' );
-          } );
+          // activate/disable "Update" and "Delete" button
+          if ( app_id && !is_new )
+            !isLocalStore && buttons_elem.querySelectorAll( '.disabled' ).forEach( button => button.removeAttribute( 'disabled' ) );
+          else {
+            buttons_elem.querySelector( '#button-update' ).disabled = true;
+            buttons_elem.querySelector( '#button-delete' ).disabled = true;
+          }
 
           // update preview of build app
           await updatePreview();
@@ -785,18 +788,15 @@
 
           // forget App-ID
           app_id = undefined;
+
+          // up to now a new app configuration
           is_new = true;
 
-          // render success message (and slowly fade it out)
-          await self.modal.start( {
-            modal_title: ' ',
-            modal_content: self.html.deleted,
-            footer: [ { "caption": "Ok", "style": "success", "onclick": function () { this.close(); } } ]
-          } );
+          // continue with new empty app configuration
+          dataset = { key: $.generateKey() };
 
-          // disable "Update" and "Delete" button
-          buttons_elem.querySelector( '#button-update' ).removeAttribute( 'disabled' );
-          buttons_elem.querySelector( '#button-delete' ).removeAttribute( 'disabled' );
+          // update frontend
+          await renderApp();
 
           // has 'change' callback? => perform it
           self.onchange && self.onchange( self );
