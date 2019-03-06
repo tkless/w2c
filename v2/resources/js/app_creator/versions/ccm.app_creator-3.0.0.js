@@ -491,6 +491,7 @@
       } ],
       "qr_code": [ "ccm.load", "https://ccmjs.github.io/akless-components/libs/qrcode-generator/qrcode.min.js" ],
       "helper": [ "ccm.load", { "url": "https://ccmjs.github.io/akless-components/modules/helper.js", "type": "module" } ],
+      "app_url": "https://tkless.github.io/w2c/v2/app.html",
       "css": [ "ccm.load", "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
@@ -844,7 +845,7 @@
           content.querySelector( '#id_copy' ).addEventListener( 'click', () => copyToClipboard( content.querySelector( '#app_id' ) ) );
 
           // provide App via URL
-          const app_url = self.helper.appURL( self.app.url, store_settings, app_id );
+          const app_url = self.helper.appURL( self.app.url, store_settings, app_id, self.app_url );
           content.querySelector( '#app_url'  ).value = app_url;
           content.querySelector( '#url_copy' ).addEventListener( 'click', () => copyToClipboard( content.querySelector( '#app_url' ) ) );
 
