@@ -920,9 +920,16 @@
         /** updates website area for app preview */
         async function updatePreview() {
 
+          // no preview element? => abort
+          if ( !preview_elem ) return;
+
+          // prepare app configuration
           let config = self.getValue();
           if ( self.convert && self.convert.builder_to_app ) config = self.convert.builder_to_app( config );
-          preview_elem && $.setContent( preview_elem, ( await self.app.start( config ) ).root );
+          config.root = preview_elem;
+
+          // render app in preview element
+          await self.app.start( config );
         }
 
       };
