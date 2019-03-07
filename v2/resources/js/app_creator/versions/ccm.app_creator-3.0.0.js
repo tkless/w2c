@@ -609,7 +609,9 @@
 
           // activate/disable "Update" and "Delete" button
           if ( app_id && !is_new )
-            !isLocalStore && buttons_elem.querySelectorAll( '.disabled' ).forEach( button => button.removeAttribute( 'disabled' ) );
+            !isLocalStore && buttons_elem.querySelectorAll( 'button' ).forEach( button => {
+              if ( button.disabled ) button.removeAttribute( 'disabled' );
+            } );
           else {
             buttons_elem.querySelector( '#button-update' ).disabled = true;
             buttons_elem.querySelector( '#button-delete' ).disabled = true;
