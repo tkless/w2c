@@ -145,7 +145,7 @@
         }
       },
       data: {
-        "store": [ "ccm.store", { "name": "w&s_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
+        "store": [ "ccm.store", { "name": "ws_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
         "key": { }
       },
       footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data", "method": "get" } ],
@@ -224,7 +224,7 @@
       feedback: [  "ccm.component", "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-4.0.0.js", {
         from_above: "20",
         css: [ "ccm.load", "resources/css/feedback.css"],
-        data: { "store": [ "ccm.store", { "name": "w&s_feedback", "url": "https://ccm2.inf.h-brs.de" } ] }
+        data: { "store": [ "ccm.store", { "name": "ws_feedback", "url": "https://ccm2.inf.h-brs.de" } ] }
       } ],
       component_manager: [ "ccm.component", "https://ccmjs.github.io/akless-components/component_manager/versions/ccm.component_manager-2.2.5.js",
         [ "ccm.get", "https://ccmjs.github.io/akless-components/component_manager/resources/configs.js", "demo", {
