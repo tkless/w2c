@@ -148,7 +148,11 @@
         "store": [ "ccm.store", { "name": "ws_marketplace", "url": "https://ccm2.inf.h-brs.de" } ],
         "key": { }
       },
-      footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data", "method": "get" } ],
+      template: {
+        home: [ "ccm.load", { "url": "resources/home.html", "type": "data", "method": "get" } ],
+        how_to: [ "ccm.load", { "url": "resources/how_to.html", "type": "data", "method": "get" } ],
+        footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data", "method": "get" } ]
+      },
       menu:  [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.4.4.js", {
         "html": {
           "main": {
@@ -469,18 +473,25 @@
 
         function renderHome() {
           setNavItemActive( '#home' );
-          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
+          $.setContent( main_elem.querySelector( '#content' ), $.html( my.template.home ) );
+          main_elem.querySelector( 'button' ).addEventListener( 'click', async ()=> {
+            // render how-to
+            main_elem.querySelector( '#how-to' ).click();
+            main_elem.querySelector( '#content' ).scrollTop = -20;
+          } );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
         }
         
         function renderHowTo() {
           setNavItemActive( '#how-to' );
-          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
+          $.setContent( main_elem.querySelector( '#content' ), $.html( my.template.how_to ) );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
         }
         
         async function renderDashboard() {
           await self.user.login();
           setNavItemActive( '#lock' );
-          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
         }
 
         function clearContentDiv() {
@@ -502,7 +513,7 @@
                   event.target.classList.add( 'active' );
                   main_elem.querySelector( '#nav-items' ).classList.remove( 'responsive' );
                   clearContentDiv();
-                  $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.footer ) );
+                  $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
                   renderAllComponents();
                   break;
                 case 'how-to':
