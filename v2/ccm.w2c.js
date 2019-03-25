@@ -29,7 +29,7 @@
                       "id": "brand",
                       "inner": {
                         "tag": "img",
-                        "src": "resources/img/learningApp_market_logo.svg",
+                        "src": "https://tkless.github.io/w2c/v2/resources/img/learningApp_market_logo.svg",
                         "width": "160px;",
                         "alt": "work&study Logo"
                       }
