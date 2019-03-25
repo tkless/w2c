@@ -149,9 +149,9 @@
         "key": { }
       },
       template: {
-        home: [ "ccm.load", { "url": "resources/home.html", "type": "data", "method": "get" } ],
-        how_to: [ "ccm.load", { "url": "resources/how_to.html", "type": "data", "method": "get" } ],
-        footer: [ "ccm.load", { "url": "resources/footer.html", "type": "data", "method": "get" } ]
+        home: [ "ccm.load", { "url": "https://tkless.github.io/w2c/v2/resources/home.html", "type": "data", "method": "get" } ],
+        how_to: [ "ccm.load", { "url": "https://tkless.github.io/w2c/v2/resources/how_to.html", "type": "data", "method": "get" } ],
+        footer: [ "ccm.load", { "url": "https://tkless.github.io/w2c/v2/resources/footer.html", "type": "data", "method": "get" } ]
       },
       menu:  [ "ccm.component", "https://ccmjs.github.io/akless-components/menu/versions/ccm.menu-2.4.4.js", {
         "html": {
@@ -182,7 +182,7 @@
         },
         "css": [ "ccm.load",
           "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css",
-          "resources/css/menu.css"
+          "https://tkless.github.io/w2c/v2/resources/css/menu.css"
         ]
         } ],
       listing: [ "ccm.component", "https://ccmjs.github.io/akless-components/listing/versions/ccm.listing-2.0.3.js", {
@@ -223,11 +223,11 @@
             ]
           }
         },
-        "css": [ "ccm.load", "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", "resources/css/listing.css" ]
+        "css": [ "ccm.load", "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", "https://tkless.github.io/w2c/v2/resources/css/listing.css" ]
       } ],
       feedback: [  "ccm.component", "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-4.0.0.js", {
         from_above: "20",
-        css: [ "ccm.load", "resources/css/feedback.css"],
+        css: [ "ccm.load", "https://tkless.github.io/w2c/v2/resources/css/feedback.css"],
         data: { "store": [ "ccm.store", { "name": "ws_feedback", "url": "https://ccm2.inf.h-brs.de" } ] }
       } ],
       component_manager: [ "ccm.component", "https://ccmjs.github.io/akless-components/component_manager/versions/ccm.component_manager-2.2.5.js",
@@ -330,7 +330,7 @@
         { "context": "head", "url":"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" },
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
-        "resources/css/w2c.css"
+        "https://tkless.github.io/w2c/v2/resources/css/w2c.css"
       ],
       user: [ "ccm.instance", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-8.3.1.js",
         {
