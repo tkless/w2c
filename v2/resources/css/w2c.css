@@ -9,12 +9,6 @@
 
 
 #head {
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-  margin-bottom: 5rem;
-  position: fixed;
-  width: 100%;
-  background-color: #fff;
-  z-index: 999;
   display: flex;
   justify-content: space-between;
   padding: .5em .8em .5em .5em;
@@ -188,7 +182,6 @@ a.nav-a {
 }
 
 #content {
-  margin-top: 10rem !important;
   height: calc(100% - 62px);
 }
 

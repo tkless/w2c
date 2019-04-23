@@ -330,11 +330,11 @@
         { "context": "head", "url":"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" },
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
-        "https://tkless.github.io/w2c/v2/resources/css/w2c.css"
+        "resources/css/w2c.css"
       ],
       user: [ "ccm.instance", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-8.3.1.js",
         {
-          "title": "Log in for Admins only.",
+          "title": "Log in for Admins only."
         },
         [ "ccm.get", "https://ccmjs.github.io/akless-components/user/resources/configs.js", "cloud" ]
       ]
