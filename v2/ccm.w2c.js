@@ -230,6 +230,7 @@
         css: [ "ccm.load", "https://tkless.github.io/w2c/v2/resources/css/feedback.css"],
         data: { "store": [ "ccm.store", { "name": "ws_feedback", "url": "https://ccm2.inf.h-brs.de" } ] }
       } ],
+      chart: [ "ccm.component", "https://ccmjs.github.io/akless-components/highchart/versions/ccm.highchart-3.0.0.js"],
       component_manager: [ "ccm.component", "https://ccmjs.github.io/akless-components/component_manager/versions/ccm.component_manager-2.2.5.js",
         [ "ccm.get", "https://ccmjs.github.io/akless-components/component_manager/resources/configs.js", "demo", {
           "menu": {
@@ -471,7 +472,7 @@
           } );
         }
 
-        function renderHome() {
+        async function renderHome() {
           setNavItemActive( '#home' );
           $.setContent( main_elem.querySelector( '#content' ), $.html( my.template.home ) );
           main_elem.querySelector( 'button' ).addEventListener( 'click', async ()=> {
@@ -479,9 +480,88 @@
             main_elem.querySelector( '#how-to' ).click();
             main_elem.querySelector( '#content' ).scrollTop = -20;
           } );
+          renderChart();
           $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
         }
-        
+
+        async function renderChart() {
+          const store_names = [ 'ws_chat', 'ws_comment', 'ws_exercise', 'ws_cloze',
+                                'ws_live_poll', 'ws_mark_words', 'ws_pdf_viewer', 'ws_qiuck_decide',
+                                'ws_quiz', 'ws_star_rating', 'ws_teambuild', 'ws_thumb_rating'];
+          const app_title = [ 'Chat', 'Comment', 'Exercise', 'Fill in The Blanks',
+                              'Live Poll', 'Mark Words', 'PDF Viewer', 'Qiuck Decision',
+                              'Quiz', 'Star Rating', 'Team Building', 'Thumb Rating'];
+          let chart_data = [];
+          let max = 0;
+          let max_name = '';
+          let apps_total = 0;
+
+
+          for ( let i = 0; i < store_names.length; i++ ) {
+            let store = await $.solveDependency( [ "ccm.store", { name: store_names[ i ], url: my.source.url } ] );
+            let store_data = await store.get({});
+
+            if( max < store_data.length ) {
+              max = store_data.length;
+              max_name = app_title[ i ];
+            }
+
+            let entry = {
+              name: app_title[ i ],
+              y: store_data.length
+            };
+
+            store_data.length && chart_data.push( entry );
+
+            apps_total = apps_total + store_data.length;
+
+          }
+
+          for( let app in chart_data ){
+            if( chart_data[ app ]. name === max_name ) {
+              chart_data[ app ].sliced = true;
+              chart_data[ app ].selected = true;
+            }
+          }
+
+          await my.chart.start({
+            root: main_elem.querySelector( '#chart' ),
+            settings: {
+              colors: ["#90ed7d", "#7cb5ec", "#85a366", "#f7a35c", "#8085e9", "#f15c80", "#e4d354", "#2b908f", "#434348", "#f45b5b", "#ffcc66", "#91e8e1"],
+              chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+              },
+              title: {
+                text: 'Total: ' + apps_total + ' Apps'
+              },
+              tooltip: {
+                pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
+              },
+              plotOptions: {
+                pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.y}',
+                    style: {
+                      color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                  }
+                }
+              },
+              series: [{
+                name: 'Apps',
+                colorByPoint: true,
+                data: chart_data
+              }]
+            }
+          });
+        }
+
         function renderHowTo() {
           setNavItemActive( '#how-to' );
           $.setContent( main_elem.querySelector( '#content' ), $.html( my.template.how_to ) );
