@@ -53,6 +53,12 @@
                       "inner": "How To"
                     },
                     {
+                      "tag": "a",
+                      "class": "nav-a",
+                      "id": "analytic",
+                      "inner": "App Results"
+                    },
+                    {
                       "id": "dashboard",
                       "tag": "a",
                       "class": "nav-a fas fa-lock"
@@ -327,17 +333,20 @@
       ],
       source : { url: "https://ccm2.inf.h-brs.de" },
       db_prefix: "ws",
-      css: [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/bootstrap-4/css/bootstrap.css",
-        { "context": "head", "url":"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" },
-        "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
-        { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
-        "https://tkless.github.io/w2c/v2/resources/css/w2c.css"
-      ],
       user: [ "ccm.instance", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-8.3.1.js",
         {
           "title": "Log in for Admins only."
         },
         [ "ccm.get", "https://ccmjs.github.io/akless-components/user/resources/configs.js", "cloud" ]
+      ],
+      analytic: [ "ccm.component", "https://ccmjs.github.io/akless-components/result/versions/ccm.result-2.0.0.js", [
+        "ccm.get","https://ccmjs.github.io/akless-components/result/resources/configs.js","ws"
+      ] ],
+      css: [ "ccm.load", "https://ccmjs.github.io/tkless-components/libs/bootstrap-4/css/bootstrap.css",
+        { "context": "head", "url":"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" },
+        "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
+        { "context": "head", "url": "https://use.fontawesome.com/releases/v5.6.3/css/all.css" },
+        "https://tkless.github.io/w2c/v2/resources/css/w2c.css"
       ]
     },
 
@@ -574,6 +583,12 @@
           $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
         }
 
+        async function renderAnalytic() {
+          await my.analytic.start( { root:  main_elem.querySelector( '#content' ) } );
+          setNavItemActive( '#analytic' );
+          $.setContent( main_elem.querySelector( '#footer-section' ), $.html( my.template.footer ) );
+        }
+
         function clearContentDiv() {
           $.setContent( main_elem.querySelector( '#content' ), '' );
         }
@@ -602,9 +617,14 @@
                   clearContentDiv();
                   renderHowTo();
                   break;
+                case 'analytic':
+                  event.target.classList.add( 'active' );
+                  await renderAnalytic();
+                  break;
                 case 'dashboard':
                   event.target.classList.add( 'active' );
                   await renderDashboard();
+                  break;
               }
             } )
           } );
