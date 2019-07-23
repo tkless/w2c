@@ -489,7 +489,7 @@
         "css": [ "ccm.load", "https://use.fontawesome.com/releases/v5.6.3/css/all.css" ]
       } ],
       "qr_code": [ "ccm.load", "https://ccmjs.github.io/akless-components/libs/qrcode-generator/qrcode.min.js" ],
-      "helper": [ "ccm.load", { "url": "https://ccmjs.github.io/akless-components/modules/helper.js", "type": "module" } ],
+      "helper": [ "ccm.load", { "url": "https://ccmjs.github.io/akless-components/modules/helper.mjs", "type": "module" } ],
       "app_url": "https://tkless.github.io/w2c/v2/app.html",
       "css": [ "ccm.load", "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
         "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
